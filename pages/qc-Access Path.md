@@ -1,6 +1,8 @@
 - storage
-	- storage 的概念和 relation概念的映射关系 ![image.jpg](../assets/8321101d-2cc5-4790-8bb6-2809f58fa6c0-1115003.jpg)
-	- slot page ![image.jpg](../assets/31087a65-fd15-4b0f-91dc-03cf6a5b923d-1115003.jpg)
+	- storage 的概念和 relation概念的映射关系 
+	  ![image.jpg](../assets/8321101d-2cc5-4790-8bb6-2809f58fa6c0-1115003.jpg)
+	- slot page
+	   ![image.jpg](../assets/31087a65-fd15-4b0f-91dc-03cf6a5b923d-1115003.jpg)
 - Access Path（building block：指query plan中的叶子节点，它们往往是access path）
 	- Simple Scan：扫全表数据
 	- Scan and Attribute Access

@@ -1,7 +1,6 @@
 - [[知识库]]
 	- [[计算机]]
 		- [[DataBase]]
-		  collapsed:: true
 			- [[CMU 15445]]
 			  collapsed:: true
 				- [[445-关系代数]]
@@ -23,7 +22,6 @@
 				- [[cb-execution]]
 				- [[cb-transaction]]
 			- [[Query Compiler]]
-			  collapsed:: true
 				- [[Basics]]
 					- [[qc-Access Path]]
 				- [[Foundation]]
