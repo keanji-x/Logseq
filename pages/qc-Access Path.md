@@ -61,16 +61,17 @@ public:: true
 						- 我们使用*表示project全部tuple
 						- 例子：select *, name from emp ![image.jpg](../assets/393a8ca2-5991-4ab5-969a-ea92417df947-1115003.jpg)
 				- 对于一些稠密的判断谓词，我们可以改写条件
-					- 比如 ![image.jpg](../assets/443a0307-97d5-4973-a227-35fdba4cdb98-1115003.jpg)
+					- 比如
+					   ![image.jpg](../assets/443a0307-97d5-4973-a227-35fdba4cdb98-1115003.jpg)
 						- 我们可以总结，上下界为28，32。且很多residual predicate ![image.jpg](../assets/4682aa60-4d75-4746-ad58-635af355fcca-1115003.jpg)
 				- 对于一些稀疏的判断谓词，我们可以将其转弯d-join
-					- 比如 ![image.jpg](../assets/c42b279e-713a-4472-a76d-e4984c7a7006-1115003.jpg)
+					- 比如 
+					  ![image.jpg](../assets/c42b279e-713a-4472-a76d-e4984c7a7006-1115003.jpg)
 					- 其可以转为 ![image.jpg](../assets/b48a408c-0548-44d8-bb27-9000311cac90-1115003.jpg)
 					- 对于上述多个区间的情况，B-tree 会实现gap skipping
 						- 当我们进入到一个新的range的时候，避免全局扫描
-							- 只比较下一个页的最大值
+							- 实现方案1：只比较下一个页的最大值
 							- 回退到父节点
-							- 从头开始搜索
 		- complex key index，value可以是部分数据
 			- value数据越多，index only scan越多，但是写的代价越大
 			- 对于complex key的谓词
