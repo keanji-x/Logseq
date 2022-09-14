@@ -52,7 +52,8 @@ public:: true
 					   ![image.jpg](../assets/5b532795-9d47-4757-8a80-d2f465514bca-1115003.jpg)
 			- 如果我们只需要index的key，不需要访问relation，那么我们将其称为index only query
 			- 对于条件，一些条件不是index sargable（我们称为residual predicate）。对于index sargable的我们往往可以确定其边界，有助于快速扫描
-				- 比如下述语句age != 30 就不是index sargable ![image.jpg](../assets/cbbc2ce1-5095-417c-b0c7-93ddf768e44a-1115003.jpg)
+				- 比如下述语句age != 30 就不是index sargable
+				   ![image.jpg](../assets/cbbc2ce1-5095-417c-b0c7-93ddf768e44a-1115003.jpg)
 				- 在index 扫描中，我们可以确定边界（比如对上述语句的边界上[25, 35]）
 					- 对于一些开边界，我们可以将其转为 ![image.jpg](../assets/535e1cc9-af40-4c07-957e-1a28ac73f60e-1115003.jpg)
 					- 更具体的，对于一个有效的index scan 
