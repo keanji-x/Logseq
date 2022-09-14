@@ -38,9 +38,12 @@
 			- 我们需要筛选出数据的TID，然后提取对应数据
 				- 比如 ![image.jpg](../assets/cff40538-6d40-450c-9790-a4e1728bb40f-1115003.jpg)
 				- 我们可以使用Map函数 ![image.jpg](../assets/8115eb2c-9c55-4196-8690-1acf13b20058-1115003.jpg)
-				- 也可以使用dependent join（<> 内的内容时dependent的部分，其依赖于外面的算子） ![image.jpg](../assets/82e62439-fc64-4ec5-81c7-ec7122748357-1115003.jpg)
-				- 对于非聚簇索引，我们需要对TID排序以保证顺序读取 ![image.jpg](../assets/0f1d08e2-0efb-40b4-b6c2-4f8dcd8ca7c8-1115003.jpg)
-				- 如果我们需要读取的数据有序的，那么对TID排序会破坏这种有序性。所以我们需要再次排序 ![image.jpg](../assets/60cd3896-7f80-497e-9d43-54fab759ac71-1115003.jpg)
+				- 也可以使用dependent join（<> 内的内容时dependent的部分，其依赖于外面的算子） 
+				  ![image.jpg](../assets/82e62439-fc64-4ec5-81c7-ec7122748357-1115003.jpg)
+				- 对于非聚簇索引，我们需要对TID排序以保证顺序读取 
+				  ![image.jpg](../assets/0f1d08e2-0efb-40b4-b6c2-4f8dcd8ca7c8-1115003.jpg)
+				- 如果我们需要读取的数据有序的，那么对TID排序会破坏这种有序性。所以我们需要再次排序
+				   ![image.jpg](../assets/60cd3896-7f80-497e-9d43-54fab759ac71-1115003.jpg)
 					- 如果引入一个密集的rank，会使得排序函数更快（比如直接桶排序）
 					   ![image.jpg](../assets/5b532795-9d47-4757-8a80-d2f465514bca-1115003.jpg)
 			- 如果我们只需要index的key，不需要访问relation，那么我们将其称为index only query
@@ -102,6 +105,6 @@
 			- 比如对于一个index access ![image.jpg](../assets/01327623-8a1c-4f9a-b823-077dc7198df6-1115003.jpg)
 			- 我们可以使用dependent join ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg)
 			- 也可以直接join（比较低效） ![image.jpg](../assets/2335cd47-3de0-4f02-8b64-fd76b6351ca6-1115003.jpg)
-			- 该方法尽管优雅，可能低效
+			- 该方法尽管优雅，可能低效。会造成搜索空间的指数级膨胀
 		- 涉及到两个index的join
 			-
