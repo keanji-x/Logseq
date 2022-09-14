@@ -1,0 +1,8 @@
+- 常见表示法
+	- 全部显示 ![image.jpg](../assets/9c2cc3c7-0ccf-4210-af3b-43ab2c8301d6-1115003.jpg)
+	- 只显示次数 ![image.jpg](../assets/c669da09-64c6-49f6-a4a2-6fa41c1a88d1-1115003.jpg)
+		- 为了在sequence的记录位置 ![image.jpg](../assets/14f9ba3f-ef4b-41c9-a38d-a1d1eb1b786f-1115003.jpg)
+			- p或者上缀表示位置
+	- 加上唯一的tid ![image.jpg](../assets/cc189d55-775e-44f0-82fa-c133579fed4c-1115003.jpg)
+- 这些表示法之间的变换
+- 基于这些表示法新的记号

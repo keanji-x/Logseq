@@ -1,0 +1,14 @@
+- MVCC
+  title:: 721-MVCC
+	- garbage collection **MVCC：Advanced**
+	- Index
+		- 问题1：每次都指向最新的key，那么老的key怎么索引
+		- 问题2：read old, del , insert, duplicate key???怎么解决
+- garbage
+	- 垃圾定义
+	- 为什么需要
+		- 节省空间
+		- 避免老版本对查询的影响
+	- 需
+- note
+	- AP 真的需要 SI吗，也许RC就够了

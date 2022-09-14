@@ -1,0 +1,25 @@
+- 定义
+	- 基本定义
+		- 对于二元 ![image.jpg](../assets/f52a5b3a-a5b3-4741-aa78-e840906be77a-1115003.jpg)
+			- 如果只对左/右孩子成立，就是left (right) linear
+			- 如果上述条件只在满足以下条件下成立，则称之为weak linear ![image.jpg](../assets/5a03053a-9680-4a17-86d4-b261c762503c-1115003.jpg)
+		- 对于多元 ![image.jpg](../assets/e09b42b1-ed25-4f80-9601-67e235a2db66-1115003.jpg)
+			- 如何上述公式对于某个参数都成立，就是strongly linear
+			- 同理，weak linear条件如下 ![image.jpg](../assets/d1f17424-7312-4e16-888b-451ad18491ac-1115003.jpg)
+	- 是否满足linear ![image.jpg](../assets/5c0b2534-514f-4571-be4a-0a46aa479461-1115003.jpg)
+		- 对于并差可得到 ![image.jpg](../assets/a1f01850-dfc3-45b3-8157-934231133de1-1115003.jpg)
+- 对于bag对linearity
+	- 例子 ![image.jpg](../assets/f5d8eb83-464f-41f9-a520-dee4f3fa22b9-1115003.jpg)
+		- 该函数是weakly的，因为如果有多个x，它会产生多个3。而实际只需要一个3（应该是这个意思，感觉原文意思不明确）
+	- 所以对于bag而言，我们所需要满足如下条件，这个被称之为duplicate faithful ![image.jpg](../assets/7f4e8695-6a1c-4fd5-a427-b7450f8776b9-1115003.jpg)
+	- 由此，我们可以得到对于bag而言：strong linear = weakly linear + duplicate faithful
+	- 所以有些等式对于set成立对于bag却不成立，比如 ![image.jpg](../assets/b0ff0597-49d8-49f6-966e-cc7ef97b5815-1115003.jpg)
+- 对与linearity的拓展
+	- 运算闭包
+		- 如果​​​ 满足linearity，我们可以得到 ![image.jpg](../assets/5ac1405c-b6eb-4696-a5f8-4536f627c0af-1115003.jpg)
+			- 简单证明 ![image.jpg](../assets/aa8d061c-e238-4c5a-a9be-a650598996c7-1115003.jpg)
+			- 其它同理
+	- 我们还可以得到一个新的运算 ![image.jpg](../assets/383bc9e2-9d71-4a50-ab62-f0859849ba50-1115003.jpg)
+		- 注意该条件只满足于 ![image.jpg](../assets/b95d0a83-b74f-4de8-b99c-5dc517aafb76-1115003.jpg)
+			- 更形式化的，​​​​ 代表f制造的attribute，​​​​ f删除的属性（比如投影） ![image.jpg](../assets/21d153a2-8ea8-4d08-af28-0ad040f0f4ba-1115003.jpg)
+			- 上述条件可以形式化的描述为 ![image.jpg](../assets/312050ad-d2ba-4762-9dfe-d41e7c7bfbb9-1115003.jpg)

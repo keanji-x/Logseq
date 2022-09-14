@@ -1,0 +1,19 @@
+- 参数
+    - 当实参初始化形参会忽略顶层const（const好麻烦）
+    - 参数的引用参数尽量使用常量引用
+        - 可以标明不允许修改
+        - 可以使用常量实参初始化
+    - 可变形参
+        - 传入initializer_list类型的容器（如果类型不同，可用可变参数模板） ![image.jpg](../assets/38f860ae-e245-4432-b216-08c15a4a1b3e-1115003.jpg)
+        - 省略符（略） ![image.jpg](../assets/f688b1a3-0dbd-49a8-8e92-0e82f6bfcac0-1115003.jpg)
+- 值的返回
+    - 使用返回值去初始化调用点的一个临时变量
+    - 不要返回局部对象的引用或指针
+    - 尾置返回类型S ![image.jpg](../assets/f92a4efc-341d-4a5a-9d4f-256dd00fa82d-1115003.jpg)
+- 函数重载
+    - 7顶层const不做区分，底层const做区分<img src="https://api2.mubu.com/v3/document_image/34f286b6-48d1-4834-bd61-026cda66ac27-1115003.jpg" /> ![image.jpg](../assets/d3872d65-a8ad-45a8-bbde-a97a29ec3093-1115003.jpg)
+- 默认实参
+    - 局部变量不能作为默认实参（局部变量可能销毁）
+- 内联函数
+    - 内联函数是编译阶段替换，编译器做检查
+    - 宏是预处理替换，不做检查

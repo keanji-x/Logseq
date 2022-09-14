@@ -1,0 +1,77 @@
+- Go thread
+	- 并发的好处
+		- I/O
+		- 多核
+		- 便利
+		- 原文 ![image.jpg](../assets/ccb29fc4-8e05-4fdd-a9a0-7ae0647739b5-1115003.jpg)
+	- 另一个选择：event-driven
+		- 事件驱动是在每一事件发生的时候，去显示的交互
+		- 可以维护一个事件表
+		- 可以实现I/O并发（select）
+		- 原文 ![image.jpg](../assets/c5e564fe-6d05-4078-a51e-e8640e7b1024-1115003.jpg)
+	- threading - challenge
+		- 数据共享
+		- 多threading 合作
+			- 同步
+		- 死锁
+- 以web crawler 为例
+	- 爬取所有的网页（注意：部分链接循环引用）
+	- challenge
+		- I/O 并发
+			- 网络延迟是瓶颈（相比网速）
+			- 需要同时去fetch 多个web （需要多进程）
+		- 每个web只取一次
+			- 需要记录url
+	- 两种风格的解决方案
+		- Serial crawler
+			- 顺序的 调用：深度搜索url
+			- 出现环的时候break
+			- 能用多进程吗？
+				- 不能，因为可能导致无法break circle
+		- ConcurrentMutex crawler
+			- 为每个fetch 分配一个threads
+			- 每一个threads 去share 一个fetched map
+			- 使用锁去修改fetched map
+				- 防止多个进程同时修改（脏数据）
+		- ConcurrentChannel crawler
+			- Go channel
+				- channel是一个object
+				- channel是阻塞的（尝试receive空的，或者send满的）
+					- 一个小坑，receive和send是非原子操作，所以多进程的时候，receive的顺序和send的顺序可能不一样
+			- 流程
+				- master 维护fetched map
+				- worker 负责去fetch url，并将新的url push进channel
+		- sharing and locking 和 channel的风格（其都可以解决问题）
+			- sharing and locking：多进程需要**同时访问**某个数据，所以需要locking
+			- channel：多进程维护一个channel 进行**通信，**
+- RPC
+	- 软件结构 ![image.jpg](../assets/213d90c3-367a-49c9-801b-394a4c299307-1115003.jpg)
+		- 核心是将调用信息编码，通过网络传送
+	- 以kv.go为例
+		- 略
+	- more about rpc
+		- 如何标识client：IP端口等
+		- 打包的数据类型：不可以传输channel和函数
+	- 错误控制
+		- 错误
+			- crash
+			- 丢包
+			- 超时等等
+		- client错误
+			- best effort
+				- 表现
+					- 当失败时，重复调用RPC
+					- 尝试最大次数后还未成功，返回错误
+				- 问题：
+					- 有些变量是虽然调用改变的（比如计数）
+					- 重复写可能会造成冲突 ![image.jpg](../assets/07443bd5-b925-4cdd-8f02-eeae162b32c1-1115003.jpg)
+				- 适用范围 ![image.jpg](../assets/6556941f-a7da-417f-a2df-871b178c372a-1115003.jpg)
+			- at most once
+				- 表现
+					- 每个RPC有一个id：xid ![image.jpg](../assets/0b68b431-7540-47da-b183-b5c764ac8d6a-1115003.jpg)
+				- 一些更复杂的情况
+					- 保证多进程的xid的唯一性（和IP相连）
+					- 什么时候丢弃old rpcs的xid
+						- **类似TCP 的 seq 和ack机制？有点没看懂** ![image.jpg](../assets/51ec0247-c37e-473d-bcca-8e2eeb8143db-1115003.jpg)
+					- 如何解决重复的回复
+						- 设置一个pend flag ![image.jpg](../assets/614c7047-8f2f-4c9d-a31f-dded1803bfca-1115003.jpg)

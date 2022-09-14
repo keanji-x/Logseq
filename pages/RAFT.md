@@ -1,0 +1,62 @@
+- 一些机制的原因
+    - term：保证每个term只有一个leader，如果没有term，那么server就无法区分新的leader和老的leader
+    - majority：注意是所有的server而不是活着的server
+        - 选举的时候需要majority投票，这样保证了不会一个term内存在两个leader
+        - commit majority：两个leader的majority必然存在交集，而这个交集是保证一致性的关键
+            - 假设上一个term 正常
+            - 那么这个term 的majority必然存在一个server 包含所有上个term的commit index
+            - 那么这个term的leader必然是 和 上个term 一致（因为term是majority中commit index中最新的）
+        - **小坑：也许是我理解的问题.（我的理解出错，官方论文中标识的last log term）**
+            - 官方实现：核心是保障commit term最新 ![image.jpg](../assets/23b811e3-0921-4617-ae78-ed329a6d0196-1115003.jpg)
+            - 论文raft中叙述是term最大就可以保障up to date ![image.jpg](../assets/78440684-79f1-4360-bd62-efc152902454-1115003.jpg)
+    - commit_idx,match_idx 待更深入的理解
+- election（忘记记录）
+- log append
+    - client 传命令给 leader
+    - leader append log
+    - send log 给 所有server
+    - 无限期的发送，会不会导致延迟？？？？，而且figure6 显示可以允许有folloewer 没有append ![image.jpg](../assets/f29cc7c9-3489-43ca-8947-dd6b3ad1ff69-1115003.jpg)
+    - log = command + term + idx
+    - leader 一直追踪最新的committed entry的idx，并在未来的heartbeat中发送（？？？一个heartbeat间隔有多个hb这么办，还是每次append一个entry就强制发一次appendEntry RPC ）
+    - 当followe发现到最新的index的时候，就会更新
+    - 一些保证：
+        - 相同idx和term的entry相同
+        - 如果上述条件成立，那么它们在idx 之前索引的entry都相同
+    - 条件1成立的原因是，leder在一个idx中只会创建一个append（会不会有多个leader呢？即split brain）
+    - 条件1可以推出条件2（论文中提到一个机制，appendEntry：当发送新entry时，会在新的之前包含一个当前的idx和term，然后follower会将其和自己最新的对比，如果对比失败，则拒绝append；类似于ack机制？）
+    - 上述保证当leader crash的时候就不能保证了（假如一个老的follower篡夺了Leder之位）
+        - 为什么，在什么情况下会出现这种不一致
+            - 
+        - 机制：leader强制follower 复制自己的logs，即follower的log会被覆盖，什么鬼？这不会导致一些操作丢失
+        - 5.4节论证了上述操作在一些限制条件下的安全性
+    - 为了保证follower的一致性
+        - the leader must find the latest log entry where the twologs agree（即follower和leader共有的最新的log），假设该log idx是a
+        - 删除follower a之后的所有log
+        - 发送leader a之后的所有log
+        - All of these actions happen in responseto the consistency check performed by AppendEntriesRPCs.
+    - leader 需要保存 每一个follower的下一个log index
+        - 当leader 被选出来时，它初始化nextidx 为它的最后一个空的log entry的索引
+        - leader需要发送给follower
+        - 如果follower 和 leader的不一致，appendentries fail，leader会自减nextidx，并retry，直到最后成功
+        - 这样就达到了共同agree的index
+        - **上述优化版**
+            - follower除了返回fail之外，还返回它的conflicting entry所在的term和该term的第一个index。为什么？
+            - 根据该信息，leader 可以 直接掠过该term的所有conflicting entry
+            -  one AppendEntries RPC willbe required for each term with conflicting entries, ratherthan one RPC per entry.
+            - In practice, we doubt this opti-mization is necessary, since failures happen infrequentlyand it is unlikely that there will be many inconsistent en-tries.
+    - 根据上述机制，可以很好的很连贯的保证一致性（不需要额外的操作）
+    - 问题
+        - 如何查找match的log
+- Safety
+    - 选举
+        - 保证选举的leader含有所有的log entry
+        - 方法
+            - 由于elec需要大部分的投票，而committed需要大部分的成功append，所以投票的follower必然有一个包含最新的log entry
+            - 在requestVote的约束
+                - 拒绝投给更老的的candidate
+                - 更老：term 更小，同term idx更小
+        - 问题：假设有一个follower在哪个空转，导致了term非常大，那么这个term非常大的candidate实际没有包含所有log entry，但被定义为up to date
+    - commit？？？？？？？？？？？？？？？
+        - 一个leader不能commit上一个term的log
+        - 即不会存在leadercommit了前一个term的log，然后在commit自己的term的时候崩溃了，这样就会导致前一个commit的term被重写，违反了commited的term不能重写的原则
+        - 所有leader是在commit自己的term时候，通过log match原则捎带着复制之前的term的

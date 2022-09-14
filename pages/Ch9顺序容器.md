@@ -1,0 +1,23 @@
+- 顺序容器
+    - 类别 ![image.jpg](../assets/c67ed021-2d67-4384-8fbe-004820dc4267-1115003.jpg)
+- 迭代器（一种指针的封装）
+    - begin & end：[begin,end)
+    - 一些操作
+        - swap 交换内存
+        - assign 可以 使得相容对象赋值（char * -> string）
+    - 迭代器的改变，当添加或删除元素时
+        - 添加
+            - vector , string，deque 等顺序容器
+                - 如果重新分配了内存，那么迭代器无效
+                - 如果没有，那后面元素地址往后或者往前移动一格，前面的元素没变；deque是双向的列表，所以前后元素都改变了
+            - list，forward_list等链表容器
+                - 不影响后面的迭代器（地址）
+        - 删除
+    - capacity和size
+        - capacity是容量，就算该容器分配的内存最大能容纳元素数量
+            - 当push_back大于capacity时，就要重新分配了
+        - size是当前容器含有元素的数量
+- 适配器
+    - 栈
+    - 堆
+    - 优先队列

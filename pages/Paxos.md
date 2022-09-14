@@ -1,0 +1,43 @@
+- 单轮的共识
+    - 问题
+        - 一个processes 集合，每个集合都可以propose 一个 value
+        - 共识算法需要保证只能有一个proposed values 被 chosen
+        - safety
+            - Only a value that has been proposed may be chosen
+            - Only a single value is chosen, and
+            - A process never learns that a value has been chosen unless it actually has been
+        - liveness
+    - 单leader
+        - 由一个leader 确认是否chosen
+        - 如果chosen则广播到所有其它的process
+        - 问题
+            - 如果leader crash，则不能提供服务
+    - quorum
+        - 附：每个proposal 都有个递增的 编号
+        - 判定规则：如果大多数 accept，则该value 被chosen
+        - 对accept 行为的约束
+            - **P1. An acceptor must accept the first proposal that it receives.**
+                - 如果不接受的话，就不能保证liveness，因为acceptor 可以一直选择不accept
+            - **P2. If a proposal with value ****v ****is chosen, then every higher-numbered pro****posal that is chosen has value ****v****.**
+                - P1 保证了liveness，但是存在一个问题是可能存在多个proposal被chosen
+                - 由于safety的要求，我们需要保证每个被chosen的proposal都是相同的
+                - 所以需要增加额外的保证
+                    - **P2a.  ****If a proposal with value ****v ****is chosen, then every higher-numbered pro****posal accepted by any acceptor has value ****v**
+                        - 首先强化约束，使得每个accept 的 proposal 都有chosen value v
+                        - 但是有一个问题就是accept并不知道那个值是否被chosen
+                    - **P2b. ****If a proposal with value ****v ****is chosen, then every higher-numbered pro****posal issued by any proposer has value ****v****.**
+                        - P2a的要求比难实现，所以可以加强约束得到P2b .
+                        - 即由发送端查看有没有proposal 被chosen
+                        - 如果有的话，就使得发送 的 proposal 的值变为chosen的值
+                    - **P2c：如何找到集合S chosen 了值** ![image.jpg](../assets/758ef286-63a5-4f7a-9de3-d6e44a41a5d4-1115003.jpg)
+                        - 如果有值被chosen：全集C，含有大多数机器的子集S
+                            - 如果m 被chosen
+                            - 则S中的肯定有一个C1 accept <m, v>
+                            - 那么对于S中的任意C而言，必然包含1个或多个C1中的机器，即至少有一个机器accept m
+                        - 如果没有值被chosen
+                            - 即如果找到的S 没有 accept 任何小于 n 的proposal
+                            - accept了大于n的proposal呢？由于递增的所以不可能proposal > n？？
+    - 实际算法
+        - prepare：找到是否有proposal 可能被propose，这里要求的信息 是 一个majority 的的最高的proposal
+        - request：如果没有，则propose 它
+- multi

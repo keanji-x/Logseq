@@ -1,0 +1,17 @@
+- 谓词的分类
+    - 来源（感觉没意义）
+        - join中的谓词
+        - where中的谓词，个人觉得和inner join中的谓词没区别​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+    - 我觉得核心是是否会生成null
+        - 谓词下推：不能推到null generating factor
+            - inner join都可以下推
+            - Full Outer Join
+                - 对与不存在满足条件的row，左右孩子都会生成null
+                - 所以不能推到左右孩子
+            - left/right outer join
+                - 不能推到right/left child
+            - semi join
+                - 不会生成null，所以都可以下推
+            - anti join
+                - anti join总是可以生成null，其和outer join本质上是一样的
+        - 谓词上拉：对可能生成null 对谓词，不可以上拉

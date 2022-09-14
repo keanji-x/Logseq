@@ -1,0 +1,12 @@
+- 二值表达式
+	- 二值表达式 ![image.jpg](../assets/5846fecb-c10b-4c8f-b238-989d1070ebdb-1115003.jpg)
+	- null value
+	- 常见性质（参见chp 5）
+		- 交换率 ![image.jpg](../assets/598d5141-989c-4178-bf48-2df364445dc7-1115003.jpg)
+		- 结合率 ![image.jpg](../assets/626b2ad0-2896-42f0-b9e9-1951fec5353c-1115003.jpg)
+		- 。。。。。
+- 比较表达式
+	- 涉及对null的处理，一般作为unknown，其作为三元比较。（或者引入特殊的运算符） ![image.jpg](../assets/3031448d-4cb4-4955-84c8-986d8e5b8d08-1115003.jpg)
+	- 对于unknown的逻辑计算 ![image.jpg](../assets/b451e112-027e-47ac-821b-f7f0fd9a22b6-1115003.jpg)
+	- 为了将unknown转为true，false。引入两种表达式 ![image.jpg](../assets/71b1c4dd-b57b-44fa-99ee-dba1d30d4893-1115003.jpg)
+		- 这两种表达式对其它计算的影响<img src="https://api2.mubu.com/v3/document_image/3e4091af-061c-45b8-a1e2-1e780a30c0c1-1115003.jpg" /> ![image.jpg](../assets/21ef8ff7-df61-4ee4-9877-1115ac0f1cb2-1115003.jpg)

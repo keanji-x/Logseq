@@ -1,0 +1,281 @@
+- docker 
+    - linux namespace e隔离进程
+    - 概念
+        - docker 镜像：即打包好的包和依赖
+        - docker镜像仓库：存放docker镜像
+        - 容器：即docker镜像的运行实例
+    - 运行
+        - docker run busybox echo ” Hello world ” ![image.jpg](../assets/fd0433b0-67fb-405a-bf55-704b4931e1a4-1115003.jpg)
+- kubernets
+    - 管理容器群
+    - 架构
+        - 主节点：控制和管理
+            - API
+            - scheculer
+            - controller manager
+            - etcd
+        - 工作节点：运行工作
+            - docker
+            - kublet
+            - kubernets service proxy
+    - pod 和 replication Controller
+        - replication 负责 创建1个或多个pod副本
+        - pod即一个任务，会被调度器调度到一个机器上
+        - pod包含一组相互依赖的容器
+- pod
+    - pod是k8s管理的基本单位
+    - pod总是运行在一个节点上，包含多个容器，
+        - 一个容器多个进程vs多个容器
+        - 多个共享同一个命名空间：默认UTS和IPC
+    - pod网络：pod 分配一个单独IP，容器绑定不同端口 ![image.jpg](../assets/a1dd2d87-8e38-4f9a-8e36-df87624443a8-1115003.jpg)
+    - pod设计：微服务 ![image.jpg](../assets/8df40208-ab15-4276-b8ec-a196d6c61445-1115003.jpg)
+    - 描述pod：yaml
+        - metadata：name、namespace、label and so on
+        - spec: container、磁盘卷等
+        - status：内部IP、状态相关 ![image.jpg](../assets/75ec4797-7890-4435-9aa2-092b5aa6e8fc-1115003.jpg)
+        - 与pod通信
+            - service
+            - 本地端口转发
+            - curl
+        - 组织pod：标签
+            - 打标签
+                - app：属于哪个应用
+                - rel：pod的版本：stable、beta、canary
+            - 定义、修改、查询标签
+            - 使用标签调度
+                - 给节点标注对应标签
+                - 在创建pod的时候，筛选节点
+                - 例子：一个gpu上运行的pod ![image.jpg](../assets/840382cb-43a5-4045-b61d-c50116c38c6c-1115003.jpg)
+    - pod的注释：注解，一种键值对
+        - curd
+    - pod的另一种组织划分形式：命名空间
+        - 命名空间为资源名称提供一个作用域 ![image.jpg](../assets/1d43cfa6-78b0-479f-8f4e-c9c58eaedd46-1115003.jpg)
+            - 一个命名空间可能不能访问其它的互斥资源
+            - 一个资源可能被组织到多个命名空间
+        - 命名空间不提供网络隔离
+    - 对pod的curd
+- Replication Controller
+    - k8s通过RC管理pod
+        - client 指定 RC运行3个pod
+        - RC自动做运行，恢复，删除错误节点的管理
+    - 存活探针（liveness probe）：检测容器是否在运行
+        - HTTP：通过HTTP协议向目标发送get请求
+            - 实例 ![image.jpg](../assets/d9601b0a-51aa-4110-a265-12ed019702f1-1115003.jpg)
+        - TCP：尝试建立TCP链接
+        - Exec：在容器执行一个命令（RPC）？并check命令的退出状态
+    - RC控制流程
+        - 协调流程图 ![image.jpg](../assets/d7a2522d-b7ff-4208-a05f-f9892f9547ea-1115003.jpg)
+        - RC的组成 ![image.jpg](../assets/a470b24f-531e-4968-b167-705d8420029e-1115003.jpg)
+            - label selector：选择RC作用域的pod
+            - replica count：运行的pod数量
+            - pod template：pod模板用于创建新的pod副本
+        - 创建RC ![image.jpg](../assets/5bbdb698-ec23-45ef-87a8-e0477ec249d4-1115003.jpg)
+        - 操作RC
+            - 创建删除
+            - 移入移除pod
+            - 加入pod标签
+            - 水平扩展
+        - ReplicaSet
+            - 新一代的RC，简称RS
+            - 提升：标签匹配能力更强？？？
+            - 创建 ![image.jpg](../assets/b340561d-5a82-45c3-b4dc-04ed3ef07459-1115003.jpg)
+        - DaemonSet
+            - 将pod分散到每个节点（一个节点可能有多个pod） ![image.jpg](../assets/6d78f882-0a07-412e-a313-8fdd99b847ae-1115003.jpg)
+            - DaemonSet没有副本数目概念：集群每个节点有一个pod
+                - 当一个节点下线，则副本数--
+                - 当一个节点新加入，要重新创建一个pod，则副本数++
+            - 还可以利用标签筛选特点的节点 ![image.jpg](../assets/f8a4b37d-9a90-4b9a-91c3-595010fa2c25-1115003.jpg)
+            - 创建 ![image.jpg](../assets/68915ad7-0baf-470d-a8e3-e55c56fbe4b9-1115003.jpg)
+        - Joba资源
+            - Job：运行pod
+                - 当出现故障，听从RS的安排重启
+                - 当运行成功退出，则不重启
+                - 实例 ![image.jpg](../assets/17672035-db65-4571-9c10-022a57b1d70f-1115003.jpg)
+            - 创建 ![image.jpg](../assets/ee14982d-bb9a-490d-95db-6881081ecc70-1115003.jpg)
+            - 可以限制Job等待的时间，时间到期后终止pod，并将Job标记为fail
+            - cronJob：定期运行或将来运行的Job
+                - 定义 ![image.jpg](../assets/95cb33bf-b33b-468a-a865-2fc4a6f4ab6b-1115003.jpg)
+- service
+    - 问题：
+        - pod会动态的增减或者失败被重启
+        - 对应副本的pod的IP地址会不停变换
+        - 如何对外通信
+    - service：提供静态IP和固定端口
+        - service内部会动态路由到服务的任意一个pod上
+        - 例子 ![image.jpg](../assets/5f88675a-a44a-4a60-986d-9ca7a5bbec62-1115003.jpg)
+    - 服务创建
+        - expose
+        - yaml文件 ![image.jpg](../assets/409938bc-9c6f-4b67-ba8c-f4f98e7946eb-1115003.jpg)
+        - 可以不同协议绑定不同端口，并且命名别名
+    - 服务发现
+        - 环境变量
+        - DNS：有一个DNSpod服务器
+    - 服务：连接到集群的外部pod
+        - endpoint
+            - endpoint是介于 服务 和 pod之间的一个资源：服务->endpoint->pod
+            - 服务是固定地址，endpoint是一个IP:端口的集合，和pod对应？
+            - 在创建服务时，会选择一个selector，用于筛选对应pod来创建endpoint这样的集合 ![image.jpg](../assets/32c1bd8f-0855-4389-a12d-482ff885133c-1115003.jpg)
+        - 链接到集群外部：手动配置endpoint
+            - 空置selector
+            - 手动创建endpoint（除了IP还可以别名） ![image.jpg](../assets/f4555812-9073-4fbe-89c5-deb92157f918-1115003.jpg)
+            - 示例 ![image.jpg](../assets/68f6e7d6-ced2-448e-bd9a-cec39672530b-1115003.jpg)
+            - 
+    - 将服务暴露给外部客户端（目前只暴露给内部pod），上述讨论的IP都是集群内IP外部u无法访问
+        - 单个服务转发
+            - NodePort
+                - 原理
+                    - 每个节点都开放某个端口
+                    - 所有通过该端口的服务都被转发到nodeport服务
+                    - 由nodeport服务路由到对应的pod上去
+                - 示例
+                    - 创建 ![image.jpg](../assets/43573f28-3d6c-4375-a4dc-5f772d59612a-1115003.jpg)
+                    - 结构 ![image.jpg](../assets/b7a1a5ec-296b-4c61-b82f-33baa664fc95-1115003.jpg)
+            - LoadBalance
+                - 原理
+                    - 大部分集群都有一个均衡服务：loadBalance
+                    - 它有一个公网IP端口
+                    - 可以通过其访问
+                    - 本质上是一个不用port转发而是公网IP的nodeport服务
+                - 示例
+                    - 创建yaml ![image.jpg](../assets/7c47c5b4-9805-4b41-9c8c-0f3fef5658ff-1115003.jpg)
+                    - 架构图 ![image.jpg](../assets/76ce81a4-01f3-4711-aa7f-7b55197df060-1115003.jpg)
+            - 问题
+                - 多余的跳数
+        - Ingress
+            - ingress：可以转发多个服务 ![image.jpg](../assets/b5a385e2-2dde-4d28-ae72-c82d82b432c6-1115003.jpg)
+            - ingress原理
+                - 原理图 ![image.jpg](../assets/6fd6785d-ccc5-49eb-9ce2-1be86ebc44a1-1115003.jpg)
+            - 创建
+                - 通过不同的path暴露不同的服务 ![image.jpg](../assets/921b2243-f23b-4e52-8554-e58ed55c611c-1115003.jpg)
+            - TLS服务
+                - 可以将TLS的证书和私钥放在Ingress中
+    - 就绪指针
+        - 判断pod是否就绪
+            - 当探测失败的时候等待
+            - 和存活指针的区别在于这点，存活指针是杀死
+        - 探针类型
+            - Exec
+            - Http Get
+            - TCP socket
+    - headless 服务
+        - 需求：找到所有对应副本的pod，服务只能找到一个pod
+        - 通过将clusterIP = None设置，是服务变为headless服务
+- 将磁盘挂载到容器
+    - 容器的文件系统是隔离的，通过卷完成共享磁盘
+    - 卷：是pod的一部分（不能单独被定义）
+        - 同一个卷挂载到不同的目录 ![image.jpg](../assets/48584928-a480-4ddc-bc91-4c3d9ee8d468-1115003.jpg)
+        - 配置yaml示例 ![image.jpg](../assets/90b9bdac-31f8-4d14-9573-05674bfe890a-1115003.jpg)
+    - 卷的类型
+        - 非持久性：随着pod的删除而被删除
+            - empty卷
+            - git卷：可以将卷绑定到一个github仓库
+        - 持久性存储：
+            - hostPath卷：和系统文件相关
+            - GCE持久磁盘作为pod存储卷
+                - 创建GCE（Google compute engine）持久磁盘
+                    - 创建磁盘
+                    - 挂载到pod上
+                    - 架构 ![image.jpg](../assets/2b48bcef-a059-4be6-82c4-4edb8fc6c45f-1115003.jpg)
+            - 通过底层持久化使用其它类型的卷（可能和对应云服务的底层引擎相关）
+                - aws弹性卷
+                - NFS卷（自有服务器） ![image.jpg](../assets/a938191e-9f5a-4248-9d40-3ead24c3b1d7-1115003.jpg)
+    - 从底层存储技术解相pod
+        - 需要指定对应存储服务器的节点IP，违反了k8s隐藏底层细节的思想
+        - 解决方案
+            - 由管理员配置持久卷
+                - yaml ![image.jpg](../assets/449028ac-76cd-461c-98f0-e1b7ed1336cd-1115003.jpg)
+            - 开发者提供持久卷声明
+                - 创建持久卷声明，自动挂载到对应持久卷上
+                - 在pod中使用持久卷声明
+            - 图例 ![image.jpg](../assets/93ef73c6-e74b-45e2-8ad6-9b0cbbf2a0b0-1115003.jpg)
+        - 持久卷的回收：delete和retain
+    - 持久卷的动态配置
+        - 上述配置的缺点：需要一个管理员去维护持久卷的配置
+        - 图例 ![image.jpg](../assets/e0efe24c-a6c4-467f-b2cd-b9f2d8c12d61-1115003.jpg)
+- ConfigMap和Secret
+    - Config：传递对docker的配置信息
+        - 硬编码
+            - 通过命令行参数 ![image.jpg](../assets/e83b5eba-93b6-46ab-922f-4f3ef83f6ca9-1115003.jpg)
+            - 通过环境变量 ![image.jpg](../assets/7bbb6e83-b10f-4b7e-8161-4e9fca772164-1115003.jpg)
+        - 通过Config Map解耦
+            - configMap是一种资源
+            - pod利用configMap
+                - 作为环境变量 ![image.jpg](../assets/01eb7652-4929-487b-8a62-616dc62b3428-1115003.jpg)
+                - 作为命令行参数
+                - 使用configMap卷，暴露为文件
+            - 更新configMap：动态更新
+    - Secret：传递敏感数据
+        - 形式
+            - 环境变量
+            - 文件
+        - Secret和configMap区别
+            - 其中内容会被自动编码
+            - 可以标记为datastring避免编码
+- pod元数据和其它资源
+    - Downward API：是将在 pod 的定义和状态中取得的数据作为环境变量和文件的值 ![image.jpg](../assets/574093da-589f-4434-aebb-b4f3edad6f4e-1115003.jpg)
+    - k8s API 服务器 ![image.jpg](../assets/02c81f4d-db19-4cb2-91e8-76f692141c63-1115003.jpg)
+        - 
+- Deployment
+    - pod 程序的更新
+        - 架构 ![image.jpg](../assets/a55412dd-362a-49dc-8196-ee4caeced884-1115003.jpg)
+        - 删除旧版本，使用新版本 ![image.jpg](../assets/360e0457-378d-4fbb-81d8-a2607d5d6f96-1115003.jpg)
+        - 创建新版本，切换旧版本 ![image.jpg](../assets/1b265d71-e5d0-47f4-9edd-f3498a265ca1-1115003.jpg)
+        - 使用RC 滚动升级：使用kubectl执行 rolling update
+            - 创建一个新的RC，滚动替换旧RC的旧版本的pod ![image.jpg](../assets/864d2981-230b-4e53-96d9-4d5927397049-1115003.jpg)
+            - 缺点
+                - kubectl rolling-update 显式地告诉 Kubemet出来执行更新，需要保证客户端一直active
+                - 由k8s 客户端通过 REST API 指挥，若网络中断，处于中间态
+                - 希望直接改动pod定义中的期望tag，改变pod副本个数，而不是手动删改
+    - 使用 Deployment声明式地升级应用
+        - Deployment：在RC/RS上的更高抽象，可以协调一组pod完成上述类似滚动更新过程 ![image.jpg](../assets/35b54182-4b00-47c3-a4fd-f58368e97e58-1115003.jpg)
+        - 可以使用Deployment 声明式的升级应用
+            - 可以回滚到某一版本
+            - 可以暂停升级、恢复升级
+- StatefulSet
+    - 多个pod副本关联到同一个PM
+        - RS 通过同一个 pod模板创建多个pod 副本
+        - 副本之间就名字和IP差异
+        - 如果有一个PM卷的声明，则所有pod都关联到PM
+        - 图示 ![image.jpg](../assets/fb39b92f-274f-42f5-8ca5-89c1f4ad9312-1115003.jpg)
+    - pod副本的多状态
+        - 分布式存储：每个实例都有单独存储的多副本
+            - 多个RS ![image.jpg](../assets/a09d637a-c3d4-44c5-8cce-90d43189df6f-1115003.jpg)
+            - 不同目录：使用RS自动选择不同的目录 ![image.jpg](../assets/0cf47c5c-62f6-4a84-8dfc-6897894b606f-1115003.jpg)
+        - 每个pod需要维护稳定的IP
+    - Statefulset：每个实例都是有自己状态的 && at most once
+        - 提供稳定的网络标识
+            - 由于实例是有独自状态的，所以需要各自独立的标识，通过创建一个headless service 标记每个pod
+            - 恢复：statefulset 恢复的pod拥有和之前crash pod完全一样的标识
+            - 扩展：扩展的pod是没有用过的标识
+        - 提供稳定的专属存储
+            - 通过在pod模板中添加卷声明模板 ![image.jpg](../assets/b9b2b20e-d1f8-4ee3-af98-7917e56a227b-1115003.jpg)
+            - 绑定到不同的pod上
+            - StatefulSet扩容需要创建两个 PM和POD
+            - Statefulset缩容的时候往往只删除pod，PM可以保存状态以后再用
+- k8s机理
+    - k8s 组件 ![image.jpg](../assets/e1d62c7d-30a9-4f3b-8032-164704469df3-1115003.jpg)
+        - 控制组件
+        - 工作节点组件
+        - 附加组件 ![image.jpg](../assets/b5ed725d-cc88-479e-a92c-94a903a93b7a-1115003.jpg)
+        - 运行和通信
+            - 可以作为pod运行多个实例（Kubelet特例）
+            - 通过API服务器通信
+        - API服务器
+            - 图例 ![image.jpg](../assets/e20da1fe-c31e-4d5b-b29a-e3667b42a38d-1115003.jpg)
+        - 调度器
+            - 功能：为pod选择最佳调度节点，即通过调度使得pod满足定义（spec）状态
+            - 算法
+                - 默认算法
+                    - 找出可用节点
+                        - 资源是否足够
+                        - 是否满足对应标签
+                        - 亲缘性、污点、容忍度？？
+                    - 按优先级排序，给出最高优先级
+                    - 图示 ![image.jpg](../assets/58527cf8-2e4c-4b52-97c4-5778498fb261-1115003.jpg)
+                - 一些更复杂的因素
+                    - 为了保证容错，需要尽可能分散
+                    - 等？
+        - 控制器
+            - 种类 ![image.jpg](../assets/5671d050-aa74-4f2b-8aeb-3cd284798bb2-1115003.jpg)
+        - kubelet
+            - 

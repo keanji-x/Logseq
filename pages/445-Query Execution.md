@@ -1,0 +1,38 @@
+- Processing Models
+	- Iterator Model：每次处理一个tuple ![image.jpg](../assets/a2849662-9ec6-4b01-90cd-ad381cc47a59-1115003.jpg)
+	- Materialization Model：每次处理全部 ![image.jpg](../assets/01411030-7c32-4ec9-b14f-d9b295c73f62-1115003.jpg)
+	- Vectorized / Batch Model：每次处理一个block ![image.jpg](../assets/3d7eb4d1-2b76-44b4-ad58-827425e59d65-1115003.jpg)
+- Access Methods：该处应该是指解析树的叶子节点访问数据的方式
+	- Sequential Scan：顺序的读取全部文件 ![image.jpg](../assets/2f5746f7-901f-460a-bec2-47d625e969f8-1115003.jpg)
+		- 一些优化策略
+			- Zone Map ![image.jpg](../assets/fb977b41-9422-42a9-90b6-ea05141c4c72-1115003.jpg)
+				- 保存一些数据的元信息帮助筛选（max/min/avg等）
+				- 插入删除等会增加额外的开销，所以不适合OLTP
+			- Late Materialization ![image.jpg](../assets/c38acff6-5630-4011-aba1-34ea4de6a84a-1115003.jpg)
+				- 在列存储时，我们可以只读入一个筛选的attribute来确定输出
+				- 在到达树的顶端时，再读入真正输出的元素
+	- Index Scan：借助index筛选
+	- Multi-Index / "Bitmap" Scan ![image.jpg](../assets/23db5087-6bc5-4ca0-8ad6-d97603de1adc-1115003.jpg)
+		- 当存在多个index时，可以全部使用构成一个bitmap
+		- 在将多个bitmap组合，（and：交，or：并）
+- Modification Queries
+- Expression Evaluation
+	- 遍历AST需要更多的调用，消耗更多的时间
+	- 可不可以将其编译为一个更短的指令
+- 并行执行器
+	- Inter parallerlism：多个sql命令并行的执行，可能会有事务隔离的问题
+	- Intra parallerlism：将一个sql内部并行的执行
+		- Intra-Operator Parallelism (Horizontal) ![image.jpg](../assets/05fb2f29-b798-4307-a7da-029c3ae47e12-1115003.jpg)
+			- 将对一整块数据，分治为不同块数据，然后并行执行
+			- 需要一个exchange 模块
+				- 汇总数据
+				- 对数据预分块
+				- 向上distribute 数据
+		- Inter-Operator Parallelism (Vertical) ![image.jpg](../assets/1ce460cf-3f67-4f88-859b-1f888acc4c23-1115003.jpg)
+			- 每个operator都有一个线程执行/ 流水线
+			- 流系统中广泛使用
+	- I/O 并行
+		- Multi-Disk Parallelism： RAID raid0
+		- Databast partition：分布式数据库中常用
+			- 水平分片：按照tuple
+			- vertical分片：按照attribute

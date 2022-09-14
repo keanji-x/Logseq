@@ -1,0 +1,18 @@
+- Chapter-2 基本概念
+	- Operator（scan，join，aggregate，filer....）
+		- Logical
+		- Physical
+	- Query Tree/ Expression
+		- 由一个operator，和多个input expression组成
+	- Group
+		- 包含多个逻辑相等的Expressions (包含逻辑和物理的)的集合
+		- 逻辑相等-> 输出相等
+	- Multi-Expression (save memory)
+		- 由一个operator，和多个input group
+	- search space: 指数级扩展
+	- rule
+		- 包含一个pattern（可以应用于哪个结构体），一个Substitute（转换后的结构体）
+		- 根据其substitute，可以分为两类
+			- transformation rule：结果是逻辑的
+			- implementation rule：结果是物理的
+	-

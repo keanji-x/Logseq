@@ -1,0 +1,76 @@
+- 基本数据结构的定义
+	- set：无顺序+不重复
+	- bag：无顺序+重复
+	- sequence：顺序+重复
+- 基本算子
+	- sets
+		- 基本运算率 ![image.jpg](../assets/6740a032-1d49-4d93-9318-023287f8e0d0-1115003.jpg)
+		- 特征函数：判断一个元素是否属于一个集合 ![image.jpg](../assets/37e8eca7-ff4b-4654-8544-2b76e9cde1e1-1115003.jpg)
+			- 双射？不懂 ![image.jpg](../assets/91741363-240f-4a61-8c16-3df0fb572429-1115003.jpg)
+			- 对于子集可以表示为 ![image.jpg](../assets/564b5a4f-2d30-49db-80e3-1672707fe282-1115003.jpg)
+	- bags
+		- 基本运算率 ![image.jpg](../assets/f0a0d7c3-cbb5-4268-b1e9-736efad6db96-1115003.jpg)
+		- 特征函数：表示s在集合S中出现的次数 ![image.jpg](../assets/2bcce0ce-c177-4066-8b42-541883219e8f-1115003.jpg)
+			- 对于子集的定义，我们同样可以得到 ![image.jpg](../assets/496c23a8-b63f-416a-a782-b043a6cb56b9-1115003.jpg)
+			- 可以通过特征函数描述集合运算 ![image.jpg](../assets/5fba0978-81b5-4fc4-bb32-2184c8e3822d-1115003.jpg)
+		- 显示的duplicate 控制：我们可以利用特征函数定义出两个函数​​​​​​​​​​​​​​​​​​​​
+			- ​​​​​​​：turn a set S into a bag with identical characteristic function
+			- ​​​​​​​​​​​​：turns a bag into a set if the bag’s characteristic function does not exceed one
+			- 一些常见的运算
+				- 并 ![image.jpg](../assets/c260a4e5-ab5c-4a09-adde-d7c3a267d614-1115003.jpg)
+				- set-faithfulness：如果一个函数​（二元函数​）不改变其集合的特性，我们可以得到<img src="https://api2.mubu.com/v3/document_image/5f552436-4a73-434d-9222-9ead2f54ee9f-1115003.jpg" /> ![image.jpg](../assets/0775b086-8faf-49ca-80fe-db727cf8e9e2-1115003.jpg)
+	- sequence
+		- 基本运算符都不太适用
+		- 定义一些函数
+			- 特征函数X：表示位置i的字符
+			- 头函数​​​​​​：表示第一个位置的字符 ![image.jpg](../assets/634a391b-0e08-4946-9d15-05c211ee6725-1115003.jpg)
+			- 尾函数​​​​：表示除第一个字符外的其他自费 ![image.jpg](../assets/5e9ff8fc-4162-4a7f-93a2-eb51198595d9-1115003.jpg)
+			- 拼接函数 ![image.jpg](../assets/02e913ad-d117-4d40-8658-b4528f2d1077-1115003.jpg)
+		- linearity定义
+			- 二元 ![image.jpg](../assets/9bf1d502-734c-43cd-a35a-855155f75e19-1115003.jpg)
+			- 多元 ![image.jpg](../assets/9123fa21-b246-43b7-b7c5-88751b096dd7-1115003.jpg)
+		-
+- Agg function
+	- 幂等：一个函数可以执行多次 ![image.jpg](../assets/079b866c-3413-43aa-94e1-ab34efa91ffc-1115003.jpg)
+	- decomposable（可溶解性）：可以先算出部分集合的结果，再汇总成最后结果（两阶段agg）<img src="https://api2.mubu.com/v3/document_image/224bcc5c-04da-4bed-9485-f38317d81933-1115003.jpg" /> ![image.jpg](../assets/a0291aaf-8b9f-4a44-9582-d9085c74056d-1115003.jpg)
+		- 常见的都可以进行下推<img src="https://api2.mubu.com/v3/document_image/8f5f05eb-8761-47d0-89dc-db9966697516-1115003.jpg" /> ![image.jpg](../assets/f6b542ef-4c93-4f94-9355-a499a51c667b-1115003.jpg)
+		- 总结表 ![image.jpg](../assets/3d7af77a-adc7-4356-97e4-17ca9820cc1c-1115003.jpg)
+	- 将decomposable推广到多个属性（可以分治的属性）
+		- 考虑到多个agg function（其中a和b都表示属性名字） ![image.jpg](../assets/b7301756-a094-4132-b2fa-1d54b370dd87-1115003.jpg)
+			- 如果所有的agg都可以被分解为两个函数，那么我们可以得到 ![image.jpg](../assets/c741fb48-202c-40fb-86c4-fd93c9fd6a1e-1115003.jpg)
+			- 我们还可以进一步的分解F1，F2
+	- Agg函数对重复数据是否敏感 ![image.jpg](../assets/0df18d78-f5b6-4a47-9df9-1b754b0a34be-1115003.jpg)
+	- 进一步考虑，除了conut之外，所有的agg函数对于只有一个的数据的输出都是其本身（在group by一个primary 索引的时候），所以我们可以进一步得到以下两个函数相等 ![image.jpg](../assets/be8a3f7d-a1e5-4ff5-8e80-357f1188a3fb-1115003.jpg)
+- operators：定义所有和应用于bags的算子
+	- projection
+		- 基本符号
+			- ​​​​​：投影attribute在​中的数据 ![image.jpg](../assets/aa8ecbec-d378-4db7-a7b0-418c72d9fec3-1115003.jpg)
+			- ​​​​​：去重投影 ![image.jpg](../assets/230400f8-6aa0-45ad-98da-c9eb147dd798-1115003.jpg)
+			- 删除某个元素 ![image.jpg](../assets/d74729bd-f580-4312-93b5-752c2b6e09b3-1115003.jpg)
+	- selection（filter）：set-faithful ![image.jpg](../assets/72cd3194-4938-4b52-8825-3aa1d13a91ec-1115003.jpg)
+	- Map
+		- 用做materialization：将一个attribute的value赋值给另一attribute ![image.jpg](../assets/dd51ddb3-89e1-4f6c-b979-7cc724a99d54-1115003.jpg)
+			- 定义讲一个tuple插入一个属性 ![image.jpg](../assets/dc8b24d5-a375-47c0-98e5-a6adf3255257-1115003.jpg)
+		- 用做函数转换 ![image.jpg](../assets/5f4773e1-3f25-474f-a0af-24860feed8b7-1115003.jpg)
+		- 考虑重命名 ![image.jpg](../assets/8f2e74f6-ad65-46dc-bedb-e860763586c8-1115003.jpg)
+	- group
+		- 签名 ![image.jpg](../assets/47b64efa-4680-4ca4-8017-93459dab8618-1115003.jpg)
+			- ​​​​​​：比较符号，用于定义一组
+			- ​：group field
+			- ​：聚合属性
+			- ​：聚合函数
+		- 引入几个变形
+			- 针对多个agg函数 ![image.jpg](../assets/76b12046-ea5a-490c-8138-fb3c1d16dde1-1115003.jpg)
+	- Join算子
+		- 常规join ![image.jpg](../assets/e4758a80-d9fe-4dbf-86b8-97064b64ee4d-1115003.jpg)
+		- d-join，一边的元素依赖另一边的元素 ![image.jpg](../assets/5627b066-f192-493d-bf49-445e91f6d3ce-1115003.jpg)
+			- 对于dependent-join的进一步优化 ![image.jpg](../assets/a9c06258-f099-47c1-a61a-d0b02d3323ea-1115003.jpg)
+				- 即现把左边边的被引用的列 project出来（去重）再和右边做join
+				- 右边那个符号简写为 ![image.jpg](../assets/9a4d8b96-53fa-49e8-8568-89e3506705b9-1115003.jpg)
+				- 定义更多的转换 ![image.jpg](../assets/83b55e9a-c9ab-4d4a-8d87-545e58f631b0-1115003.jpg)
+		- 对于join的常见变换
+			- 谓词+笛卡尔积 ![image.jpg](../assets/c3643f4a-c012-471c-8b86-585ce59a2ca5-1115003.jpg)
+			- semi-join可以引出一个新的谓词​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ![image.jpg](../assets/8e3c6eaa-f3bf-44fc-ac4b-0f37e61616a2-1115003.jpg)
+				- 这有点想first match
+				- 匹配到一个就代表条件为真
+			- anti join可以做上述类似的转换​​​​​​​​​​​​​​​​​​​​​​​​​​​ ![image.jpg](../assets/08484e1a-53a1-4949-b406-d2933faf32e8-1115003.jpg)

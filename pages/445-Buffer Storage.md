@@ -1,0 +1,27 @@
+- 计算存储结构
+	- Volatile Devices：快，随机读写 ≈ 顺序读写，读取单位小(byte)
+	- Non Volatile Devices：慢，随机读写 << 顺序读写，读取单位大(block/4kb)
+- 数据库的磁盘结构
+	- file: heap file
+		- 链表管理空闲页
+		- 专门的directory
+	- page
+		- slotted pages ![image.jpg](../assets/3b845c53-c56c-41a7-bf35-72ff5050005b-1115003.jpg)
+		- log structed：顺序写 >> 随机写，以及分布式的需求 ![image.jpg](../assets/258eb9eb-ad45-4bc2-9e1d-6f8720e6bee3-1115003.jpg)
+	- tuple/record ![image.jpg](../assets/e97f1d13-e0a1-476d-82a1-60e423b6b59b-1115003.jpg)
+		- head：位图，并发控制的锁，等等
+	- 基本数据类型
+		- 基本整数类型：INT/BITINT/SMALLINT/...
+		- 浮点数，精度会有损失：FLOAT，REAL
+		- 精度无损伤：NUMERIC,DECIMAL
+			- 大整数
+			- 无损失的小数
+		- 可变长度数据：VARCHAR，TEXT，BLOB....
+		- 日期时间
+		- Catalogs：数据的一些元数据
+			- Tables, columns, indexes, views
+			- Users, permissions
+			- Internal statistics
+- 事务与存储模型
+	- OLTA：行存储
+	- OLTP：列存储

@@ -1,0 +1,37 @@
+- distributed system
+	- multiple process
+	- inter process communication
+	- disjoint address spaces
+		- shared memory？
+		- message？
+	- collective goal
+- Import issues
+	- Local knowledge of a process
+		- identity：leader/follower？
+		- state
+		- identity of neighbor
+	- Network topology
+		- low latency
+		- high throughput
+	- degree of synchronization
+		- clock drift
+		- message latency
+	- failure
+	- scalability
+		- base bus: bus is bottleneck
+		-
+- common subproblem
+	- election
+	- mutual exclusion
+		- multi process acquire shared resource
+	- time synchronization
+	- global state
+		- decided by all local state
+	- multi casting
+	- replica management
+- implement
+	- message pass
+	- shared memory
+	- ....?
+- parallel vs distributed
+	-

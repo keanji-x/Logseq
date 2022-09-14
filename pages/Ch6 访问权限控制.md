@@ -1,0 +1,7 @@
+- 控制名字空间 ![image.jpg](../assets/ef3e06da-36ad-4d0c-9755-6765d0474d4c-1115003.jpg)
+    - 在import的时候，java会按照CLASSPATH路径以及import 路径寻找对应class
+    - 一个java文件至多有一个public class
+- 权限管理 ![image.jpg](../assets/95bccc2c-21c0-46bc-b876-ea0b0999f8a8-1115003.jpg)
+    - 类只能public 或默认
+        - private 没有意义，因为只能和自己玩
+        - protect？？？

@@ -1,0 +1,175 @@
+- 基础数据结构
+	- Table 系列
+		- Table_Share：底层文件信息，全局唯一
+		- Table：每个线程创建的，作为一个表的抽象
+		- Table List：作为指向表的一个引用，全局所有表构成一个链表 ![image.jpg](../assets/a3dd64a5-ec57-441b-9ba3-c9ef76d67185-1115003.jpg)
+			- next_global
+			- next_prev
+			- 怎么表示Join？ ![image.jpg](../assets/0054ef0e-ca94-438f-ad67-c4fda61b8f32-1115003.jpg)
+				- 个人理解，在左深树中，Join可以用右孩子表示？
+	- Query block && Query expression
+		- 总体架构 ![image.jpg](../assets/60ce38ae-9592-45a7-989a-7f0b05eb2810-1115003.jpg){:height 667, :width 958}
+			- query expression：表示一组query block（可能是一个）
+				- 里面包含多个query block
+				- 以及对query block结果的操作（union等）
+			- query block作为基本的语句
+				- 作为基本单位，其包括基本的Table，join，where cond，having cond，order元素
+				- 子查询作为一个slave expression ![image.jpg](../assets/6c141c0d-53ae-4035-b7db-c9fed2bb592e-1115003.jpg)
+					- master 表示其属于的expression
+					- slave 表示其子查询
+				- 其兄弟block ![image.jpg](../assets/3f2af507-92f3-4641-aa76-8a7da4e1b539-1115003.jpg)
+				- Join
+					- Join：保存优化后的Join对象
+					- top_join_slict：指向最上层的join
+		- 例子
+			- 对于语句`(SELECT *   FROM ttt1)UNION ALL  (SELECT *   FROM     (SELECT *      FROM ttt2) AS a,     (SELECT *      FROM ttt3      UNION ALL SELECT *      FROM ttt4) AS b)`  ![image.jpg](../assets/52d45059-7e30-4eb5-bcdb-c181cd881e76-1115003.jpg)
+		- 参考文章
+			- <a  href="https://www.alibabacloud.com/blog/details-of-the-architecture-of-mysql-8-0-server-layer_598909">https://www.alibabacloud.com/blog/details-of-the-architecture-of-mysql-8-0-server-layer_598909</a>
+		- AccessPath：基本的operator（Volcano的基本单元）
+	- JoinHypergraph
+		- relational expression ![image.jpg](../assets/2fe6c7c4-ff13-4999-89b2-f3490eac2f51-1115003.jpg)
+			- Join 算子
+			- TABLE
+		- Node
+			- TABLE table
+			- join_conditions_pushable_to_this
+			- sargable_predicates
+				- sargable是指可以将其推到index上的表达式
+		- Predicate，也是edge
+			- condition
+			- used_tables：一个64位位图（hyper graph算法最多只允许61个表）
+			- total_eligibility_set
+		- JoinHyperGraph
+- 入口函数：`bool Query_block::optimize(THD *thd, bool finalize_access_paths) `
+	- 初始化Join：`JOIN *const join_local = new (thd->mem_root) JOIN(thd, this);`
+	- 优化Join：`join->optimize(finalize_access_paths)`
+- 优化步骤 入口函数，Join:: optimize 
+  ![image.jpg](../assets/fb0bb872-e022-47a4-9bc5-f34c3aac5e2c-1115003.jpg)
+	- 1.*Logical transformations* ：做一些规则转换（如何匹配规则，如何定义规则，规则怎么转换）
+		- 优化outer join
+			- optimize_cond ![image.jpg](../assets/4addf469-cf28-4dd9-b46c-72bd2e24655f-1115003.jpg)
+				-
+	- 2.*Perform cost-based optimization*：如何枚举计划
+	- 3.*Post-join order optimization:*：特殊的Join枚举
+	- 4.*Code generation*：略
+- ----------------------------------------------
+- 入口函数sql_select.cc  Query_block::optimize
+	- 做一些transform优化
+	- FindBestQueryPlan：HyperGraph optimizing
+		- 清除由in -> exits 构造的条件（为什么） ![image.jpg](../assets/9fd401c3-9cfa-4114-b4d4-e7cb5c5ee2a5-1115003.jpg)
+			- 在什么时候会做这种转换
+			- 为什么这种转换不适用于hyper graph（因为这个是可以物化更好？
+		- check
+			- 。。
+			- 。。
+		- MakeJoinHypergraph：构建Hypergraph
+			- ？针对roll up
+				- slice是什么意思
+				- refresh_base_slice
+			- MakeJoinHypergraph：构建出RelationExpression图，从left-top-list中
+				- 1.针对Join构建RelationalExpression树，并谓词下推
+					- MakeRelationalExpressionFromJoinList：针对JOIN_LIST的每个节点，都构建出对应的RelExpr
+						- 构建expr节点
+							- 对于semi/anti join ![image.jpg](../assets/e88ca9b3-3024-4fbd-bfbb-a2ab2df549c4-1115003.jpg)
+								- ？semi join为什么可能是子查询
+							- 对于其他的join ![image.jpg](../assets/a3c21a12-5b08-49f5-bc04-ddcce554c5cb-1115003.jpg)
+						- 提取条件 ![image.jpg](../assets/973a7d11-1907-45df-9bda-744b307cdb34-1115003.jpg)
+							- EarlyExpandMultipleEquals：扩张等价列
+								- 扩张常量条件
+									- [a,b,5] => a=5 and b = 5
+								- 扩张同一张表的条件：因为可以直接下推
+									- 只涉及两张表 ![image.jpg](../assets/7ea27cda-1a71-45be-a80a-72bbba4c9f95-1115003.jpg)
+										- 当存在索引时，下推微辞不一定更快
+										- 所以在存在两张表时，会扩张一个跨表条件
+										- 当多表时，这个优化不需要
+									- 如果涉及到多张表（>=3） ![image.jpg](../assets/3270d6a6-cb79-476f-aec3-0dd85ddf6f30-1115003.jpg)
+										- 直接加入在同一张表的条件
+							- ExtractConditions：提取条件
+							- EarlyNormalizeConditions：格式化处理
+								- 常量折叠
+								- 清除恒等式
+								- 启发式规则，将更贵的条件放在最后面
+						- ComputeCompanionSets：自顶向下计算同属于一个inner join group的表
+							- companion_set：由inner-join 构成的子图中的节点属于一个集合，其代表可以表示该集合可以作为一个团（如果允许笛卡尔积） ![image.jpg](../assets/f0acdab0-f61a-4704-90b5-fb648ff840a9-1115003.jpg)
+							- outter join/straight inner join：不属于任何集合 ![image.jpg](../assets/a6b259e8-a66a-4c76-a01b-6feb499e8f17-1115003.jpg)
+							- inner-join：可以将左右孩子加入集合 ![image.jpg](../assets/0b665de1-7bbb-4a0e-8981-a2889ebee315-1115003.jpg)
+							- anti/semi/left（left outter） join：加入左边的表 ![image.jpg](../assets/9cfa797c-3b5f-46ba-bad8-82a3fd0a3ae3-1115003.jpg)
+								- 左边的表时可以加入上层的set的，比如​​​​​​​​​​​​​ ，代表C和B时可以加入一个集合
+					- FlattenInnerJoins：自低向上吸收无条件的inner join（笛卡尔积？）到multi-innter-join ![image.jpg](../assets/5d2b21b5-914a-40b5-b68c-907a9b08c0b8-1115003.jpg)
+					- 处理各种谓词
+						- 谓词下推的逻辑
+							- PushDownAsMuchAsPossible：将可以下推的条件下推
+								- 针对每一个条件
+									- 提取肯定不可下推的条件
+										- 如果只是单表条件（不能是join的条件在outter join中，会存在单表条件？） ![image.jpg](../assets/594721b3-98f3-4ec5-85bd-e4d3930d022e-1115003.jpg)
+										- 如果条件涉及到外层的表（比如相关子查询转化而来的semi-join） ![image.jpg](../assets/b60dd5f3-7a37-486b-ac67-c349d1b516cb-1115003.jpg)
+							- PushDownCondition（Item，remain，expr）：下推这条件Item到expr以下，并保留remain条件（涉及到各种谓词下推到判断）待看predicate move around 论文
+								- 1.如果是Table节点，那么推无可推，则直接将其加入到Table的filter里 ![image.jpg](../assets/925f28be-3e15-48ac-aa85-aad514604563-1115003.jpg)
+								- 如果是MultiInnerJoin
+									- 针对每个孩子，如果孩子的表和条件引用的表兼容，则下推 ![image.jpg](../assets/4b92abc6-9901-4b7a-8d89-42aae47713c6-1115003.jpg)
+									- 针对该节点本身，我们需要部分flatten inner join（condition影响的部分），这样我们就可以针对这个部分展开的subtree做下推
+										- 例子：这里应该有个typo错误 ![image.jpg](../assets/9a8fdb30-fb02-454a-925a-20c41e44c440-1115003.jpg)
+										- 提取出受到影响的表 ![image.jpg](../assets/079e13c7-a861-45c6-8527-e4de30aa6314-1115003.jpg)
+										- 将所有受到影响的表创建为一个inner join tree ![image.jpg](../assets/120c9119-ba9a-4fa5-8975-bcfab27c3d05-1115003.jpg)
+										- 删除老节点，加入新节点
+								- 如果条件引用的表只涉及左孩子
+									- 如果可以下推到左孩子，则直接下推 ![image.jpg](../assets/b407251c-7b49-4680-ba86-4a8f4f799cdc-1115003.jpg)
+										- 对于join中的条件
+											- 总是可以推到inner join/semi join以下
+											- 不可以推到outer/anti join以下
+										- 对于filter（where）中的条件，总是可以下推（左节点总不是null generating的，由于mysql只支持left outer join）
+											- 本来full outer/anti join不可以，但是mysql不支持他们
+									- 不可以下推就保留
+								- 如果条件引用的表只涉及左孩子
+									- 如果可以下推到右孩子则直接下推（右孩子是table） ![image.jpg](../assets/300ddfd2-86ef-442b-9a3f-601a4a4bc853-1115003.jpg)
+										- join中的条件
+											- 如果是来自Join，那么总能下推
+												- 如果来自outer join中的条件，那么是能推到inner-join以下吗，对于右孩子是的，因为outer join只是left join
+												- 如果是来自inner join中的条件，那么可以推到outer-join以下：可以的。因为，该inner join是在该outer join以上，那么对于null-rejecting 条件，之后会再去除
+										- where中的条件：由于不是null-generating的，所以只能下推到inner join和semi join，不能推到left outer join
+								- 如果两边都涉及
+									- 如果存在重叠部分，下推重叠部分的条件
+										- 针对左右孩子 ![image.jpg](../assets/b8f86449-70e4-4de7-9ff7-010ece67554d-1115003.jpg)
+											- 构造出partial condition？待看
+									- 如果是multiple-equl- condition
+										- 如果等列式中包括多个左孩子的表，且可以下推到左孩子，则下推 ![image.jpg](../assets/61d57add-7f64-4085-871f-a3c1b4727338-1115003.jpg)
+										- 右孩子同理
+								- 如果源头是where 中的条件，我们需要将改条件合并进join条件
+									- 对于outer join和anti join，我们不能合并，因为它们是null-generating的
+										- 我们需要通过Rewrite加入新的condition ![image.jpg](../assets/4f43d424-febd-4f44-a654-70e8604f22f9-1115003.jpg)
+											- AddJoinConditionPossiblyWithRewrite：向Join中加入新的条件
+												- 如果是inner join
+													- 检查是否值得在加到当前 join 语句 ![image.jpg](../assets/3f3257e6-43e7-47f9-acd1-0633f747fee4-1115003.jpg)
+														- 如果和左右子树不重叠，肯定不可下推 ![image.jpg](../assets/163f07a8-6b89-414c-8739-4d2d7f44feab-1115003.jpg)
+									- 对于此算子是semi join？？？ ![image.jpg](../assets/49ed27e1-884b-480c-9218-febc8ffc891b-1115003.jpg)
+									-
+						- 1.处理Join条件
+							- **下推本节点条件** ![image.jpg](../assets/fe741523-1e06-4ff3-bbe2-8619cf14c965-1115003.jpg)
+							- 下推孩子节点条件 ![image.jpg](../assets/279630db-1504-4f87-b3fa-11655b8d3f10-1115003.jpg)
+						- 2.处理where条件
+							- 首先expand条件，EarlyExpandMultipleEquals EarlyExpandMultipleEquals：扩张等价列
+							- ExtractConditions：提取条件
+							- PushDownAsMuchAsPossible：下推条件
+							- 把所有where条件都转为标准形
+								- CanonicalizeCondition： ![image.jpg](../assets/bb00ce07-e06f-42a2-b404-ad970cec1df9-1115003.jpg)
+									- 将multi- equivalent condition转化标准合取等式
+									- 如果等式两边的类型不兼容，加上cast
+								- 如果转化后到condition是合取等式，则将其分解
+						- 3. 进一步UnflattenInnerJoin ![image.jpg](../assets/5da5ac5a-23ad-4140-8cdf-8af4fc4e733b-1115003.jpg)
+							- 对于Multi-inner-join，构造一颗左深树 ![image.jpg](../assets/f01b5112-cee4-4e46-b1e6-6488d19d3870-1115003.jpg)
+						- 进一步处理join中的Multiple Equalities（为什么要在处理Join后处理它）
+					- 处理后join 属性：主要是保证类型的一致性 ![image.jpg](../assets/b083171b-4450-4b34-a0eb-47237fdba31d-1115003.jpg)
+					- UnflattenInnerJoins：重新展开Multi-Inner-Join
+				- 2.从RelationalExpression树中构建出HyperGraph
+					- MakeJoinGraphFromRelationalExpression：构建JoinGraph
+						- 针对Table，加入一个节点 ![image.jpg](../assets/00899a6a-ae6e-4033-80ae-626bb9fe58f3-1115003.jpg)
+							- 每个节点包括
+								- 下推到此处的谓词
+								- Table结构体
+							- 同时记录Table编号到node编号到映射
+						- 如果是一个expression（也就是一个join的符号）
+							- 递归加入左右孩子 ![image.jpg](../assets/f7499699-d71e-43d1-be0d-f4075b14a711-1115003.jpg)
+							- 记录当前节点子树中包含的节点（​​​​​​​​ in ​<a  href="https://mubu.com/dociOQncKtAaX">On the correct and complete enumeration of the core search space</a>​ ） ![image.jpg](../assets/60b2f94a-3348-4f9a-8099-5c099fc3a093-1115003.jpg)
+							- 记录当前谓词所引用的表（​​​​​​​​​​）
+							- 构造边
+		- 枚举子图

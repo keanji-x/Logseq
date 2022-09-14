@@ -1,0 +1,22 @@
+- 文档链接[<a  href="https://docs.clustrix.com/xpand/latest/distributed-database-architecture]">https://docs.clustrix.com/xpand/latest/distributed-database-architecture]</a>
+- Evaluation model
+    - Query 分成多个fragment
+        - 查询query 分成两步 ![image.jpg](../assets/0c3278ec-cbc9-4077-8364-f8e6cad52c56-1115003.jpg)
+            - 查询数据所在节点
+            - 在对应节点读取数据
+        - Scaling Join
+            - 对于Join语句，其执行步骤如下 (`SELECT name, amount from bundler b JOIN donation d on b.id = d.bundler_id WHERE b.id = 15;`) ![image.jpg](../assets/bbba1c70-7f1d-4de0-a6fd-0e2bf1ed559b-1115003.jpg)
+                - 从GTM节点（Global Transaction Model，唯一的主节点）开始
+                - 找出满足条件（b.id = 15）的节点，并跳去该节点
+                - 读取该节点的数据
+                - 找出满足条件（d.id = 15）的节点并跳去该节点
+                - 对上述数据Join
+                - 从GTM节点返回
+                - 如上步骤示意图如下 ![image.jpg](../assets/a4b74d15-ee71-47d3-beb7-084fca55912a-1115003.jpg)
+            - 对于另一个语句（无b.id = 15），其并发执行步骤如下（`SELECT name, amount from bundler b JOIN donation d on b.id = d.bundler_id;`）
+                - 示意图 ![image.jpg](../assets/67d43b4f-064d-4d23-bf3e-5c7bfdf343bf-1115003.jpg)
+            - MPP中的Join（面向多个col）
+                - 如果只是针对单个col的条件且针对其hash分布，那么每个节点上的数据都是统一的 ![image.jpg](../assets/334536a2-d9e4-4c3b-9292-209cbaf7fe16-1115003.jpg)
+                - 如果非对应hash的col，或者遇到合取谓词，则需要广播全表 ![image.jpg](../assets/66ebd941-9b7e-4a43-b90a-7870c994eae6-1115003.jpg)
+        - Scaling Agg
+            - 两阶段聚合 ![image.jpg](../assets/4fcdf667-756b-4670-8cb5-8ac8635bdca8-1115003.jpg)

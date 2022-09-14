@@ -1,0 +1,12 @@
+- 关于数据库理论部分
+	- 关系数据模型
+	- 关系数据库的设计理论
+	- High-level 数据库（略过）
+- 关于SQL语言编程
+	- 关系代数
+	- SQL语言
+	- Constraint and trigger
+	- views and index
+	- SQL in a server enviornment
+	- advanced topics in relational database
+- 关于数据库实现部分

@@ -1,0 +1,64 @@
+- Components of a Flink Setup
+    - graph ![image.jpg](../assets/d5928f62-f744-4a75-bc08-a0dedb7b080b-1115003.jpg)
+    - JobManager: master process
+        - control the excution of a singel application: one to one
+        - covert application's JobGraph into ExecutionMap, consisting of tasks excuted in parallel
+        - request all resource and ditributed Execution to TastManager
+    - Resource Managers: manage TaskManagers slots
+    - TaskManagers: worker process
+    - Dispatcher: submit app and start a JobManager
+- Application Deployment
+    - framework style: jar
+    - library style: dokcer image
+- Task Execution
+    - a TaskManager contains many tasks
+    - a task = a slot execute a paraller operators group (a slice of an app) 
+    - in fact, tasks in a TaskManager is threads in JVM 
+        - with less cost of communcation
+        - isolation and fault torent is bad
+    - graph ![image.jpg](../assets/b494c4c4-6c13-4bc5-90be-137f6ddc9681-1115003.jpg)
+- high available setup：Failures
+    - TaskManager failure
+        - require more resource and restart
+    - Job Manager failure
+        - how to keep meta-data about it's execution
+        - ZoopKeeper for durable data store ![image.jpg](../assets/b1244c71-25d9-4daa-91c1-3c3ff0dde78b-1115003.jpg)
+        - steps of A new JobManager taking over 
+            - request  the location for meta-data
+                - JobGraph
+                - Jar 
+                - checkpoints
+            - request slots
+        - restart and reset the state to last checkpoint
+    - 
+- Data Transfer in Flink
+    - TaskManager are response for shipping data ![image.jpg](../assets/cdec6140-5ff5-4fc0-b26d-3e474fba9b34-1115003.jpg)
+    - Credit based flow control
+        - data are collect into a batch for highly net using
+        - buffering bring more latency
+        -  Credit based flow：reduce the latency
+            - receiver grant some credit to sender，buffers are reserved to receive its data
+            - once a sender receives a credit，it ships as many buffer as it granted，and the size of backlog
+            - receiver process these data and prioritize the next credit grants according to the backlog
+    - Task chaining：reduce the overhead of local communication  ？？
+        - graph：fused into a single task ![image.jpg](../assets/b53e85a0-280d-4f0c-b24a-b4245fdc03d1-1115003.jpg)
+            - with the same parallelism？？
+            - connect by local forward channels
+        - 
+- Event-Time Processing
+    - Time Stamp
+    - Watermark
+        - application provide watermark, which can control latency and completeness 
+        - Watermarks are used to derive the current event time at each task
+        - properties
+            - monotonically increasing
+            - related to record timestamps
+                - A watermark with timestamp T indicates that all subsequent records should have timestamp > T
+        - if a data time smaller is smaller than WM,  it is called late data
+    - Watermark Propagation and Event time
+        - when a task receives a watermark
+            - updated internal time based on the WM timestamp
+            - task's time service identifies all timers
+                - if a timers has a time < updated event time
+                - the task will invoke a callback function to compute and emit
+            -  The task emits a watermark with the updated event time

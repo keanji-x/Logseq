@@ -1,0 +1,75 @@
+- 代价计算：profile+operator
+- profile
+	- 分类
+		- 物理：page数量
+		- 逻辑：cardinality（一个完整的logical profile是每个属性的子集的size）
+			- 属性依赖：如果两个attribute 在各个值上的size相同，就可以说它们是依赖的
+			- 数据类型
+				- 类别：颜色
+				- 离散：正整数，**字符串** （只有activate domain）
+				- 连续：**浮点数 **（只有activate domain）
+- 基本操作
+	- 构建 ![image.jpg](../assets/f2586aba-a99e-499c-984f-cf0577853e8d-1115003.jpg)
+	- 更新
+		- 全量更新
+		- 增量更新
+	- 推导/传播：即计算一个表达式结果的profile ![image.jpg](../assets/f51071d7-6aa8-49c9-8c8d-f31efa755385-1115003.jpg)
+	- 计算 ![image.jpg](../assets/02dd530c-34f0-4a8d-9137-9870534b5780-1115003.jpg)
+- A First Approach
+	- Abbreviations ![image.jpg](../assets/6d3608e3-9102-459c-9cb4-751e9a6c1cc7-1115003.jpg)
+	- CPU cost
+		- RSI：the number of calls to the tuple oriented interface
+			- 即在volcano模型中，next调用次数
+		- 缺点：函数代价并不是固定的
+			- 有些函数的代价依赖输入：字符串比较
+			- 有些是用户自定义函数
+	- I/O cost
+		- 在面向磁盘的数据库中，I/O就是页的数量
+		- 对于不同的access path（​​​​     记为满足条件p的tuple的比例fraction）
+			- 聚簇索引  / 所有含有满足条件的tuple的页都能装入内存 ![image.jpg](../assets/bb088cf9-7b2f-444d-afb7-6c6c4fe66189-1115003.jpg)
+			- 非聚簇索引 （存在BPM的置换） ![image.jpg](../assets/c4172009-f239-4081-9420-f76c2fe1665b-1115003.jpg)
+		- 对于不同的join的代价
+			-
+	- Cardinality Estimates：基于selectivity
+		- selectivity定义
+			- filter ![image.jpg](../assets/d33f8a74-2bc0-4994-bf29-9ecfffbe932c-1115003.jpg)
+			- join ![image.jpg](../assets/cbf3088e-0b84-4f53-aef3-b4ad00059ed7-1115003.jpg)
+			- 基于均匀假设的基本估计公式 ![image.jpg](../assets/2d2dd600-b89e-4957-b6d3-f7eefb097dd5-1115003.jpg)
+	- 模型的缺点
+		- CPU计算很粗糙，没有考虑并行
+		- 不包括projection和semijoin算子
+		- profile propagation没有讨论
+- Logical Profile
+	- 完备性
+		- **cardinality estimate**
+		- **profile propagation**
+	- 基本概念（上界、下界、势、域）
+		- 下界 ![image.jpg](../assets/c3e9f6f3-8299-4f19-9fc7-8f6ad6a25cc4-1115003.jpg)
+		- 上界 ![image.jpg](../assets/9b619137-a62c-4d31-b3a9-3a78c821b472-1115003.jpg)
+		- **cumulated frequency**：tuple的数量（为什么不是势，感觉针对的是bag而不是set） ![image.jpg](../assets/cb8d4a4f-6b72-433d-9660-89a02c6689c1-1115003.jpg)
+		- 域：值得注意的是对于一些实数，我们可以取实际的取值范围作为域 ![image.jpg](../assets/ca240d8c-3c60-4433-9bb0-54c1efda0d0a-1115003.jpg)
+	- 假设
+		- 均匀分布
+			- uniform distribute assumption：每个值出现的频率相同
+			- uniform spread assumption(equal spread assumption)：每个值出现的位置分布是均匀的
+				- 这里存在一个特例，continous-value assumption，即每个值都出现n/f次，不存在空洞，由于其更简单，所以更倾向这个估计
+		- attribute独立 ![image.jpg](../assets/7d051eef-a97b-48bc-a9b2-487f2e76d149-1115003.jpg)
+	- Propagation
+		- 问题描述
+			- 表R 和 attribute ![image.jpg](../assets/aacfe2a5-3395-4b5a-bede-1517791e6fbe-1115003.jpg)
+			- profile<img src="https://api2.mubu.com/v3/document_image/3cea3e7b-f139-41d5-8920-efdae6f6864d-1115003.jpg" /> ![image.jpg](../assets/6dd7b7df-b526-4fe4-aefc-023c4cac22c6-1115003.jpg)
+			- 针对每个一个操作符，得到其输出<img src="https://api2.mubu.com/v3/document_image/6655e1ad-21f3-4323-a311-5623378eedce-1115003.jpg" /> ![image.jpg](../assets/cf7c7e70-53a7-4e9d-99da-452029f0a0f9-1115003.jpg)
+		- 基本operator
+			- filter
+				- exact match ​​​​​​​​​​​​​​​​
+					- A
+						- l，u：上界下界 为c
+						- domain：我们假设条件总等满足，所以domain为1（因为总是返回0的估计没有意义） ![image.jpg](../assets/686254fb-927d-44fc-937c-ea919f0c69db-1115003.jpg)
+						- 累计次数满足均匀分布且CSA（对于是key的attribute，为1） ![image.jpg](../assets/2521c54a-b07b-4e35-ba3f-511caa8f50a7-1115003.jpg)
+					- C
+						- 由于没有足够信息，假设上下界不变 ![image.jpg](../assets/684af5e7-e507-445d-9acb-2a83d2c5346f-1115003.jpg)
+						- 对于domain（1-每个value不会出现的概率）* value的个数 ![image.jpg](../assets/ed5daf2b-6691-4124-b69b-210bf0a5f752-1115003.jpg)
+							- s(p) 对应的是每个tuple被选中的概率 ![image.jpg](../assets/e2c89ef9-8772-43c9-85e4-b19555700c4a-1115003.jpg)
+							- 对于C的每个value，出现的频率为fc/dc
+						- fc和fa相同 ![image.jpg](../assets/30cd408b-7b39-422c-9946-09a5f307ebd6-1115003.jpg)
+				- range query

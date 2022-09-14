@@ -1,0 +1,20 @@
+- 数据库是什么
+	- 组织数据的结构：表
+	- 数据的操作方式：curd
+	- 对数据的约束：权限控制以及完整性等等
+- 关系数据库
+	- 组织数据的结构
+		- attribute：columns
+		- tuple：row
+		- schema：对于某种关系的定义（例如电影：Movies(title, year, length, genre)）
+		- Domains：data type
+		- 示例 ![image.jpg](../assets/9a31bf93-0c63-421f-91fc-b69a8aab8f07-1115003.jpg)
+			- title是attribute
+			- 一个movie是一个tuple
+			- 上述关于movie的定义是schema
+			- string等是domain
+	- 操作方式（待记录）
+	- 约束
+		- key constraint（更多的将被defer到ch7）
+			- key：a set of attributes
+			-
