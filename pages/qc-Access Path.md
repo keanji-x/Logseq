@@ -55,7 +55,8 @@ public:: true
 				- 比如下述语句age != 30 就不是index sargable ![image.jpg](../assets/cbbc2ce1-5095-417c-b0c7-93ddf768e44a-1115003.jpg)
 				- 在index 扫描中，我们可以确定边界（比如对上述语句的边界上[25, 35]）
 					- 对于一些开边界，我们可以将其转为 ![image.jpg](../assets/535e1cc9-af40-4c07-957e-1a28ac73f60e-1115003.jpg)
-					- 更具体的，对于一个有效的index scan ![image.jpg](../assets/2955a254-862c-435d-8e43-507cb3c6b30d-1115003.jpg)
+					- 更具体的，对于一个有效的index scan 
+					  ![image.jpg](../assets/2955a254-862c-435d-8e43-507cb3c6b30d-1115003.jpg)
 						- 为了表示这些符号，我们使用[]包括它们，并且用；分隔
 						- 如果不存在条件的话，可以省略
 						- 我们使用*表示project全部tuple
@@ -80,8 +81,10 @@ public:: true
 					- 如果存在一个range 谓词
 						- 比如
 						   ![image.jpg](../assets/b473ed15-c404-45c3-aeed-056bdbc67145-1115003.jpg)
-							- 它的lower bound（start condition）， ![image.jpg](../assets/eb2aea35-1242-4085-b125-2756083d9fc6-1115003.jpg)
-							- 它的upper bound（end condition），是（当k1=c1时，k2也是递增排列，所以可以一直到k1=c1的尾部） ![image.jpg](../assets/e1628f83-f8a1-4ffc-a5cd-8a179e054295-1115003.jpg)
+							- 它的lower bound（start condition）
+							   ![image.jpg](../assets/eb2aea35-1242-4085-b125-2756083d9fc6-1115003.jpg)
+							- 它的upper bound（end condition），是（当k1=c1时，k2也是递增排列，所以可以一直到k1=c1的尾部） 
+							  ![image.jpg](../assets/e1628f83-f8a1-4ffc-a5cd-8a179e054295-1115003.jpg)
 							- 它的residual condition上（k2 >= c2的区间内，k3的分布没有规律） ![image.jpg](../assets/ee21366b-7078-4cc5-b66a-ee26a1acc124-1115003.jpg)
 					- 比如
 					   ![image.jpg](../assets/178fff87-ab54-4831-8756-863cd0f169e2-1115003.jpg)
