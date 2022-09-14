@@ -8,10 +8,13 @@
 	- Scan and Attribute Access
 		- storage中存储的数据可能不是原格式，所以我们需要map，当遇到谓词时 ![image.jpg](../assets/3d9f7510-759a-4143-bdd7-10bcdd4e416d-1115003.jpg)
 		- 考虑到如果会被多个谓词使用，我们可能希望只extract一次
-			- 我们需要一个map算子，将对应数据提取并concat到tuple末尾 ![image.jpg](../assets/3e678f61-de77-433a-9ac1-263f60add7af-1115003.jpg)
-			- 这样我们可以得到新的谓词 ![image.jpg](../assets/7316acf8-0296-4aa7-96e1-31f54fa31bc4-1115003.jpg)
+			- 我们需要一个map算子，将对应数据提取并concat到tuple末尾 
+			  ![image.jpg](../assets/3e678f61-de77-433a-9ac1-263f60add7af-1115003.jpg)
+			- 这样我们可以得到新的谓词
+			   ![image.jpg](../assets/7316acf8-0296-4aa7-96e1-31f54fa31bc4-1115003.jpg)
 			- 一般来说，我们希望尽量延迟加载数据。最迟的时间点树pipeline breaker前？ ![image.jpg](../assets/7b47ee38-0055-4e5a-a2b3-0013dba3f373-1115003.jpg)
-				- 有点类似谓词下推（上面比下面的执行计划要更好）<img src="https://api2.mubu.com/v3/document_image/f7edd51e-375d-44af-a50f-6acfceae01f5-1115003.jpg" /> ![image.jpg](../assets/1d8ab59c-2c74-49d8-b2dc-f3d36ece74b5-1115003.jpg)
+				- 有点类似谓词下推（上面比下面的执行计划要更好
+				   ![image.jpg](../assets/1d8ab59c-2c74-49d8-b2dc-f3d36ece74b5-1115003.jpg)
 		- 有时候，数据库可以实现算子来直接对storage中的格式进行计算（比如按位比较）
 		- 如果谓词能直接以存储格式进行比较，我们将其称为SARGable predicates
 			- 如果能用index，则称为index sargable
