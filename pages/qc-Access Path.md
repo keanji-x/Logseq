@@ -6,7 +6,8 @@
 - Access Path（building block：指query plan中的叶子节点，它们往往是access path）
 	- Simple Scan：扫全表数据
 	- Scan and Attribute Access
-		- storage中存储的数据可能不是原格式，所以我们需要map，当遇到谓词时 ![image.jpg](../assets/3d9f7510-759a-4143-bdd7-10bcdd4e416d-1115003.jpg)
+		- storage中存储的数据可能不是原格式，所以我们需要map，当遇到谓词时
+		   ![image.jpg](../assets/3d9f7510-759a-4143-bdd7-10bcdd4e416d-1115003.jpg)
 		- 考虑到如果会被多个谓词使用，我们可能希望只extract一次
 			- 我们需要一个map算子，将对应数据提取并concat到tuple末尾 
 			  ![image.jpg](../assets/3e678f61-de77-433a-9ac1-263f60add7af-1115003.jpg)
