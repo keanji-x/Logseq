@@ -73,11 +73,13 @@
 				- 对于一个包含前缀谓词的条件
 					- 如果全部都是equal 谓词，那么upper bound和lower bound很明确
 					- 如果存在一个range 谓词
-						- 比如 ![image.jpg](../assets/b473ed15-c404-45c3-aeed-056bdbc67145-1115003.jpg)
+						- 比如
+						   ![image.jpg](../assets/b473ed15-c404-45c3-aeed-056bdbc67145-1115003.jpg)
 							- 它的lower bound（start condition）， ![image.jpg](../assets/eb2aea35-1242-4085-b125-2756083d9fc6-1115003.jpg)
 							- 它的upper bound（end condition），是（当k1=c1时，k2也是递增排列，所以可以一直到k1=c1的尾部） ![image.jpg](../assets/e1628f83-f8a1-4ffc-a5cd-8a179e054295-1115003.jpg)
 							- 它的residual condition上（k2 >= c2的区间内，k3的分布没有规律） ![image.jpg](../assets/ee21366b-7078-4cc5-b66a-ee26a1acc124-1115003.jpg)
-					- 比如 ![image.jpg](../assets/178fff87-ab54-4831-8756-863cd0f169e2-1115003.jpg)
+					- 比如
+					   ![image.jpg](../assets/178fff87-ab54-4831-8756-863cd0f169e2-1115003.jpg)
 						- 那么它们的上下界就是每个谓词的上下界
 						- 如果有一个key缺失上/下界，那么其后的那些key对于上/下界就没有帮助
 				- 对于不包含前缀谓词的条件，如果这个前缀谓词有比较多的重复元素
@@ -102,9 +104,12 @@
 				- 如果我们发现直接取数据的代价 小于 index scanning + intersecting。那么便放弃index scanning
 	- index 和 join
 		- index accessing可以被表示为一个join
-			- 比如对于一个index access ![image.jpg](../assets/01327623-8a1c-4f9a-b823-077dc7198df6-1115003.jpg)
-			- 我们可以使用dependent join ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg)
-			- 也可以直接join（比较低效） ![image.jpg](../assets/2335cd47-3de0-4f02-8b64-fd76b6351ca6-1115003.jpg)
+			- 比如对于一个index access
+			   ![image.jpg](../assets/01327623-8a1c-4f9a-b823-077dc7198df6-1115003.jpg)
+			- 我们可以使用dependent join
+			   ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg)
+			- 也可以直接join（比较低效）
+			   ![image.jpg](../assets/2335cd47-3de0-4f02-8b64-fd76b6351ca6-1115003.jpg)
 			- 该方法尽管优雅，可能低效。会造成搜索空间的指数级膨胀
 		- 涉及到两个index的join
 			-
