@@ -14,21 +14,25 @@
 			   ![image.jpg](../assets/7316acf8-0296-4aa7-96e1-31f54fa31bc4-1115003.jpg)
 			- 一般来说，我们希望尽量延迟加载数据。最迟的时间点树pipeline breaker前？ ![image.jpg](../assets/7b47ee38-0055-4e5a-a2b3-0013dba3f373-1115003.jpg)
 				- 有点类似谓词下推（上面比下面的执行计划要更好
+				  ![image.png](../assets/image_1663142411638_0.png) 
 				   ![image.jpg](../assets/1d8ab59c-2c74-49d8-b2dc-f3d36ece74b5-1115003.jpg)
 		- 有时候，数据库可以实现算子来直接对storage中的格式进行计算（比如按位比较）
 		- 如果谓词能直接以存储格式进行比较，我们将其称为SARGable predicates
 			- 如果能用index，则称为index sargable
 			- 如果不能，则是data sargable
 		- 我们可以进一步拓展scan，使得在scan的时候就可以做筛选
-			- 比如筛选表I，中满足p的数据v ![image.jpg](../assets/56eaf983-c772-487b-84cc-2dba73313dd4-1115003.jpg)
+			- 比如筛选表I，中满足p的数据v
+			   ![image.jpg](../assets/56eaf983-c772-487b-84cc-2dba73313dd4-1115003.jpg)
 	- 临时表
 		- 如果一个表需要重复使用，可以将其物化
 	- Table function：一个函数，可以返回一个relation
-		- Primes(1, 100)返回1到100之间的质数 ![image.jpg](../assets/cdb2d343-3d88-425c-93ed-f87215280482-1115003.jpg)
+		- Primes(1, 100)返回1到100之间的质数
+		   ![image.jpg](../assets/cdb2d343-3d88-425c-93ed-f87215280482-1115003.jpg)
 	- 索引
 		- 索引类型
 		- B+树/hash index
-		- 聚簇，非聚簇 ![image.jpg](../assets/63998eae-91c1-4cfd-9d1d-9c2d9eab9b30-1115003.jpg)
+		- 聚簇，非聚簇 
+		  ![image.jpg](../assets/63998eae-91c1-4cfd-9d1d-9c2d9eab9b30-1115003.jpg)
 	- 单索引的access path
 		- 单个键，无数据，value是TID
 			- 我们需要筛选出数据的TID，然后提取对应数据
@@ -37,7 +41,8 @@
 				- 也可以使用dependent join（<> 内的内容时dependent的部分，其依赖于外面的算子） ![image.jpg](../assets/82e62439-fc64-4ec5-81c7-ec7122748357-1115003.jpg)
 				- 对于非聚簇索引，我们需要对TID排序以保证顺序读取 ![image.jpg](../assets/0f1d08e2-0efb-40b4-b6c2-4f8dcd8ca7c8-1115003.jpg)
 				- 如果我们需要读取的数据有序的，那么对TID排序会破坏这种有序性。所以我们需要再次排序 ![image.jpg](../assets/60cd3896-7f80-497e-9d43-54fab759ac71-1115003.jpg)
-					- 如果引入一个密集的rank，会使得排序函数更快（比如直接桶排序） ![image.jpg](../assets/5b532795-9d47-4757-8a80-d2f465514bca-1115003.jpg)
+					- 如果引入一个密集的rank，会使得排序函数更快（比如直接桶排序）
+					   ![image.jpg](../assets/5b532795-9d47-4757-8a80-d2f465514bca-1115003.jpg)
 			- 如果我们只需要index的key，不需要访问relation，那么我们将其称为index only query
 			- 对于条件，一些条件不是index sargable（我们称为residual predicate）。对于index sargable的我们往往可以确定其边界，有助于快速扫描
 				- 比如下述语句age != 30 就不是index sargable ![image.jpg](../assets/cbbc2ce1-5095-417c-b0c7-93ddf768e44a-1115003.jpg)
