@@ -15,7 +15,8 @@ public:: true
 			  ![image.jpg](../assets/3e678f61-de77-433a-9ac1-263f60add7af-1115003.jpg)
 			- 这样我们可以得到新的谓词
 			   ![image.jpg](../assets/7316acf8-0296-4aa7-96e1-31f54fa31bc4-1115003.jpg)
-			- 一般来说，我们希望尽量延迟加载数据。最迟的时间点树pipeline breaker前？ ![image.jpg](../assets/7b47ee38-0055-4e5a-a2b3-0013dba3f373-1115003.jpg)
+			- 一般来说，我们希望尽量延迟加载数据。最迟的时间点树pipeline breaker前？
+			   ![image.jpg](../assets/7b47ee38-0055-4e5a-a2b3-0013dba3f373-1115003.jpg)
 				- 有点类似谓词下推（上面比下面的执行计划要更好
 				  ![image.png](../assets/image_1663142411638_0.png) 
 				   ![image.jpg](../assets/1d8ab59c-2c74-49d8-b2dc-f3d36ece74b5-1115003.jpg)
