@@ -34,9 +34,6 @@
 					- [[qc-Deriving and Dealing with Interesting Orderings and Groupings]]
 					- [[qc-Simplifying the Query Graph]]
 					- [[qc-Cardinality and cost estimation]]
-					-
-					-
-				-
 			- [[Paper Reading]]
 			  collapsed:: true
 				- [[On the correct and complete enumeration of the core search space]]
