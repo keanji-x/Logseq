@@ -1,3 +1,5 @@
+public:: true
+
 - storage
 	- storage 的概念和 relation概念的映射关系 
 	  ![image.jpg](../assets/8321101d-2cc5-4790-8bb6-2809f58fa6c0-1115003.jpg)
