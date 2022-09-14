@@ -71,7 +71,7 @@ public:: true
 					- 对于上述多个区间的情况，B-tree 会实现gap skipping
 						- 当我们进入到一个新的range的时候，避免全局扫描
 							- 实现方案1：只比较下一个页的最大值
-							- 回退到父节点
+							- 实现方案2：回退到父节点
 		- complex key index，value可以是部分数据
 			- value数据越多，index only scan越多，但是写的代价越大
 			- 对于complex key的谓词
