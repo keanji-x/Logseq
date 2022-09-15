@@ -227,7 +227,7 @@
 
  ;; Enable all your properties to have corresponding pages
  :property-pages/enabled? true
- :graph/settings {:excluded-pages? true, :builtin-pages? true, :orphan-pages? false, :journal? true}
+ :graph/settings {:excluded-pages? true, :builtin-pages? true, :orphan-pages? false, :journal? false}
 
  ;; Properties to exclude from having property pages
  ;; E.g.:property-pages/excludelist #{:duration :author}
