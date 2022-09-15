@@ -44,9 +44,8 @@ public:: true
 		  ![image.jpg](../assets/63998eae-91c1-4cfd-9d1d-9c2d9eab9b30-1115003.jpg)
 	- 单索引的access path
 		- dependent join的书写格式
-			- 下述符号中，<>是一个执行的子查询，这个查询需
+			- 下述符号中，<>是一个执行的子查询，这个查询需要接收外部的输入作为参数，比如：
 			  $$T_1 \Join_{a_1=a_2} T_2 \rightarrow T1_{a_1}<(T2(a_1 = a_2))>$$
-			-
 		- 单个键，无数据，value是TID
 			- 我们需要筛选出数据的TID，然后提取对应数据
 				- 比如 ![image.jpg](../assets/cff40538-6d40-450c-9790-a4e1728bb40f-1115003.jpg)
