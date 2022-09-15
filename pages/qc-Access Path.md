@@ -43,6 +43,8 @@ public:: true
 		- 聚簇，非聚簇 
 		  ![image.jpg](../assets/63998eae-91c1-4cfd-9d1d-9c2d9eab9b30-1115003.jpg)
 	- 单索引的access path
+		- dependent join的书写格式
+			- Attribute <Function (predicate)>
 		- 单个键，无数据，value是TID
 			- 我们需要筛选出数据的TID，然后提取对应数据
 				- 比如 ![image.jpg](../assets/cff40538-6d40-450c-9790-a4e1728bb40f-1115003.jpg)
@@ -50,7 +52,6 @@ public:: true
 				   ![image.jpg](../assets/8115eb2c-9c55-4196-8690-1acf13b20058-1115003.jpg)
 				- 也可以使用**dependent join**（<> 内的内容时dependent的部分，其依赖于外面的算子） 
 				  ![image.jpg](../assets/82e62439-fc64-4ec5-81c7-ec7122748357-1115003.jpg)
-					-
 				- 对于非聚簇索引，我们需要对TID排序以保证顺序读取 
 				  ![image.jpg](../assets/0f1d08e2-0efb-40b4-b6c2-4f8dcd8ca7c8-1115003.jpg)
 				- 如果我们需要读取的数据有序的，那么对TID排序会破坏这种有序性。所以我们需要再次排序
