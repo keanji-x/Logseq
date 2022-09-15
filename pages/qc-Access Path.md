@@ -143,7 +143,7 @@ public:: true
 		- 涉及到两个index的join
 			- 假设语句为
 			  ```sql
-			  
+			  select
 			  ```
 			-
 			-
