@@ -141,6 +141,10 @@ public:: true
 				- 将<>号内的子查询记作$<\Chi e:*TID, name:e.name(\square)> \Rightarrow E_a$
 				- 这样我们就可以简写上述符号$E_i<E_a>$
 		- 涉及到两个index的join
+			- 假设语句为
+			  ```sql
+			  
+			  ```
 			-
 			-
 			-
