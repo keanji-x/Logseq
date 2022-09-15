@@ -50,6 +50,7 @@ public:: true
 				   ![image.jpg](../assets/8115eb2c-9c55-4196-8690-1acf13b20058-1115003.jpg)
 				- 也可以使用**dependent join**（<> 内的内容时dependent的部分，其依赖于外面的算子） 
 				  ![image.jpg](../assets/82e62439-fc64-4ec5-81c7-ec7122748357-1115003.jpg)
+					-
 				- 对于非聚簇索引，我们需要对TID排序以保证顺序读取 
 				  ![image.jpg](../assets/0f1d08e2-0efb-40b4-b6c2-4f8dcd8ca7c8-1115003.jpg)
 				- 如果我们需要读取的数据有序的，那么对TID排序会破坏这种有序性。所以我们需要再次排序
@@ -58,6 +59,7 @@ public:: true
 					   ![image.jpg](../assets/5b532795-9d47-4757-8a80-d2f465514bca-1115003.jpg)
 			- 如果我们只需要index的key，不需要访问relation，那么我们将其称为index only query
 			- 对于条件，一些条件不是index sargable（我们称为residual predicate）。对于index sargable的我们往往可以确定其边界，有助于快速扫描
+			  collapsed:: true
 				- 比如下述语句age != 30 就不是index sargable
 				   ![image.jpg](../assets/cbbc2ce1-5095-417c-b0c7-93ddf768e44a-1115003.jpg)
 				- 在index 扫描中，我们可以确定边界（比如对上述语句的边界上[25, 35]）
@@ -73,11 +75,11 @@ public:: true
 					   ![image.jpg](../assets/443a0307-97d5-4973-a227-35fdba4cdb98-1115003.jpg)
 						- 我们可以总结，上下界为28，32。且很多residual predicate ![image.jpg](../assets/4682aa60-4d75-4746-ad58-635af355fcca-1115003.jpg)
 				- 对于一些稀疏的判断谓词，我们可以将其转弯d-join
+				  collapsed:: true
 					- 比如 
 					  ![image.jpg](../assets/c42b279e-713a-4472-a76d-e4984c7a7006-1115003.jpg)
 					- 其可以转为
 					   ![image.jpg](../assets/b48a408c-0548-44d8-bb27-9000311cac90-1115003.jpg)
-						- 上述
 					- 对于上述多个区间的情况，B-tree 会实现gap skipping
 						- 当我们进入到一个新的range的时候，避免全局扫描
 							- 实现方案1：只比较下一个页的最大值
