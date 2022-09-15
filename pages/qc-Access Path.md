@@ -137,8 +137,8 @@ public:: true
 		- 为了简化描述，我们做一些记号
 			- 首先对于上述d-join
 			   ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg)
-				- 我们将读索引记作$Emp_{salary}[x; x \leq age \geq 35; TID] \rightarrow E_i$
-				-
+				- 我们将读索引记作$Emp_{salary}[x; x \leq age \geq 35; TID] \Rightarrow E_i$
+				- 将<>号内的子查询记作$<\gamma>$
 		- 涉及到两个index的join
 			-
 			-
