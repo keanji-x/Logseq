@@ -1,6 +1,7 @@
 public:: true
 
 - storage
+  collapsed:: true
 	- storage 的概念和 relation概念的映射关系 
 	  ![image.jpg](../assets/8321101d-2cc5-4790-8bb6-2809f58fa6c0-1115003.jpg)
 	- slot page
@@ -69,7 +70,9 @@ public:: true
 				- 对于一些稀疏的判断谓词，我们可以将其转弯d-join
 					- 比如 
 					  ![image.jpg](../assets/c42b279e-713a-4472-a76d-e4984c7a7006-1115003.jpg)
-					- 其可以转为 ![image.jpg](../assets/b48a408c-0548-44d8-bb27-9000311cac90-1115003.jpg)
+					- 其可以转为
+					   ![image.jpg](../assets/b48a408c-0548-44d8-bb27-9000311cac90-1115003.jpg)
+						- 上述
 					- 对于上述多个区间的情况，B-tree 会实现gap skipping
 						- 当我们进入到一个新的range的时候，避免全局扫描
 							- 实现方案1：只比较下一个页的最大值
