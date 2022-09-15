@@ -136,6 +136,8 @@ public:: true
 			- 该方法尽管优雅，但是会造成搜索空间的指数级膨胀
 		- 为了简化描述，我们做一些记号
 			- 首先对于上述d-join
+			   ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg)
+				- 我们将读索引记作$Emp_{salary}$
 		- 涉及到两个index的join
 			-
 			-
