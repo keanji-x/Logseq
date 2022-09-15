@@ -44,7 +44,7 @@ public:: true
 		  ![image.jpg](../assets/63998eae-91c1-4cfd-9d1d-9c2d9eab9b30-1115003.jpg)
 	- 单索引的access path
 		- dependent join的书写格式
-			- Attribute <Function (predicate dependent on A)>
+			- $$T1 \Join T2 \rrightarrow Table1<Function (predicate dependent on A)>$$
 		- 单个键，无数据，value是TID
 			- 我们需要筛选出数据的TID，然后提取对应数据
 				- 比如 ![image.jpg](../assets/cff40538-6d40-450c-9790-a4e1728bb40f-1115003.jpg)
@@ -75,7 +75,6 @@ public:: true
 					   ![image.jpg](../assets/443a0307-97d5-4973-a227-35fdba4cdb98-1115003.jpg)
 						- 我们可以总结，上下界为28，32。且很多residual predicate ![image.jpg](../assets/4682aa60-4d75-4746-ad58-635af355fcca-1115003.jpg)
 				- 对于一些稀疏的判断谓词，我们可以将其转弯d-join
-				  collapsed:: true
 					- 比如 
 					  ![image.jpg](../assets/c42b279e-713a-4472-a76d-e4984c7a7006-1115003.jpg)
 					- 其可以转为
