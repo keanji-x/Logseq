@@ -44,7 +44,7 @@ public:: true
 		  ![image.jpg](../assets/63998eae-91c1-4cfd-9d1d-9c2d9eab9b30-1115003.jpg)
 	- 单索引的access path
 		- dependent join的书写格式
-			- Attribute <Function (predicate)>
+			- Attribute <Function (predicate dependent on A)>
 		- 单个键，无数据，value是TID
 			- 我们需要筛选出数据的TID，然后提取对应数据
 				- 比如 ![image.jpg](../assets/cff40538-6d40-450c-9790-a4e1728bb40f-1115003.jpg)
@@ -60,7 +60,6 @@ public:: true
 					   ![image.jpg](../assets/5b532795-9d47-4757-8a80-d2f465514bca-1115003.jpg)
 			- 如果我们只需要index的key，不需要访问relation，那么我们将其称为index only query
 			- 对于条件，一些条件不是index sargable（我们称为residual predicate）。对于index sargable的我们往往可以确定其边界，有助于快速扫描
-			  collapsed:: true
 				- 比如下述语句age != 30 就不是index sargable
 				   ![image.jpg](../assets/cbbc2ce1-5095-417c-b0c7-93ddf768e44a-1115003.jpg)
 				- 在index 扫描中，我们可以确定边界（比如对上述语句的边界上[25, 35]）
@@ -86,11 +85,13 @@ public:: true
 							- 实现方案1：只比较下一个页的最大值
 							- 实现方案2：回退到父节点
 		- complex key index，value可以是部分数据
+		  collapsed:: true
 			- value数据越多，index only scan越多，但是写的代价越大
 			- 对于complex key的谓词
 				- 对于一个包含前缀谓词的条件
 					- 如果全部都是equal 谓词，那么upper bound和lower bound很明确
 					- 如果存在一个range 谓词
+					  collapsed:: true
 						- 比如
 						   ![image.jpg](../assets/b473ed15-c404-45c3-aeed-056bdbc67145-1115003.jpg)
 							- 它的lower bound（start condition）
@@ -106,7 +107,6 @@ public:: true
 					- 比如，index <male，hair color，height>对于谓`haircolor='blond'` and `height between 170 and 180`，我们没有办法直接确定谓词。但是我们可以转为 ![image.jpg](../assets/f3c2566f-5ea4-43e7-baf6-addc3600df59-1115003.jpg)
 					- 如果缺失的key的domain比较少，我们使用gap skipping做这种改写可以非常有效
 	- 多个索引的access path
-	  collapsed:: true
 		- 对于多个索引，我们可以将多个索引的结果做集合运算 ![image.jpg](../assets/5426f133-0674-4c10-b650-72e129ead591-1115003.jpg)
 			- and：交
 			- or：并
