@@ -43,6 +43,7 @@ public:: true
 		- 聚簇，非聚簇 
 		  ![image.jpg](../assets/63998eae-91c1-4cfd-9d1d-9c2d9eab9b30-1115003.jpg)
 	- 单索引的access path
+	  collapsed:: true
 		- dependent join的书写格式
 			- 下述符号中，<>是一个执行的子查询，这个查询需要接收外部的输入作为参数，比如：
 			  $$T_1 \Join_{a_1=a_2} T_2 \rightarrow T1_{a_1}<(T2(a_1 = a_2))>$$
@@ -107,6 +108,7 @@ public:: true
 					- 比如，index <male，hair color，height>对于谓`haircolor='blond'` and `height between 170 and 180`，我们没有办法直接确定谓词。但是我们可以转为 ![image.jpg](../assets/f3c2566f-5ea4-43e7-baf6-addc3600df59-1115003.jpg)
 					- 如果缺失的key的domain比较少，我们使用gap skipping做这种改写可以非常有效
 	- 多个索引的access path
+	  collapsed:: true
 		- 对于多个索引，我们可以将多个索引的结果做集合运算 ![image.jpg](../assets/5426f133-0674-4c10-b650-72e129ead591-1115003.jpg)
 			- and：交
 			- or：并
@@ -131,7 +133,7 @@ public:: true
 			   ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg)
 			- 也可以直接join（比较低效）
 			   ![image.jpg](../assets/2335cd47-3de0-4f02-8b64-fd76b6351ca6-1115003.jpg)
-			- 该方法尽管优雅，可能低效。会造成搜索空间的指数级膨胀
+			- 该方法尽管优雅，但是会造成搜索空间的指数级膨胀
 		- 涉及到两个index的join
 			-
 			-
