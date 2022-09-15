@@ -9,6 +9,7 @@ public:: true
 - Access Path（building block：指query plan中的叶子节点，它们往往是access path）
 	- Simple Scan：扫全表数据
 	- Scan and Attribute Access
+	  collapsed:: true
 		- storage中存储的数据可能不是原格式，所以我们需要map，当遇到谓词时
 		   ![image.jpg](../assets/3d9f7510-759a-4143-bdd7-10bcdd4e416d-1115003.jpg)
 		- 考虑到如果会被多个谓词使用，我们可能希望只extract一次
@@ -29,11 +30,14 @@ public:: true
 			- 比如筛选表I，中满足p的数据v
 			   ![image.jpg](../assets/56eaf983-c772-487b-84cc-2dba73313dd4-1115003.jpg)
 	- 临时表
+	  collapsed:: true
 		- 如果一个表需要重复使用，可以将其物化
 	- Table function：一个函数，可以返回一个relation
+	  collapsed:: true
 		- Primes(1, 100)返回1到100之间的质数
 		   ![image.jpg](../assets/cdb2d343-3d88-425c-93ed-f87215280482-1115003.jpg)
 	- 索引
+	  collapsed:: true
 		- 索引类型
 		- B+树/hash index
 		- 聚簇，非聚簇 
@@ -42,8 +46,9 @@ public:: true
 		- 单个键，无数据，value是TID
 			- 我们需要筛选出数据的TID，然后提取对应数据
 				- 比如 ![image.jpg](../assets/cff40538-6d40-450c-9790-a4e1728bb40f-1115003.jpg)
-				- 我们可以使用Map函数 ![image.jpg](../assets/8115eb2c-9c55-4196-8690-1acf13b20058-1115003.jpg)
-				- 也可以使用dependent join（<> 内的内容时dependent的部分，其依赖于外面的算子） 
+				- 我们可以使用Map函数
+				   ![image.jpg](../assets/8115eb2c-9c55-4196-8690-1acf13b20058-1115003.jpg)
+				- 也可以使用**dependent join**（<> 内的内容时dependent的部分，其依赖于外面的算子） 
 				  ![image.jpg](../assets/82e62439-fc64-4ec5-81c7-ec7122748357-1115003.jpg)
 				- 对于非聚簇索引，我们需要对TID排序以保证顺序读取 
 				  ![image.jpg](../assets/0f1d08e2-0efb-40b4-b6c2-4f8dcd8ca7c8-1115003.jpg)
@@ -98,6 +103,7 @@ public:: true
 					- 比如，index <male，hair color，height>对于谓`haircolor='blond'` and `height between 170 and 180`，我们没有办法直接确定谓词。但是我们可以转为 ![image.jpg](../assets/f3c2566f-5ea4-43e7-baf6-addc3600df59-1115003.jpg)
 					- 如果缺失的key的domain比较少，我们使用gap skipping做这种改写可以非常有效
 	- 多个索引的access path
+	  collapsed:: true
 		- 对于多个索引，我们可以将多个索引的结果做集合运算 ![image.jpg](../assets/5426f133-0674-4c10-b650-72e129ead591-1115003.jpg)
 			- and：交
 			- or：并
