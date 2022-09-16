@@ -153,8 +153,10 @@ public:: true
 			  根据上述的规则我们可以转为d-join并记为：
 			  $$Emp_{name}[x;name='Maier']<X_{t:*x.tid}><Dept_{dno}[y;y.dno=dno]><X_{u:*dTID}>\Rightarrow  E_i<E_a><D_i><D_a>$$
 			- 优化措施：我们要把outer部分的结果排序
-				- 可以将随机IO转为
-			-
+				- 根据TID排序，可以将随机IO转为顺序IO
+				- 去重，可以避免重复读取相同的page
+			- 以上述执行计划为例
+				- 将
 			-
 			-
 			-
