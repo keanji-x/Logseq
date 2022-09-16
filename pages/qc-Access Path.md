@@ -130,13 +130,13 @@ public:: true
 			- 比如对于一个index access
 			   ![image.jpg](../assets/01327623-8a1c-4f9a-b823-077dc7198df6-1115003.jpg)
 			- 我们可以使用dependent join
-			   ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg)
+			   ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg){:height 47, :width 553}
 			- 也可以直接join（比较低效）
 			   ![image.jpg](../assets/2335cd47-3de0-4f02-8b64-fd76b6351ca6-1115003.jpg)
 			- 该方法尽管优雅，但是会造成搜索空间的指数级膨胀
 		- 为了简化描述，我们做一些记号
 			- 首先对于上述d-join
-			   ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg)
+			   ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg){:height 43, :width 501}
 				- 我们将读索引记作$Emp_{salary}[x; x \leq age \geq 35; TID] \Rightarrow E_i$
 				- 将<>号内的子查询记作$<\Chi e:*TID, name:e.name(\square)> \Rightarrow E_a$
 				- 这样我们就可以简写上述符号$E_i<E_a>$
@@ -147,7 +147,9 @@ public:: true
 			  from Emp e, Dept d
 			  where e.name = 'Maier' and e.dno = d.dno
 			  ```
-			- 我们可以转为执行计划
+			  我们可以转为执行计划
+			  ![image.png](../assets/image_1663310526861_0.png){:height 43, :width 493}
+			-
 			-
 			-
 			-
