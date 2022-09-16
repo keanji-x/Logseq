@@ -164,7 +164,8 @@ public:: true
 					- 如果Dept.dno 是聚簇索引，我们可以通过排序避免随机IO
 					- 如果物化$D_i$的，有序的dno（或者是grouping 后的dno）可以使得物化视图只需要保存一条数据
 						- 在$E_a$ 中，每个职员都唯一的映射到一个department
-						-
+						- 多个职员可以属于同一个department
+						- 如果dno是有序的（grouping）的，那么如果我们取得一个dno后，它之后就不会再被需要了
 				- 将$E_i<E_a><D_i>$ 按照dTID排序，这和优化1效果相同
 				-
 			-
