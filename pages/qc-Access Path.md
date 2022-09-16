@@ -149,6 +149,9 @@ public:: true
 			  ```
 			  我们可以转为执行计划
 			  ![image.png](../assets/image_1663310526861_0.png){:height 43, :width 493}
+			  
+			  根据上述的规则我们可以转为d-join并记为：
+			  $$Emp_{name} E_i<E_a><D_i><D_a>$$
 			-
 			-
 			-
