@@ -168,7 +168,7 @@ public:: true
 							   ![image.png](../assets/image_1663332986866_0.png){:height 72, :width 380}
 							- 然后我们可以将得到索引访问的TID缓存下来（或者叫cached,或 materialized）
 							   ![image.png](../assets/image_1663333063151_0.png){:height 59, :width 561}
-							-
+							- 如果
 							-
 				- 将$E_i<E_a><D_i>$ 按照dTID排序，这和优化1效果相同
 				-
