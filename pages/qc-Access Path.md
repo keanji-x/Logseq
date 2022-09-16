@@ -151,7 +151,7 @@ public:: true
 			  ![image.png](../assets/image_1663310526861_0.png){:height 43, :width 493}
 			  
 			  根据上述的规则我们可以转为d-join并记为：
-			  $$Emp_{name}[x;name='Maier']<X_{t:*x.tid}><Dept_{dno}[y;y.dno=dno]><X_{u:*dTID}>\Rightarrow  E_i<E_a><D_i><D_a>$$
+			  $$Emp_{name}[x;name='Maier']<X_{t:*x.tid}><Dept_{dno}[y;y.dno=dno;dTID]><X_{u:*dTID}>\Rightarrow  E_i<E_a><D_i><D_a>$$
 			- 优化措施：我们要把outer部分的结果排序
 				- 根据TID排序，可以将随机IO转为顺序IO
 				- 去重，可以避免重复读取相同的page
@@ -160,7 +160,7 @@ public:: true
 				- 将$E_i<E_a>$的结果按照dno排序
 					- 对于多个重复的dno可以去重
 					- 如果Dept.dno 是聚簇索引，我们可以通过排序避免随机IO
-				- 将$E_i<E_a><D_i>$
+				- 将$E_i<E_a><D_i>$ 按照dTID排序，这和优化1的
 			-
 			-
 			-
