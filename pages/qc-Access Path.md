@@ -165,7 +165,8 @@ public:: true
 						- 如果dno是有序的（grouping）的，那么如果我们取得一个dno后，它之后就不会再被需要了
 						- 这样我们便可以改写上述的$D_i$
 							- 首先是根据dno，在department中的索引中访问唯一的TID
-							   ![image.png](../assets/image_1663332986866_0.png)
+							   ![image.png](../assets/image_1663332986866_0.png){:height 72, :width 380}
+							- 然后我们可以将得到索引访问的TID缓存下来（或者叫cached,或 materialized）
 							-
 				- 将$E_i<E_a><D_i>$ 按照dTID排序，这和优化1效果相同
 				-
