@@ -151,7 +151,8 @@ public:: true
 			  ![image.png](../assets/image_1663310526861_0.png){:height 43, :width 493}
 			  
 			  根据上述的规则我们可以转为d-join并记为：
-			  $$Emp_{name}[x;name='Maier']<Xt_{*x.tid}><Dept_{dno}[y.dno=dno]><X:> E_i<E_a><D_i><D_a>$$
+			  $$Emp_{name}[x;name='Maier']<X_{t:*x.tid}><Dept_{dno}[y.dno=dno]><X_{u:*dTID}> E_i<E_a><D_i><D_a>$$
+			-
 			-
 			-
 			-
