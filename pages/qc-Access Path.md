@@ -152,7 +152,8 @@ public:: true
 			  
 			  根据上述的规则我们可以转为d-join并记为：
 			  $$Emp_{name}[x;name='Maier']<X_{t:*x.tid}><Dept_{dno}[y;y.dno=dno]><X_{u:*dTID}>\Rightarrow  E_i<E_a><D_i><D_a>$$
-			- 针对上述的执行计划，我们要把outer部分的结果排序，
+			- 优化措施：我们要把outer部分的结果排序
+				- 可以将随机IO转为
 			-
 			-
 			-
