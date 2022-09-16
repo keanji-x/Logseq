@@ -140,6 +140,7 @@ public:: true
 				- 我们将读索引记作$Emp_{salary}[x; x \leq age \geq 35; TID] \Rightarrow E_i$
 				- 将<>号内的子查询记作$<\Chi e:*TID, name:e.name(\square)> \Rightarrow E_a$
 				- 这样我们就可以简写上述符号$E_i<E_a>$
+				  id:: 63232538-28a0-4ec8-87c5-73eb1f5b4bcc
 		- 涉及到两个index的join
 			- 假设语句为
 			  ```sql
@@ -158,9 +159,11 @@ public:: true
 			- 以上述执行计划为例
 				- 将$E_i$ 的结果按TID排序，可以避免随机IO
 				- 将$E_i<E_a>$的结果按照dno排序
+				  id:: 63241d6c-718d-4e3a-ae24-b7502b366a7f
 					- 对于多个重复的dno可以去重
 					- 如果Dept.dno 是聚簇索引，我们可以通过排序避免随机IO
-				- 将$E_i<E_a><D_i>$ 按照dTID排序，这和 ((将$E_i$ ))
+				- 将$E_i<E_a><D_i>$ 按照dTID排序，这和
+				-
 			-
 			-
 			-
