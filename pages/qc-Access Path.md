@@ -128,11 +128,11 @@ public:: true
 	- index 和 join
 		- index accessing可以被表示为一个join
 			- 比如对于一个index access
-			   ![image.jpg](../assets/01327623-8a1c-4f9a-b823-077dc7198df6-1115003.jpg)
+			   ![image.jpg](../assets/01327623-8a1c-4f9a-b823-077dc7198df6-1115003.jpg){:height 50, :width 595}
 			- 我们可以使用dependent join
 			   ![image.jpg](../assets/3b9d8d0e-5660-4955-895e-e0c80ab452cb-1115003.jpg){:height 47, :width 553}
 			- 也可以直接join（比较低效）
-			   ![image.jpg](../assets/2335cd47-3de0-4f02-8b64-fd76b6351ca6-1115003.jpg)
+			   ![image.jpg](../assets/2335cd47-3de0-4f02-8b64-fd76b6351ca6-1115003.jpg){:height 54, :width 586}
 			- 该方法尽管优雅，但是会造成搜索空间的指数级膨胀
 		- 为了简化描述，我们做一些记号
 			- 首先对于上述d-join
