@@ -153,21 +153,23 @@ public:: true
 			  
 			  根据上述的规则我们可以转为d-join并记为：
 			  $$Emp_{name}[x;name='Maier']<X_{t:*x.tid}><Dept_{dno}[y;y.dno=dno;dTID]><X_{u:*dTID}>\Rightarrow  E_i<E_a><D_i><D_a>$$
-			- 优化措施：我们要把outer部分的结果排序
-				- 根据TID排序，可以将随机IO转为顺序IO
-				- 去重，可以避免重复读取相同的page
 			- 以上述执行计划为例
 				- 将$E_i$ 的结果按TID排序，可以避免随机IO
 				- 将$E_i<E_a>$的结果按照dno排序
 				  id:: 63241d6c-718d-4e3a-ae24-b7502b366a7f
+				  collapsed:: true
 					- 对于多个重复的dno可以去重
 					- 如果Dept.dno 是聚簇索引，我们可以通过排序避免随机IO
 					- 如果物化$D_i$的，有序的dno（或者是grouping 后的dno）可以使得物化视图只需要保存一条数据
+					  collapsed:: true
 						- 在$E_a$ 中，每个职员都唯一的映射到一个department
 						- 多个职员可以属于同一个department
 						- 如果dno是有序的（grouping）的，那么如果我们取得一个dno后，它之后就不会再被需要了
 				- 将$E_i<E_a><D_i>$ 按照dTID排序，这和优化1效果相同
 				-
+			- 优化措施总结
+				- 将索引
+				- 去重，可以避免重复读取相同的page
 			-
 			-
 			-
