@@ -166,7 +166,7 @@ public:: true
 						- 这样我们便可以改写上述的$D_i$
 							- 首先是根据dno，在department中的索引中访问唯一的TID
 							   ![image.png](../assets/image_1663332986866_0.png){:height 72, :width 380}
-							- 然后我们可以将得到索引访问的TID缓存下来（或者叫cached,或 materialized）
+							- 如果内部执行的结果是一个物化视图
 							   ![image.png](../assets/image_1663333063151_0.png){:height 59, :width 561}
 								- 为什么要缓存？
 							- 如果我们假设dno是已经排序的，那么我们只需要缓存一个就行
