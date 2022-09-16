@@ -143,9 +143,11 @@ public:: true
 		- 涉及到两个index的join
 			- 假设语句为
 			  ```sql
-			  select
+			  select *
+			  from Emp e, Dept d
+			  where e.name = 'Maier' and e.dno = d.dno
 			  ```
-			-
+			- 我们可以转为执行计划
 			-
 			-
 			-
