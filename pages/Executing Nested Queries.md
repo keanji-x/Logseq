@@ -1,0 +1,3 @@
+- 背景
+	- 有Index的Nest Loop Join 要比hash join的扩展性更强
+		- Index 的 扩张速度
