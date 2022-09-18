@@ -1,0 +1,46 @@
+- [[DataBase]]
+  collapsed:: true
+	- [[CMU 15445]]
+	  collapsed:: true
+		- [[445-关系代数]]
+		- [[445-SQL]]
+		- [[445-Index]]
+		- [[445-Buffer Storage]]
+		- [[445-Buffer Pool]]
+		- [[445-Query Execution]]
+		- [[445-Sorting & aggregations]]
+		- [[445-Query Planning]]
+		- [[445-Transaction]]
+	- [[CMU 15721]]
+		- [[721-MVCC]]
+	- [[数据库全书]]
+		- [[cb-目录]]
+		- [[cb-关系]]
+		- [[cb-execution]]
+		- [[cb-transaction]]
+	- [[Query Compiler]]
+		- [[Basics]]
+			- [[qc-Access Path]]
+		- [[Foundation]]
+			- [[qc-关系代数]] #DataBase
+			- [[qc-Expressions]]#DataBase
+			- [[qc-Bag representation]]#DataBase
+			- [[qc-Linearity of Algebraic Operators]]#DataBase
+			- [[qc-Function dependencies]]#DataBase
+		- [[Plan Generation]]
+			- [[qc-Deriving and Dealing with Interesting Orderings and Groupings]]#DataBase
+			- [[qc-Simplifying the Query Graph]]
+			- [[qc-Cardinality and cost estimation]]
+	- [[Paper Reading]]
+		- [[On the correct and complete enumeration of the core search space]]
+		- [[Dphyp]]
+		- [[Columbia Optimizer]]
+		- [[MPP]]
+		-
+	- [[Code Reading]]
+		- [[MySQL]]
+			- [[ms-optimizer]]
+		- [[NoisePage]]
+			- [[Optimizer]]
+		- [[MariaDB xpand]]
+		- [[PolarDB Optimizer]]
