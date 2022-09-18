@@ -1,4 +1,4 @@
 - 背景
 	- 有Index的Nest Loop Join 要比hash join的扩展性更强
-		- Index 的读取是 log n
-		- 而 hash join的
+		- Index 的读取是 O(log n
+		- 而 hash join 和 sorting 的 操作是O(n)
