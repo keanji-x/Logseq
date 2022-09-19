@@ -178,7 +178,7 @@
   :block/updated-at 1663136047832}
  {:block/name "database",
   :block/created-at 1663245759174,
-  :block/updated-at 1663245759174}
+  :block/updated-at 1663501409077}
  {:block/name "distributed systems,  algorithmic approach information",
   :block/created-at 1663137084223,
   :block/updated-at 1663137084223}
@@ -197,6 +197,12 @@
  {:block/name "dsaai-introduction",
   :block/created-at 1663132979751,
   :block/updated-at 1663132979751}
+ {:block/name "executing nested queries",
+  :block/created-at 1663503916532,
+  :block/updated-at 1663504150585}
+ {:block/name "executing nested queries ",
+  :block/created-at 1663503914684,
+  :block/updated-at 1663503914684}
  {:block/name "favorites",
   :block/created-at 1663071616346,
   :block/updated-at 1663071616346}
@@ -263,7 +269,7 @@
   :block/updated-at 1663132981382}
  {:block/name "paper reading",
   :block/created-at 1663135592568,
-  :block/updated-at 1663135592568}
+  :block/updated-at 1663503914685}
  {:block/name "paxos",
   :block/created-at 1663132980948,
   :block/updated-at 1663132980948}
@@ -333,7 +339,7 @@
   :block/updated-at 1663344003122}
  {:block/name "sep 18th, 2022",
   :block/created-at 1663470272786,
-  :block/updated-at 1663472561424}
+  :block/updated-at 1663501514815}
  {:block/name "ss with stateful",
   :block/created-at 1663132981953,
   :block/updated-at 1663132981953}
