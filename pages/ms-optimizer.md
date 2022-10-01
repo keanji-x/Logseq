@@ -7,7 +7,7 @@
 			- next_prev
 			- Join
 			   ![image.jpg](../assets/0054ef0e-ca94-438f-ad67-c4fda61b8f32-1115003.jpg)
-				- 个人理解，在左深树中，Join可以用右孩子表示？
+				- 我们可以用一个列表表示一个左边申述
 	- Query block && Query expression
 		- 总体架构 ![image.jpg](../assets/60ce38ae-9592-45a7-989a-7f0b05eb2810-1115003.jpg){:height 667, :width 958}
 			- query expression：表示一组query block（可能是一个）
