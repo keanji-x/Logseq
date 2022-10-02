@@ -1,7 +1,7 @@
 - 基本数据结构
 	- Query Expression -> Query Block
 		- 图例
-			- 总体架构 ![image.jpg](../assets/60ce38ae-9592-45a7-989a-7f0b05eb2810-1115003.jpg){:height 667, :width 958}
+			- 总体架构 ![image.jpg](../assets/60ce38ae-9592-45a7-989a-7f0b05eb2810-1115003.jpg){:height 489, :width 699}
 				- query expression：表示一组query block（可能是一个）
 					- 里面包含多个query block
 					- 以及对query block结果的操作（union等）
