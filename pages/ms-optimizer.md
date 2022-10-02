@@ -1,6 +1,7 @@
 - 基本数据结构
 	- Query Expression -> Query Block
 		- 图例
+		  collapsed:: true
 			- 总体架构 ![image.jpg](../assets/60ce38ae-9592-45a7-989a-7f0b05eb2810-1115003.jpg){:height 667, :width 958}
 				- query expression：表示一组query block（可能是一个）
 				  collapsed:: true
@@ -20,6 +21,7 @@
 						- top_join_slict：指向最上层的join
 			- 例子
 				- 对于语句`(SELECT *   FROM ttt1)UNION ALL  (SELECT *   FROM     (SELECT *      FROM ttt2) AS a,     (SELECT *      FROM ttt3      UNION ALL SELECT *      FROM ttt4) AS b)`  ![image.jpg](../assets/52d45059-7e30-4eb5-bcdb-c181cd881e76-1115003.jpg)
+	-
 - 基础数据结构
 	- Table 系列
 		- Table_Share：底层文件信息，全局唯一
