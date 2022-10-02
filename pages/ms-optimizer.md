@@ -19,7 +19,7 @@
 						- Join：保存优化后的Join对象
 						- top_join_slict：指向最上层的join
 			- 例子
-				- 对于语句`(SELECT *   FROM ttt1)UNION ALL  (SELECT *   FROM     (SELECT *      FROM ttt2) AS a,     (SELECT *      FROM ttt3      UNION ALL SELECT *      FROM ttt4) AS b)`  ![image.jpg](../assets/52d45059-7e30-4eb5-bcdb-c181cd881e76-1115003.jpg)
+				- 对于语句`(SELECT *   FROM ttt1)UNION ALL  (SELECT *   FROM     (SELECT *      FROM ttt2) AS a,     (SELECT *      FROM ttt3      UNION ALL SELECT *      FROM ttt4) AS b)`  ![image.jpg](../assets/52d45059-7e30-4eb5-bcdb-c181cd881e76-1115003.jpg){:height 289, :width 656}
 	-
 - 基础数据结构
 	- Table 系列
