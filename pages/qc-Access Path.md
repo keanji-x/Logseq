@@ -173,10 +173,9 @@ public:: true
 							   ![image.png](../assets/image_1663333416253_0.png){:height 95, :width 541}
 							-
 				- 将$E_i<E_a><D_i>$ 按照dTID排序，这和优化1效果相同
-				-
 			- 优化措施总结
 				- 将访问索引得到的TID排序，这样可以将随机IO转为随机IO
 				- 将d-join的外部得到的数据排序（grouping），我们可以避免访问数据两次
-			-
+				- [[Executing Nested Queries]]
 			-
 			-
