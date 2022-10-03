@@ -7,6 +7,7 @@ public:: true
 	- slot page
 	   ![image.jpg](../assets/31087a65-fd15-4b0f-91dc-03cf6a5b923d-1115003.jpg)
 - Access Path（building block：指query plan中的叶子节点，它们往往是access path）
+  collapsed:: true
 	- Simple Scan：扫全表数据
 	- Scan and Attribute Access
 	  collapsed:: true
@@ -126,6 +127,7 @@ public:: true
 				- access数据的代价越高越先
 				- 如果我们发现直接取数据的代价 小于 index scanning + intersecting。那么便放弃index scanning
 	- index 和 join
+	  collapsed:: true
 		- index accessing可以被表示为一个join
 			- 比如对于一个index access
 			   ![image.jpg](../assets/01327623-8a1c-4f9a-b823-077dc7198df6-1115003.jpg){:height 50, :width 595}
@@ -180,3 +182,7 @@ public:: true
 			-
 			-
 			-
+- Counting the Number of Accesses
+	- 一些基本记号如图：
+	  ![image.png](../assets/image_1664802316704_0.png)
+	-
