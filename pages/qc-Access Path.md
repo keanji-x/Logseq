@@ -176,6 +176,7 @@ public:: true
 			- 优化措施总结
 				- 将访问索引得到的TID排序，这样可以将随机IO转为随机IO
 				- 将d-join的外部得到的数据排序（grouping），我们可以避免访问数据两次
-				- [[Executing Nested Queries]]
+				- [[Executing Nested Queries]] 待看
+			-
 			-
 			-
