@@ -195,19 +195,24 @@ public:: true
 			- **随机访问：给定一个TID，那么我们能直接访问对应的page**
 			- 顺序访问：给定一个TID，那么我们需要顺序搜索
 	- 问题建模
-		- k disy
-		- m个 bucket，每个含 n 个 item，共有$N = n*m$ 个items
-		  随机访问k个item 需要的bucket数为$y_{n}^{N,m}(k)$
-			- 推论1
-			  ![image.png](../assets/image_1664972708228_0.png){:height 50, :width 212}
-				- ![image.png](../assets/image_1664972840919_0.png){:height 43, :width 58}
-				  指每页包含被访问的元素的概率
-			- 推论2
-			  ![image.png](../assets/image_1664972926699_0.png){:height 57, :width 328}
-				- p是一个bucket不包括这k个item中的一个元素，也就是这个bucket不被访问的概率
-			- 推论3
-			  ![image.png](../assets/image_1664974198461_0.png){:height 222, :width 216}
-				- 从N个元素选出k个item的组合是$N \choose k$
-				- 从当前页以外的元素中选出k个item的组合为$N-n \choose k$
+		- k distinct items
+			- m个 bucket，每个含 n 个 item，共有$N = n*m$ 个items
+			  collapsed:: true
+			  随机访问k个item 需要的bucket数为$y_{n}^{N,m}(k)$
+				- 推论1
+				  ![image.png](../assets/image_1664972708228_0.png){:height 50, :width 212}
+					- ![image.png](../assets/image_1664972840919_0.png){:height 43, :width 58}
+					  指每页包含被访问的元素的概率
+				- 推论2
+				  ![image.png](../assets/image_1664972926699_0.png){:height 57, :width 328}
+					- p是一个bucket不包括这k个item中的一个元素，也就是这个bucket不被访问的概率
+				- 推论3
+				  ![image.png](../assets/image_1664974198461_0.png){:height 222, :width 216}
+					- 从N个元素选出k个item的组合是$N \choose k$
+					- 从当前页以外的元素中选出k个item的组合为$N-n \choose k$
+				-
+			- 对于一些特殊情况的解
+			  ![image.png](../assets/image_1664974715430_0.png){:height 184, :width 362}
+		- k non-distinct items
 			-
 -
