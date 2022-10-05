@@ -191,8 +191,8 @@ public:: true
 		- 假设我们需要访问k个tuple（item），那么我们可能需要访问多少个page（bucket），具体的可以分为两种情况：
 			- k distinct items
 			- k non-distinct items
-		- 访问模型
+		- 访问模型，我们采用随机模型
 			- **随机访问：给定一个TID，那么我们能直接访问对应的page**
 			- 顺序访问：给定一个TID，那么我们需要顺序搜索
-	-
+	- 问题建模
 		-
