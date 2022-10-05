@@ -213,7 +213,12 @@ public:: true
 				-
 			- 对于一些特殊情况的解
 			  ![image.png](../assets/image_1664974715430_0.png){:height 184, :width 362}
-			- 上述精确解是很难算的，所以
+			- 上述精确解是很难算的，所以可以给出一些近似解
+				- 简单的近似解
+				  ![image.png](../assets/image_1664974933550_0.png){:height 49, :width 274}
+				- 复杂的近似解 
+				  ![image.png](../assets/image_1664974957537_0.png)
+				-
 		- k non-distinct items
 			-
 -
