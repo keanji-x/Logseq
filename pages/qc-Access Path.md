@@ -196,4 +196,5 @@ public:: true
 			- 顺序访问：给定一个TID，那么我们需要顺序搜索
 	- 问题建模
 		- m个 bucket，每个含 n 个 item
-		  问k个item
+		  访问k个item 需要的bucket数为
+			- 推论1：
