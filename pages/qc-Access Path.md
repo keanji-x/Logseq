@@ -187,4 +187,5 @@ public:: true
 	  ![image.png](../assets/image_1664802316704_0.png)
 		- 如果$k > N-M$，或者m=1，那么需要访问全部page
 		- 如果$k = 1$，那肯定只需要访问一页
-	-
+	- 问题定义
+		- 假设我们需要访问k个tuple（item），那么
