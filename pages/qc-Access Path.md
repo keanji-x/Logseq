@@ -202,4 +202,5 @@ public:: true
 				- ![image.png](../assets/image_1664972840919_0.png){:height 43, :width 58}
 				  指每页只包含一个item的情况
 			- 推论2
-			  ![image.png](../assets/image_1664972926699_0.png)
+			  ![image.png](../assets/image_1664972926699_0.png){:height 57, :width 328}
+				-
