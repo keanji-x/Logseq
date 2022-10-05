@@ -195,6 +195,6 @@ public:: true
 			- **随机访问：给定一个TID，那么我们能直接访问对应的page**
 			- 顺序访问：给定一个TID，那么我们需要顺序搜索
 	- 问题建模
-		- m个 bucket，每个含 n 个 item
-		  访问k个item 需要的bucket数为$\upsilon$
+		- m个 bucket，每个含 n 个 item，共有
+		  访问k个item 需要的bucket数为$y_{n}^{N,m}(k)$
 			- 推论1：
