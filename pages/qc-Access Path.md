@@ -204,5 +204,5 @@ public:: true
 			- 推论2
 			  ![image.png](../assets/image_1664972926699_0.png){:height 57, :width 328}
 				- p是一个bucket不包括这k个item中的一个元素，也就是这个bucket不被访问的概率
--
+		-
 -
