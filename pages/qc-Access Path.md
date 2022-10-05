@@ -192,6 +192,7 @@ public:: true
 			- k distinct items
 			- k non-distinct items
 		- 访问模型
-			- 随机访问：给定一个TID，那么我们能直接访问对应的page
-			- 顺序访问：给定一个TID，那么往年
+			- **随机访问：给定一个TID，那么我们能直接访问对应的page**
+			- 顺序访问：给定一个TID，那么我们需要顺序搜索
+	-
 		-
