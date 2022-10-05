@@ -223,7 +223,8 @@ public:: true
 					  ![image.png](../assets/image_1664974957537_0.png)
 					- 关于最终解的近似
 					  ![image.png](../assets/image_1664975010956_0.png){:height 104, :width 449}
-			- k non-distinct items（什么情况会取n distinct item。）
+			- k non-distinct items（什么情况会取n distinct item）
+				- 与上述使用的不放回
 				-
 				-
 -
