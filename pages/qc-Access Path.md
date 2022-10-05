@@ -195,5 +195,5 @@ public:: true
 			- **随机访问：给定一个TID，那么我们能直接访问对应的page**
 			- 顺序访问：给定一个TID，那么我们需要顺序搜索
 	- 问题建模
-		- 从 m个 bucket，每个含 n个 item
-		  如果我们需要访问k个item
+		- m个 bucket，每个含 n 个 item
+		  问k个item
