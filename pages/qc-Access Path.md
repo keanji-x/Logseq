@@ -224,7 +224,7 @@ public:: true
 					- 关于最终解的近似
 					  ![image.png](../assets/image_1664975010956_0.png){:height 104, :width 449}
 			- k non-distinct items（什么情况会取n distinct item）
-				- 与上述使用的不放回
+				- 与上述使用的**不放回采样**概率模型不同的是，这里采用的是**放回采样**
 				-
 				-
 -
