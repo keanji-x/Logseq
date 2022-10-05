@@ -213,6 +213,7 @@ public:: true
 				-
 			- 对于一些特殊情况的解
 			  ![image.png](../assets/image_1664974715430_0.png){:height 184, :width 362}
+			- 上述精确解是很难算的，所以
 		- k non-distinct items
 			-
 -
