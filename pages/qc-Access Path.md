@@ -196,7 +196,7 @@ public:: true
 			- 顺序访问：给定一个TID，那么我们需要顺序搜索
 	- 问题建模
 		- m个 bucket，每个含 n 个 item，共有$N = n*m$ 个items
-		  访问k个item 需要的bucket数为$y_{n}^{N,m}(k)$
+		  随机访问k个item 需要的bucket数为$y_{n}^{N,m}(k)$
 			- 推论1
 			  ![image.png](../assets/image_1664972708228_0.png){:height 50, :width 212}
 				- ![image.png](../assets/image_1664972840919_0.png){:height 43, :width 58}
@@ -204,4 +204,5 @@ public:: true
 			- 推论2
 			  ![image.png](../assets/image_1664972926699_0.png){:height 57, :width 328}
 				- p是一个bucket不包括这k个item中的一个元素，也就是这个bucket不被访问的概率
+-
 -
