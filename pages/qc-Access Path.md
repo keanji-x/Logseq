@@ -185,4 +185,4 @@ public:: true
 - Counting the Number of Accesses
 	- 一些基本记号如图：
 	  ![image.png](../assets/image_1664802316704_0.png)
-		-
+		- 如果k > N - M
