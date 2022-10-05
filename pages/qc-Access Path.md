@@ -189,4 +189,6 @@ public:: true
 		- 如果$k = 1$，那肯定只需要访问一页
 	- 问题定义
 		- 假设我们需要访问k个tuple（item），那么我们可能需要访问多少个page（bucket），具体的可以分为两种情况：
-			-
+			- k distinct items
+			- k non-distinct items
+		-
