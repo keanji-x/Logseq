@@ -197,7 +197,9 @@ public:: true
 	- 问题建模
 		- 随机访问·
 			- k distinct items
+			  collapsed:: true
 				- m个 bucket，每个含 n 个 item，共有$N = n*m$ 个items
+				  collapsed:: true
 				  随机访问k个item 需要的bucket数为$y_{n}^{N,m}(k)$
 					- 推论1
 					  ![image.png](../assets/image_1664972708228_0.png){:height 50, :width 212}
@@ -221,6 +223,6 @@ public:: true
 					  ![image.png](../assets/image_1664974957537_0.png)
 					- 关于最终解的近似
 					  ![image.png](../assets/image_1664975010956_0.png){:height 104, :width 449}
-		- k non-distinct items
-			-
+			- k non-distinct items
+				-
 -
