@@ -250,7 +250,7 @@ public:: true
 					  ![image.png](../assets/image_1665045735681_0.png){:height 141, :width 403}
 						-
 		- 非均匀的分布
-			- 假设每个bucket包含的item数量是不同的，这里以k-distinct item为例
+			- 假设每个bucket包含的item数量是不同的，这里以k-distinct item为例，访问bucket的数量
 			  collapsed:: true
 				- 总的访问页的数量，是每一页被访问概率的期望
 				  ![image.png](../assets/image_1665046249667_0.png){:height 107, :width 287}
@@ -262,5 +262,6 @@ public:: true
 			  collapsed:: true
 				- 我们可以建模，有L个区间，每个区间有$l_i$ 个bucket。在每个区间内内的bucket包含的item数量相同
 				   ![image.png](../assets/image_1665046503187_0.png){:height 119, :width 348}
-			- 对于每个
+			- 对于每个bucket，访问的有效元素的数量
+				- 在上述问题，我们在某一页访问x个元素的概率是
 -
