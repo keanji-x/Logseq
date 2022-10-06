@@ -241,6 +241,6 @@ public:: true
 					  ![image.png](../assets/image_1665045436590_0.png){:height 49, :width 156}
 				- 当group by的时候，我们可能会关心k个元素中distinct的数量，它的计算是
 				  ![image.png](../assets/image_1665045513251_0.png){:height 85, :width 276}
-					-
+					- 从特例来推，当每个bucket只包含一个元素，那么访问bucket的数量即为distinct
 					-
 -
