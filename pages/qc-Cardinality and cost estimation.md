@@ -87,13 +87,13 @@
 		- 基本operator
 			- filter
 				- exact match ​​​​​​​​​​​​​​​​$\sigma_{A=c}$
-					- A
+					- 属性A
 						- l，u：上界下界 为c
 						- domain：我们假设条件总等满足，所以domain为1（因为总是返回0的估计没有意义）
 						   ![image.jpg](../assets/686254fb-927d-44fc-937c-ea919f0c69db-1115003.jpg){:height 94, :width 376}
 						- 累计次数满足均匀分布且CSA（对于是key的attribute，为1）
 						   ![image.jpg](../assets/2521c54a-b07b-4e35-ba3f-511caa8f50a7-1115003.jpg){:height 58, :width 132}
-					- C
+					- 属性C
 						- 由于没有足够信息，假设上下界不变
 						   ![image.jpg](../assets/684af5e7-e507-445d-9acb-2a83d2c5346f-1115003.jpg){:height 44, :width 267}
 						- 对于domain（1-每个value不会出现的概率）* value的个数
@@ -105,5 +105,7 @@
 							  $$(1-s(p))^{\frac{fc}{dc}}$$
 						- fc和fa相同 
 						  ![image.jpg](../assets/30cd408b-7b39-422c-9946-09a5f307ebd6-1115003.jpg){:height 57, :width 136}
-				- range query $c1 \leq A \geq c2, l_A$
-				-
+				- range query $c1 \leq A \geq c2, l_A \leq c1 \leq c2 \leq u_A$
+					- 属性A
+						-
+					- 属性C
