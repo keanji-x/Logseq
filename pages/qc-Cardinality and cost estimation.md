@@ -37,11 +37,16 @@
 		- 对于不同的join的代价
 			- nest loop join
 			  ![image.png](../assets/image_1665055270537_0.png){:height 54, :width 400}
-			-
+			- Sort merge join
+				- sort cost
+				  ![image.png](../assets/image_1665057155826_0.png)
+				-
 	- Cardinality Estimates：基于selectivity
 		- selectivity定义
-			- filter ![image.jpg](../assets/d33f8a74-2bc0-4994-bf29-9ecfffbe932c-1115003.jpg)
-			- join ![image.jpg](../assets/cbf3088e-0b84-4f53-aef3-b4ad00059ed7-1115003.jpg)
+			- filter
+			   ![image.jpg](../assets/d33f8a74-2bc0-4994-bf29-9ecfffbe932c-1115003.jpg)
+			- join
+			   ![image.jpg](../assets/cbf3088e-0b84-4f53-aef3-b4ad00059ed7-1115003.jpg)
 			- 基于均匀假设的基本估计公式 ![image.jpg](../assets/2d2dd600-b89e-4957-b6d3-f7eefb097dd5-1115003.jpg)
 	- 模型的缺点
 		- CPU计算很粗糙，没有考虑并行
