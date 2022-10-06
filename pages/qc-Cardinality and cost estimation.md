@@ -112,4 +112,8 @@
 						- 对于f和d我们也可以直接利用CSA假设计算
 						  ![image.png](../assets/image_1665058393707_0.png){:height 128, :width 244}
 					- 属性C
-						- 对于c而言，我们
+						- 对于c而言，我们的推导方式和上述方案一样
+						- 上下界不变，f相同
+						- 对于d的估计使用s(p)
+						  ![image.png](../assets/image_1665058501252_0.png)
+						-
