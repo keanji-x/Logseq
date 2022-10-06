@@ -253,8 +253,8 @@ public:: true
 						-
 		- 非均匀的分布
 			- 假设每个bucket包含的item数量是不同的，这里以k-distinct item为例
-				- 那么总的访问页数即为期望
+				- 总的访问页的数量，是每一页被访问概率的期望
 				  ![image.png](../assets/image_1665046114632_0.png){:height 112, :width 381}
-				-
+				- 根据上述推导
 			-
 -
