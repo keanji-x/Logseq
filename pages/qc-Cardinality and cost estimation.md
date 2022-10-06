@@ -77,6 +77,9 @@
 		- 问题描述
 			- 表R 和 attribute
 			   ![image.jpg](../assets/aacfe2a5-3395-4b5a-bede-1517791e6fbe-1115003.jpg){:height 46, :width 138}
+			- 给定每个attribute的logical profile
+			  $bc = [l_c, u_c, f_c, d_c]$
+			  $$ba = $$
 			- ![image.jpg](../assets/6dd7b7df-b526-4fe4-aefc-023c4cac22c6-1115003.jpg)
 			- 针对每个一个操作符，得到其输出<img src="https://api2.mubu.com/v3/document_image/6655e1ad-21f3-4323-a311-5623378eedce-1115003.jpg" /> ![image.jpg](../assets/cf7c7e70-53a7-4e9d-99da-452029f0a0f9-1115003.jpg)
 		- 基本operator
