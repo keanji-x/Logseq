@@ -256,5 +256,7 @@ public:: true
 				- 总的访问页的数量，是每一页被访问概率的期望
 				  ![image.png](../assets/image_1665046249667_0.png){:height 107, :width 287}
 				- 根据上述推导$y_{n_j}^N(k)$，我们可以得到概率为
+				  ![image.png](../assets/image_1665046261270_0.png){:height 86, :width 468}
+				- 如果我们按照每页包含的item数量顺序排序计算，我们可以递推计算概率p
 			-
 -
