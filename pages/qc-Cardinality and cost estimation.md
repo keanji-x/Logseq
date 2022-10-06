@@ -97,12 +97,13 @@
 						- 由于没有足够信息，假设上下界不变
 						   ![image.jpg](../assets/684af5e7-e507-445d-9acb-2a83d2c5346f-1115003.jpg){:height 44, :width 267}
 						- 对于domain（1-每个value不会出现的概率）* value的个数
-						   ![image.jpg](../assets/ed5daf2b-6691-4124-b69b-210bf0a5f752-1115003.jpg){:height 52, :width 469}
+						   ![image.jpg](../assets/ed5daf2b-6691-4124-b69b-210bf0a5f752-1115003.jpg){:height 37, :width 328}
 							- s(p) 对应的是每个tuple被选中的概率 
 							  ![image.jpg](../assets/e2c89ef9-8772-43c9-85e4-b19555700c4a-1115003.jpg){:height 52, :width 367}
 							- 对于C的每个value，出现的频率为fc/dc
 							- 所以value没有被选中的概率是者$\frac{fc}{dc}$次都没有被选中的概率
-							  $$(1-s(p))$$
+							  $$(1-s(p))^{\frac{fc}{dc}}$$
 						- fc和fa相同 
 						  ![image.jpg](../assets/30cd408b-7b39-422c-9946-09a5f307ebd6-1115003.jpg){:height 57, :width 136}
 				- range query
+				-
