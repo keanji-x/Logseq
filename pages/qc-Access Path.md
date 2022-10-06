@@ -258,5 +258,6 @@ public:: true
 				- 根据上述推导$y_{n_j}^N(k)$，我们可以得到概率为
 				  ![image.png](../assets/image_1665046261270_0.png){:height 86, :width 468}
 				- 如果我们按照每页包含的item数量顺序排序计算，我们可以递推计算概率p
+				  ![image.png](../assets/image_1665046322914_0.png){:height 81, :width 387}
 			-
 -
