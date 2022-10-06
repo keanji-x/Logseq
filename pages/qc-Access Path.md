@@ -232,5 +232,7 @@ public:: true
 				- 依照上述推导流程，可得
 					- 总的访问页数，等于m*每一页被访问的概率
 					   ![image.png](../assets/image_1665044824412_0.png){:height 62, :width 398}
-					-
+					- 每一页被访问的概率为 $1-p(不被访问)$
+					  ![image.png](../assets/image_1665045303991_0.png){:height 69, :width 316}
+					- 不被
 -
