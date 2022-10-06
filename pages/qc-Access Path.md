@@ -230,6 +230,7 @@ public:: true
 				  ![image.png](../assets/image_1664975580130_0.png){:height 96, :width 318}
 					- 从组合推，我们从N+k-1的元素中取k distinct个元素
 				- 依照上述推导流程，可得
+				  collapsed:: true
 					- 总的访问页数，等于m*每一页被访问的概率
 					   ![image.png](../assets/image_1665044824412_0.png){:height 62, :width 398}
 					- 每一页被访问的概率为 $1-p(不被访问)$
@@ -238,4 +239,6 @@ public:: true
 					  ![image.png](../assets/image_1665045398662_0.png){:height 247, :width 266}
 					- 同样可以得到一个近似解 
 					  ![image.png](../assets/image_1665045436590_0.png){:height 49, :width 156}
+				- 当group by的时候，我们可能会关心k个元素中distinct的数量
+					-
 -
