@@ -31,11 +31,11 @@
 		- 在面向磁盘的数据库中，I/O就是页的数量
 		- 对于不同的access path（​​​​     记为满足条件p的tuple的比例fraction）
 			- 聚簇索引  / 所有含有满足条件的tuple的页都能装入内存
-			   ![image.jpg](../assets/bb088cf9-7b2f-444d-afb7-6c6c4fe66189-1115003.jpg){:height 49, :width 316}
+			   ![image.jpg](../assets/bb088cf9-7b2f-444d-afb7-6c6c4fe66189-1115003.jpg){:height 46, :width 320}
 			- 非聚簇索引 （存在BPM的置换）
-			   ![image.jpg](../assets/c4172009-f239-4081-9420-f76c2fe1665b-1115003.jpg)
+			   ![image.jpg](../assets/c4172009-f239-4081-9420-f76c2fe1665b-1115003.jpg){:height 40, :width 272}
 		- 对于不同的join的代价
-			-
+			- nest loop join
 	- Cardinality Estimates：基于selectivity
 		- selectivity定义
 			- filter ![image.jpg](../assets/d33f8a74-2bc0-4994-bf29-9ecfffbe932c-1115003.jpg)
