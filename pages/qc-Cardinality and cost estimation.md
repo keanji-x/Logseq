@@ -89,7 +89,7 @@
 				- exact match ​​​​​​​​​​​​​​​​$\sigma_{A=c}$
 					- 属性A
 						- l，u：上界下界 为c
-						- domain：我们假设条件总等满足，所以domain为1（因为总是返回0的估计没有意义）
+						- distinct value：我们假设条件总等满足，所以d为1（因为总是返回0的估计没有意义）
 						   ![image.jpg](../assets/686254fb-927d-44fc-937c-ea919f0c69db-1115003.jpg){:height 94, :width 376}
 						- 累计次数满足均匀分布且CSA（对于是key的attribute，为1）
 						   ![image.jpg](../assets/2521c54a-b07b-4e35-ba3f-511caa8f50a7-1115003.jpg){:height 58, :width 132}
@@ -109,5 +109,5 @@
 					- 属性A
 						- 对于上下界我们可以直接得到
 						  $$l_A = c1, u_A = c2$$
-						-
+						- 对于f和d我们也可以直接利用CSA假设计算
 					- 属性C
