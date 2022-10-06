@@ -62,17 +62,21 @@
 		   ![image.jpg](../assets/c3e9f6f3-8299-4f19-9fc7-8f6ad6a25cc4-1115003.jpg){:height 42, :width 198}
 		- 上界
 		   ![image.jpg](../assets/9b619137-a62c-4d31-b3a9-3a78c821b472-1115003.jpg){:height 43, :width 260}
-		- **cumulated frequency**：tuple的数量（为什么不是势，感觉针对的是bag而不是set） ![image.jpg](../assets/cb8d4a4f-6b72-433d-9660-89a02c6689c1-1115003.jpg)
-		- 域：值得注意的是对于一些实数，我们可以取实际的取值范围作为域 ![image.jpg](../assets/ca240d8c-3c60-4433-9bb0-54c1efda0d0a-1115003.jpg)
+		- **cumulated frequency**：tuple的数量（为什么不是势，感觉针对的是bag而不是set）
+		   ![image.jpg](../assets/cb8d4a4f-6b72-433d-9660-89a02c6689c1-1115003.jpg){:height 38, :width 149}
+		- 域：值得注意的是对于一些实数，我们可以取实际的取值范围作为域
+		   ![image.jpg](../assets/ca240d8c-3c60-4433-9bb0-54c1efda0d0a-1115003.jpg){:height 44, :width 170}
 	- 假设
 		- 均匀分布
 			- uniform distribute assumption：每个值出现的频率相同
 			- uniform spread assumption(equal spread assumption)：每个值出现的位置分布是均匀的
 				- 这里存在一个特例，continous-value assumption，即每个值都出现n/f次，不存在空洞，由于其更简单，所以更倾向这个估计
-		- attribute独立 ![image.jpg](../assets/7d051eef-a97b-48bc-a9b2-487f2e76d149-1115003.jpg)
+		- attribute独立
+		   ![image.jpg](../assets/7d051eef-a97b-48bc-a9b2-487f2e76d149-1115003.jpg){:height 49, :width 358}
 	- Propagation
 		- 问题描述
-			- 表R 和 attribute ![image.jpg](../assets/aacfe2a5-3395-4b5a-bede-1517791e6fbe-1115003.jpg)
+			- 表R 和 attribute
+			   ![image.jpg](../assets/aacfe2a5-3395-4b5a-bede-1517791e6fbe-1115003.jpg)
 			- profile<img src="https://api2.mubu.com/v3/document_image/3cea3e7b-f139-41d5-8920-efdae6f6864d-1115003.jpg" /> ![image.jpg](../assets/6dd7b7df-b526-4fe4-aefc-023c4cac22c6-1115003.jpg)
 			- 针对每个一个操作符，得到其输出<img src="https://api2.mubu.com/v3/document_image/6655e1ad-21f3-4323-a311-5623378eedce-1115003.jpg" /> ![image.jpg](../assets/cf7c7e70-53a7-4e9d-99da-452029f0a0f9-1115003.jpg)
 		- 基本operator
