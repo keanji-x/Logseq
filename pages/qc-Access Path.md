@@ -196,16 +196,13 @@ public:: true
 			- 顺序访问：给定一个TID，那么我们需要顺序搜索
 	- 问题建模
 		- 均匀分布模型·
-		  collapsed:: true
 			- k distinct items
-			  collapsed:: true
 				- m个 bucket，每个含 n 个 item，共有$N = n*m$ 个items
-				  collapsed:: true
 				  随机访问k个item 需要的bucket数为$y_{n}^{N,m}(k)$
 					- 推论1
 					  ![image.png](../assets/image_1664972708228_0.png){:height 50, :width 212}
 						- ![image.png](../assets/image_1664972840919_0.png){:height 43, :width 58}
-						  指每页包含被访问的元素的概率
+						  指在N个元素中，选择当前页中的n个元素的概率
 					- 推论2
 					  ![image.png](../assets/image_1664972926699_0.png){:height 57, :width 328}
 						- p是一个bucket不包括这k个item中的一个元素，也就是这个bucket不被访问的概率
@@ -225,6 +222,7 @@ public:: true
 					- 关于最终解的近似
 					  ![image.png](../assets/image_1664975010956_0.png){:height 104, :width 449}
 			- k non-distinct items（什么情况会取n distinct item）
+			  collapsed:: true
 				- 与上述使用的**不放回采样**概率模型不同的是，这里采用的是**放回采样**
 				- 从有N个元素的集合S中放回的取k个元素的组合为：
 				  collapsed:: true
