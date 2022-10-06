@@ -64,7 +64,7 @@
 		   ![image.jpg](../assets/9b619137-a62c-4d31-b3a9-3a78c821b472-1115003.jpg){:height 43, :width 260}
 		- **cumulated frequency**：tuple的数量（为什么不是势，感觉针对的是bag而不是set）
 		   ![image.jpg](../assets/cb8d4a4f-6b72-433d-9660-89a02c6689c1-1115003.jpg){:height 38, :width 149}
-		- domain：
+		- distinct value：这里的含义是distinct value的数量
 		   ![image.jpg](../assets/ca240d8c-3c60-4433-9bb0-54c1efda0d0a-1115003.jpg){:height 44, :width 170}
 	- 假设
 		- 均匀分布
