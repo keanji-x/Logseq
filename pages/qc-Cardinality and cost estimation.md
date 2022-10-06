@@ -38,9 +38,9 @@
 			- nest loop join
 			  ![image.png](../assets/image_1665055270537_0.png){:height 54, :width 400}
 			- Sort merge join
-				- sort cost
+				- sort cost（有点奇怪，不是log n吗）
 				  ![image.png](../assets/image_1665057155826_0.png)
-				- merge cost
+				- merge cost：如果在内存可以忽略
 	- Cardinality Estimates：基于selectivity
 		- selectivity定义
 			- filter
@@ -58,8 +58,10 @@
 		- **cardinality estimate**
 		- **profile propagation**
 	- 基本概念（上界、下界、势、域）
-		- 下界 ![image.jpg](../assets/c3e9f6f3-8299-4f19-9fc7-8f6ad6a25cc4-1115003.jpg)
-		- 上界 ![image.jpg](../assets/9b619137-a62c-4d31-b3a9-3a78c821b472-1115003.jpg)
+		- 下界
+		   ![image.jpg](../assets/c3e9f6f3-8299-4f19-9fc7-8f6ad6a25cc4-1115003.jpg){:height 42, :width 198}
+		- 上界
+		   ![image.jpg](../assets/9b619137-a62c-4d31-b3a9-3a78c821b472-1115003.jpg){:height 43, :width 260}
 		- **cumulated frequency**：tuple的数量（为什么不是势，感觉针对的是bag而不是set） ![image.jpg](../assets/cb8d4a4f-6b72-433d-9660-89a02c6689c1-1115003.jpg)
 		- 域：值得注意的是对于一些实数，我们可以取实际的取值范围作为域 ![image.jpg](../assets/ca240d8c-3c60-4433-9bb0-54c1efda0d0a-1115003.jpg)
 	- 假设
