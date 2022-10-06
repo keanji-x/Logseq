@@ -246,7 +246,9 @@ public:: true
 						  ![image.png](../assets/image_1665045652415_0.png){:height 53, :width 290}
 						- 页数为
 						  ![image.png](../assets/image_1665045669611_0.png){:height 46, :width 466}
-					- 硬推
+					- 硬推的话，我们计算包含l个distinct的元素的概率为p，然后求其期望
+					  ![image.png](../assets/image_1665045735681_0.png){:height 141, :width 403}
+						-
 						-
 					-
 -
