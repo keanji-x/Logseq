@@ -105,5 +105,5 @@
 							  $$(1-s(p))^{\frac{fc}{dc}}$$
 						- fc和fa相同 
 						  ![image.jpg](../assets/30cd408b-7b39-422c-9946-09a5f307ebd6-1115003.jpg){:height 57, :width 136}
-				- range query
+				- range query $c1 \leq A \geq c2, l_A$
 				-
