@@ -195,7 +195,8 @@ public:: true
 			- **随机访问：给定一个TID，那么我们能直接访问对应的page**
 			- 顺序访问：给定一个TID，那么我们需要顺序搜索
 	- 问题建模
-		- 随机访问·
+		- 完全随机模型·
+		  collapsed:: true
 			- k distinct items
 			  collapsed:: true
 				- m个 bucket，每个含 n 个 item，共有$N = n*m$ 个items
@@ -240,6 +241,7 @@ public:: true
 					- 同样可以得到一个近似解 
 					  ![image.png](../assets/image_1665045436590_0.png){:height 49, :width 156}
 				- 当group by的时候，我们可能会关心k个元素中distinct的数量，它的计算是
+				  collapsed:: true
 				  ![image.png](../assets/image_1665045513251_0.png){:height 85, :width 276}
 					- 从特例来推，当每个bucket只包含一个元素，那么访问bucket的数量即为distinct元素的数量
 						- 概率p为
@@ -249,6 +251,7 @@ public:: true
 					- 硬推的话，我们计算包含l个distinct的元素的概率为p，然后求其期望
 					  ![image.png](../assets/image_1665045735681_0.png){:height 141, :width 403}
 						-
-						-
-					-
+		-
+			-
+			-
 -
