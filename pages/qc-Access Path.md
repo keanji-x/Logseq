@@ -195,7 +195,7 @@ public:: true
 			- **随机访问：给定一个TID，那么我们能直接访问对应的page**
 			- 顺序访问：给定一个TID，那么我们需要顺序搜索
 	- 问题建模
-		- 完全随机模型·
+		- 均匀分布模型·
 		  collapsed:: true
 			- k distinct items
 			  collapsed:: true
@@ -251,7 +251,7 @@ public:: true
 					- 硬推的话，我们计算包含l个distinct的元素的概率为p，然后求其期望
 					  ![image.png](../assets/image_1665045735681_0.png){:height 141, :width 403}
 						-
-		-
+		- 非均匀的分布：假设每个bucket包含的item数量是不同的
 			-
 			-
 -
