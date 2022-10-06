@@ -234,5 +234,5 @@ public:: true
 					   ![image.png](../assets/image_1665044824412_0.png){:height 62, :width 398}
 					- 每一页被访问的概率为 $1-p(不被访问)$
 					  ![image.png](../assets/image_1665045303991_0.png){:height 69, :width 316}
-					- 不被
+					- 不被访问的概率是是选取的元素不在k个元素中的
 -
