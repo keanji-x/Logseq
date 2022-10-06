@@ -254,7 +254,7 @@ public:: true
 		- 非均匀的分布
 			- 假设每个bucket包含的item数量是不同的，这里以k-distinct item为例
 				- 总的访问页的数量，是每一页被访问概率的期望
-				  ![image.png](../assets/image_1665046114632_0.png){:height 112, :width 381}
-				- 根据上述推导
+				  ![image.png](../assets/image_1665046249667_0.png){:height 107, :width 287}
+				- 根据上述推导$y_{n_j}^N(k)$，我们可以得到概率为
 			-
 -
