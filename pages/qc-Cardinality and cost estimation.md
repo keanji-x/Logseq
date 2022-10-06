@@ -90,12 +90,17 @@
 					- A
 						- l，u：上界下界 为c
 						- domain：我们假设条件总等满足，所以domain为1（因为总是返回0的估计没有意义）
-						   ![image.jpg](../assets/686254fb-927d-44fc-937c-ea919f0c69db-1115003.jpg)
-						- 累计次数满足均匀分布且CSA（对于是key的attribute，为1） ![image.jpg](../assets/2521c54a-b07b-4e35-ba3f-511caa8f50a7-1115003.jpg)
+						   ![image.jpg](../assets/686254fb-927d-44fc-937c-ea919f0c69db-1115003.jpg){:height 94, :width 376}
+						- 累计次数满足均匀分布且CSA（对于是key的attribute，为1）
+						   ![image.jpg](../assets/2521c54a-b07b-4e35-ba3f-511caa8f50a7-1115003.jpg){:height 58, :width 132}
 					- C
-						- 由于没有足够信息，假设上下界不变 ![image.jpg](../assets/684af5e7-e507-445d-9acb-2a83d2c5346f-1115003.jpg)
-						- 对于domain（1-每个value不会出现的概率）* value的个数 ![image.jpg](../assets/ed5daf2b-6691-4124-b69b-210bf0a5f752-1115003.jpg)
-							- s(p) 对应的是每个tuple被选中的概率 ![image.jpg](../assets/e2c89ef9-8772-43c9-85e4-b19555700c4a-1115003.jpg)
+						- 由于没有足够信息，假设上下界不变
+						   ![image.jpg](../assets/684af5e7-e507-445d-9acb-2a83d2c5346f-1115003.jpg){:height 44, :width 267}
+						- 对于domain（1-每个value不会出现的概率）* value的个数
+						   ![image.jpg](../assets/ed5daf2b-6691-4124-b69b-210bf0a5f752-1115003.jpg){:height 52, :width 469}
+							- s(p) 对应的是每个tuple被选中的概率 
+							  ![image.jpg](../assets/e2c89ef9-8772-43c9-85e4-b19555700c4a-1115003.jpg){:height 52, :width 367}
 							- 对于C的每个value，出现的频率为fc/dc
-						- fc和fa相同 ![image.jpg](../assets/30cd408b-7b39-422c-9946-09a5f307ebd6-1115003.jpg)
+						- fc和fa相同 
+						  ![image.jpg](../assets/30cd408b-7b39-422c-9946-09a5f307ebd6-1115003.jpg){:height 57, :width 136}
 				- range query
