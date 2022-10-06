@@ -57,14 +57,14 @@
 	- 完备性
 		- **cardinality estimate**
 		- **profile propagation**
-	- 基本概念（上界、下界、势、域）
+	- 基本概念
 		- 下界
 		   ![image.jpg](../assets/c3e9f6f3-8299-4f19-9fc7-8f6ad6a25cc4-1115003.jpg){:height 42, :width 198}
 		- 上界
 		   ![image.jpg](../assets/9b619137-a62c-4d31-b3a9-3a78c821b472-1115003.jpg){:height 43, :width 260}
 		- **cumulated frequency**：tuple的数量（为什么不是势，感觉针对的是bag而不是set）
 		   ![image.jpg](../assets/cb8d4a4f-6b72-433d-9660-89a02c6689c1-1115003.jpg){:height 38, :width 149}
-		- 域：值得注意的是对于一些实数，我们可以取实际的取值范围作为域
+		- domain：
 		   ![image.jpg](../assets/ca240d8c-3c60-4433-9bb0-54c1efda0d0a-1115003.jpg){:height 44, :width 170}
 	- 假设
 		- 均匀分布
@@ -96,7 +96,7 @@
 					- 属性C
 						- 由于没有足够信息，假设上下界不变
 						   ![image.jpg](../assets/684af5e7-e507-445d-9acb-2a83d2c5346f-1115003.jpg){:height 44, :width 267}
-						- 对于domain（1-每个value不会出现的概率）* value的个数
+						- 对于d（1-每个value不会出现的概率）* value的个数
 						   ![image.jpg](../assets/ed5daf2b-6691-4124-b69b-210bf0a5f752-1115003.jpg){:height 37, :width 328}
 							- s(p) 对应的是每个tuple被选中的概率 
 							  ![image.jpg](../assets/e2c89ef9-8772-43c9-85e4-b19555700c4a-1115003.jpg){:height 52, :width 367}
