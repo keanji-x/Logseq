@@ -258,7 +258,7 @@ public:: true
 				- 如果我们按照每页包含的item数量顺序排序计算，我们可以递推计算概率p
 				  ![image.png](../assets/image_1665046322914_0.png){:height 81, :width 387}
 			- 同样每个bucket被访问的概率页不一定是相同的（直方图分布）
-				- 我们可以建模，有L个区间，每个区间有$l_i$ 个bucket。在每个区间内是均匀的
+				- 我们可以建模，有L个区间，每个区间有$l_i$ 个bucket。在每个区间内内的bucket包含的item数量相同
 				   ![image.png](../assets/image_1665046503187_0.png){:height 119, :width 348}
 				-
 -
