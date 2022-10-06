@@ -36,6 +36,8 @@
 			   ![image.jpg](../assets/c4172009-f239-4081-9420-f76c2fe1665b-1115003.jpg){:height 40, :width 272}
 		- 对于不同的join的代价
 			- nest loop join
+			  ![image.png](../assets/image_1665055270537_0.png){:height 54, :width 400}
+			-
 	- Cardinality Estimates：基于selectivity
 		- selectivity定义
 			- filter ![image.jpg](../assets/d33f8a74-2bc0-4994-bf29-9ecfffbe932c-1115003.jpg)
