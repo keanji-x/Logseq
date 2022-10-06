@@ -14,10 +14,13 @@
 	- 更新
 		- 全量更新
 		- 增量更新
-	- 推导/传播：即计算一个表达式结果的profile ![image.jpg](../assets/f51071d7-6aa8-49c9-8c8d-f31efa755385-1115003.jpg)
-	- 计算 ![image.jpg](../assets/02dd530c-34f0-4a8d-9137-9870534b5780-1115003.jpg)
+	- 推导/传播：即计算一个表达式结果的profile 
+	  ![image.jpg](../assets/f51071d7-6aa8-49c9-8c8d-f31efa755385-1115003.jpg)
+	- 计算
+	   ![image.jpg](../assets/02dd530c-34f0-4a8d-9137-9870534b5780-1115003.jpg)
 - A First Approach
-	- Abbreviations ![image.jpg](../assets/6d3608e3-9102-459c-9cb4-751e9a6c1cc7-1115003.jpg)
+	- Abbreviations
+	   ![image.jpg](../assets/6d3608e3-9102-459c-9cb4-751e9a6c1cc7-1115003.jpg)
 	- CPU cost
 		- RSI：the number of calls to the tuple oriented interface
 			- 即在volcano模型中，next调用次数
@@ -27,8 +30,10 @@
 	- I/O cost
 		- 在面向磁盘的数据库中，I/O就是页的数量
 		- 对于不同的access path（​​​​     记为满足条件p的tuple的比例fraction）
-			- 聚簇索引  / 所有含有满足条件的tuple的页都能装入内存 ![image.jpg](../assets/bb088cf9-7b2f-444d-afb7-6c6c4fe66189-1115003.jpg)
-			- 非聚簇索引 （存在BPM的置换） ![image.jpg](../assets/c4172009-f239-4081-9420-f76c2fe1665b-1115003.jpg)
+			- 聚簇索引  / 所有含有满足条件的tuple的页都能装入内存
+			   ![image.jpg](../assets/bb088cf9-7b2f-444d-afb7-6c6c4fe66189-1115003.jpg){:height 49, :width 316}
+			- 非聚簇索引 （存在BPM的置换）
+			   ![image.jpg](../assets/c4172009-f239-4081-9420-f76c2fe1665b-1115003.jpg)
 		- 对于不同的join的代价
 			-
 	- Cardinality Estimates：基于selectivity
