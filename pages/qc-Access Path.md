@@ -269,4 +269,8 @@ public:: true
 				  ![image.png](../assets/image_1665046902199_0.png){:height 94, :width 302}
 				- 我们可以计算一些特例
 					- 比如所有的$n_j = n$，则访问的k个元素会均匀分布在m个page中
+					  ![image.png](../assets/image_1665046977336_0.png){:height 525, :width 375}
+					- 当每个bucket只包含1个item
+					  ![image.png](../assets/image_1665047021006_0.png){:height 197, :width 253}
+					-
 -
