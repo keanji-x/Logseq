@@ -266,5 +266,7 @@ public:: true
 				- 在上述问题，我们在某一页访问x个元素的概率是（超几何分布）
 				  ![image.png](../assets/image_1665046857480_0.png){:height 111, :width 321}
 				- 进一步，我们可以求出期望，在这一页访问的item数量为
-				  ![image.png](../assets/image_1665046902199_0.png)
+				  ![image.png](../assets/image_1665046902199_0.png){:height 94, :width 302}
+				- 我们可以计算一些特例
+					- 比如所有的$n_j = n$，则访问的k个元素会均匀分布在m个page中
 -
