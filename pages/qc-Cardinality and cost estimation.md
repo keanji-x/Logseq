@@ -105,7 +105,7 @@
 							  $$(1-s(p))^{\frac{fc}{dc}}$$
 						- fc和fa相同 
 						  ![image.jpg](../assets/30cd408b-7b39-422c-9946-09a5f307ebd6-1115003.jpg){:height 57, :width 136}
-				- range query $c1 \leq A \geq c2, l_A \leq c1 \leq c2 \leq u_A$
+				- range query $c1 \leq A \leq c2, l_A \leq c1 \leq c2 \leq u_A$
 					- 属性A
 						- 对于上下界我们可以直接得到
 						  $$l_A = c1, u_A = c2$$
@@ -115,5 +115,5 @@
 						- 对于c而言，我们的推导方式和上述方案一样
 						- 上下界不变，f相同
 						- 对于d的估计使用s(p)
-						  ![image.png](../assets/image_1665058501252_0.png)
-						-
+						  ![image.png](../assets/image_1665058501252_0.png){:height 51, :width 297}
+				-
