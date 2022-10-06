@@ -82,8 +82,8 @@
 			  $$ba = [l_a, u_a, f_a, d_a]$$
 			-
 			- 针对每个一个操作符，计算其输出的profile
-			  $$bc = [l_c, u_c, f_c, d_c]$$
-			  $$ba = [l_a, u_a, f_a, d_a]$$
+			  $$bc‘ = [l_c‘, u_c‘, f_c‘, d_c‘]$$
+			  $$ba’ = [l_a’, u_a’, f_a’, d_a’]$$
 		- 基本operator
 			- filter
 				- exact match ​​​​​​​​​​​​​​​​
