@@ -107,5 +107,7 @@
 						  ![image.jpg](../assets/30cd408b-7b39-422c-9946-09a5f307ebd6-1115003.jpg){:height 57, :width 136}
 				- range query $c1 \leq A \geq c2, l_A \leq c1 \leq c2 \leq u_A$
 					- 属性A
+						- 对于上下界我们可以直接得到
+						  $$l_A = c1, u_A = c2$$
 						-
 					- 属性C
