@@ -116,4 +116,5 @@
 						- 上下界不变，f相同
 						- 对于d的估计使用s(p)
 						  ![image.png](../assets/image_1665058501252_0.png){:height 51, :width 297}
-				-
+				- Equality-based correlation $A = B$
+					-
