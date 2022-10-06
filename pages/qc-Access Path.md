@@ -229,5 +229,6 @@ public:: true
 				  collapsed:: true
 				  ![image.png](../assets/image_1664975580130_0.png){:height 96, :width 318}
 					- 从组合推，我们从N+k-1的元素中取k distinct个元素
-				- 依照上述推导
+				- 依照上述推导流程，可得
+					- 总的访问页数，等于m*每一页被访问的概率
 -
