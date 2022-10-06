@@ -239,6 +239,8 @@ public:: true
 					  ![image.png](../assets/image_1665045398662_0.png){:height 247, :width 266}
 					- 同样可以得到一个近似解 
 					  ![image.png](../assets/image_1665045436590_0.png){:height 49, :width 156}
-				- 当group by的时候，我们可能会关心k个元素中distinct的数量
+				- 当group by的时候，我们可能会关心k个元素中distinct的数量，它的计算是
+				  ![image.png](../assets/image_1665045513251_0.png){:height 85, :width 276}
+					-
 					-
 -
