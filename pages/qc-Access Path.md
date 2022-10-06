@@ -253,8 +253,8 @@ public:: true
 						-
 		- 非均匀的分布
 			- 假设每个bucket包含的item数量是不同的，这里以k-distinct item为例
-			- 假设有m个bucket，每个bucket包含 $n_j$ 个元素，那么第j个page被访问的概率为
-			  ![image.png](../assets/image_1665046070216_0.png)
-			-
+				- 那么总的访问页数即为期望
+				  ![image.png](../assets/image_1665046114632_0.png){:height 112, :width 381}
+				-
 			-
 -
