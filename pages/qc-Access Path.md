@@ -263,5 +263,8 @@ public:: true
 				- 我们可以建模，有L个区间，每个区间有$l_i$ 个bucket。在每个区间内内的bucket包含的item数量相同
 				   ![image.png](../assets/image_1665046503187_0.png){:height 119, :width 348}
 			- 对于每个bucket，访问的有效元素的数量
-				- 在上述问题，我们在某一页访问x个元素的概率是
+				- 在上述问题，我们在某一页访问x个元素的概率是（超几何分布）
+				  ![image.png](../assets/image_1665046857480_0.png){:height 111, :width 321}
+				- 进一步，我们可以求出期望，在这一页访问的item数量为
+				  ![image.png](../assets/image_1665046902199_0.png)
 -
