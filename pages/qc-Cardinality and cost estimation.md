@@ -147,5 +147,6 @@
 							- 如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立
 							  则
 							  $$d_A^\prime = d_B^\prime = min(d_A, d_B)$$
-							- 如果A和B是独立分布的，那么我们可以用 [[qc-Access Path]]
+							- 如果A和B是独立分布的，那么我们可以用 [[qc-Access Path]]内的推导
+								- 对于n*n
 							-
