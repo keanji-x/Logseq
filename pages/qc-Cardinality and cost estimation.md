@@ -146,5 +146,5 @@
 						- 对于d
 							- 如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立
 							  则
-							  $$d_A\prime = d_B\prime = min(d_A, d_B)$$
-							- $$d_{A}^{\prime}\supseteq d_{B}^{\prime}\underline{{{D(r u\star\slash n,\underline{{{\beta}}}_{A})}}}$$
+							  $$d_A^\prime = d_B^\prime = min(d_A, d_B)$$
+							-
