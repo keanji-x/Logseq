@@ -140,4 +140,6 @@
 							  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \frac{f}{d_A} \frac{d_A}{n} \frac{1}{d_B}=f / d_B$$
 							- 上述情况是$\Pi_B(R) \subseteq \Pi_A(R)$。结合$\Pi_A(R) \subseteq \Pi_B(R)$我们可以得到
 							  $$f_A^{\prime}=f_B^{\prime}=\frac{f}{\max \left(d_A, d_B\right)}$$
-							- 如果上述条件都不成立，但是A和B是独立的
+							- 如果上述条件都不成立，但是A和B是独立的。那么我们可以推得
+							  $$p(x_i \ in B | x_i \ in A) = p(x_i \in B) = \frac{1}{n}$$
+							-
