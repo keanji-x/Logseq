@@ -147,4 +147,4 @@
 							- 如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立
 							  则
 							  $$d_A\prime = d_B\prime = min(d_A, d_B)$$
-							-
+							- $$d_{A}^{\prime}\longrightarrow d_{B}^{\prime}\longrightarrow\frac{D(r\star\mathcal{\imath},\int_{A})}{\mathrm{In}{\star}{\tt\bf x}(d_{A},d_{B})}$$
