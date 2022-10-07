@@ -148,6 +148,6 @@
 							  则
 							  $$d_A^\prime = d_B^\prime = min(d_A, d_B)$$
 							- 如果A和B是独立分布的，那么我们可以用 [[qc-Access Path]]内的推导
-								- 对于n*n个可能的元素，我们选|R|个元素，其中distinct 的元素个数是
+								- 对于$n*n$个可能的元素，我们选|R|个元素，其中distinct 的元素个数是
 								  $$\mathcal{D}(n*n, |R|)$$
-							-
+								-
