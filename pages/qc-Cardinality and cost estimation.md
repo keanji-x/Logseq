@@ -85,7 +85,7 @@
 			  $$bc‘ = [l_c‘, u_c‘, f_c‘, d_c‘]$$
 			  $$ba’ = [l_a’, u_a’, f_a’, d_a’]$$
 		- 基本operator
-			- filter
+			- filter()
 				- exact match ​​​​​​​​​​​​​​​​$\sigma_{A=c}$
 					- 属性A
 						- l，u：上界下界 为c
