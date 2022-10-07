@@ -134,7 +134,5 @@
 					- profile 传递
 						- 上下界不变
 						- 对于f，我们可以得到公式为
-						  $$f_A' = f_B' = \sum_{i=1}^n\overline{}$$
-							- 每个元素在A的概率为
-							  $$ p(x_i \in A)$$
-							- $$f_A', f_B = \sun$$
+						  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \overline{f_A} p\left(x_i=A\right) p\left(x_i=B \mid x_i=A\right)$$
+							-
