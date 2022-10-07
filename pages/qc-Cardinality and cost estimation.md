@@ -117,12 +117,14 @@
 						- 对于d的估计使用s(p)
 						  ![image.png](../assets/image_1665058501252_0.png){:height 51, :width 297}
 				- Equality-based correlation $A = B$
-					- 对于$[l_A, u_A], [l_B, u_B]$
-						- 如果两个没有交集，则为空
-						- 如果两个不相等，我们可以将其规范为相等的。则我们可以得到
-						  $$l_A,l_B = max(l_A, l_B)$$
-						  $$u_A,u_B = max(u_A, u_B)$$
-						- 则经过filter 之后，上下界不变
-					- 对于f
-						- 由于$A,B \in \mathcal{A}(R)$，所以可得$f_A = f_B$，记为$f$
-						-
+					- 基本假设
+						- 对于$[l_A, u_A], [l_B, u_B]$
+							- 如果两个没有交集，则为空
+							- 如果两个不相等，我们可以将其规范为相等的。则我们可以得到
+							  $$l_A,l_B = max(l_A, l_B)$$
+							  $$u_A,u_B = max(u_A, u_B)$$
+							- 则经过filter 之后，上下界不变
+						- 对于f
+							- 由于$A,B \in \mathcal{A}(R)$，所以可得$f_A = f_B$，记为$f$
+						- 对于d
+							-
