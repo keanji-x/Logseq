@@ -222,7 +222,6 @@ public:: true
 					- 关于最终解的近似
 					  ![image.png](../assets/image_1664975010956_0.png){:height 104, :width 449}
 			- k non-distinct items（什么情况会取n distinct item）
-			  collapsed:: true
 				- 与上述使用的**不放回采样**概率模型不同的是，这里采用的是**放回采样**
 				- 从有N个元素的集合S中放回的取k个元素的组合为：
 				  collapsed:: true
@@ -239,7 +238,6 @@ public:: true
 					- 同样可以得到一个近似解 
 					  ![image.png](../assets/image_1665045436590_0.png){:height 49, :width 156}
 				- 当group by的时候，我们可能会关心k个元素中distinct的数量，它的计算是
-				  collapsed:: true
 				  ![image.png](../assets/image_1665045513251_0.png){:height 85, :width 276}
 					- 从特例来推，当每个bucket只包含一个元素，那么访问bucket的数量即为distinct元素的数量
 						- 概率p为
@@ -263,6 +261,7 @@ public:: true
 				- 我们可以建模，有L个区间，每个区间有$l_i$ 个bucket。在每个区间内内的bucket包含的item数量相同
 				   ![image.png](../assets/image_1665046503187_0.png){:height 119, :width 348}
 			- 对于每个bucket，访问的有效元素的数量
+			  collapsed:: true
 				- 在上述问题，我们在某一页访问x个元素的概率是（超几何分布）
 				  ![image.png](../assets/image_1665046857480_0.png){:height 111, :width 321}
 				- 进一步，我们可以求出期望，在这一页访问的item数量为
