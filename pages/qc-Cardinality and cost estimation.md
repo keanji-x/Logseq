@@ -85,7 +85,7 @@
 			  $$bc‘ = [l_c‘, u_c‘, f_c‘, d_c‘]$$
 			  $$ba’ = [l_a’, u_a’, f_a’, d_a’]$$
 		- 基本operator
-			- filter()
+			- filter（针对是同一张表）
 				- exact match ​​​​​​​​​​​​​​​​$\sigma_{A=c}$
 					- 属性A
 						- l，u：上界下界 为c
@@ -117,4 +117,6 @@
 						- 对于d的估计使用s(p)
 						  ![image.png](../assets/image_1665058501252_0.png){:height 51, :width 297}
 				- Equality-based correlation $A = B$
+					- 对于$u_A, l_A, u_B, l_B$
+						-
 					-
