@@ -124,4 +124,4 @@
 						  $$u_A,u_B = max(u_A, u_B)$$
 						- 则经过filter 之后，上下界不变
 					- 对于f
-						- 由于$A,B \in \math{A}(R)$
+						- 由于$A,B \in \mathcal{A}(R)$
