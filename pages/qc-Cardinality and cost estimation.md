@@ -133,7 +133,7 @@
 							  $$p(x\in A) = \frac{n-1 \choose d_{A}-1}{n \choose d_A}=\frac{d_A}{n}$$
 					- profile 传递
 						- 上下界不变
-						- 对于f，我们可以通过计算所有元素在即在A由在B中的概率期望得到，注意每个元素不一定只出现一次
+						- 对于f，我们可以通过计算所有元素既在A由在B中的概率期望得到，注意每个元素不一定只出现一次
 						  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \overline{f_A} p\left(x_i=A\right) p\left(x_i=B \mid x_i=A\right)$$
 							- $\overline{f_A}$表示每个value对应的tuple数量$\frac{f}{d_A}$
 							- 所以我们可以计算得到
@@ -143,3 +143,6 @@
 							- 如果上述条件都不成立，但是A和B是独立的。那么我们可以推得
 							  $$p(x_i \in B | x_i \in A) = p(x_i \in B) = \frac{1}{n}$$
 							  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \frac{f}{d_A} \frac{d_A}{n} \frac{1}{n}=\frac{f}{n}$$
+						- 对于d
+							- 如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立
+							-
