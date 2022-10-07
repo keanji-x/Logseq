@@ -135,4 +135,4 @@
 						- 上下界不变
 						- 对于f，我们可以得到公式为
 						  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \overline{f_A} p\left(x_i=A\right) p\left(x_i=B \mid x_i=A\right)$$
-							-
+							- 上述公式
