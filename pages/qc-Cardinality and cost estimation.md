@@ -117,6 +117,6 @@
 						- 对于d的估计使用s(p)
 						  ![image.png](../assets/image_1665058501252_0.png){:height 51, :width 297}
 				- Equality-based correlation $A = B$
-					- 对于$u_A, l_A, u_B, l_B$
-						-
+					- 对于$[l_A, u_A], [l_B, u_B]$
+						- 如果两个没有交集，则是
 					-
