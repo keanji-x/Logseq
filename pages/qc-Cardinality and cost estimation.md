@@ -127,7 +127,7 @@
 						- 对于f
 							- 由于$A,B \in \mathcal{A}(R)$，所以可得$f_A = f_B$，记为$f$
 						- 对于d
-							- 综上，$d_A = d_B$，记为$n$。所以数据库的元素可以表示为$\{x_1,...,x_n\}$
+							- A和B有相同的domain，假设这个domain内可能的元素个数为$n$，取值区间可以表示为$\{x_1,...,x_n\}$
 							- 如果存在一个元素，$x \in [l_A, u_A], x \notin \Pi(R)$。则表示x是一个空洞
 							- 则对于x，其在表R中的概率是
 							  $$p(x\in A) = \frac{n-1 \choose d_{A}-1}{n \choose d_A}=\frac{d_A}{n}$$
