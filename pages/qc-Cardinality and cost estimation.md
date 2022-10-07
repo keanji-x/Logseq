@@ -133,6 +133,6 @@
 							  $$p(x\in A) = \frac{n-1 \choose d_{A}-1}{n \choose d_A}=\frac{d_A}{n}$$
 					- profile 传递
 						- 上下界不变
-						- 对于f，我们可以得到公式为
+						- 对于f，我们可以通过每个元素在即在A由在B中出现概率的期望
 						  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \overline{f_A} p\left(x_i=A\right) p\left(x_i=B \mid x_i=A\right)$$
-							- 上述公式
+							- \overline{f_A}表示
