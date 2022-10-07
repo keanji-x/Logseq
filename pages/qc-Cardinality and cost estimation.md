@@ -138,6 +138,6 @@
 							- $\overline{f_A}$表示每个value对应的tuple数量$\frac{f}{d_A}$
 							- 所以我们可以计算得到
 							  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \frac{f}{d_A} \frac{d_A}{n} \frac{1}{d_B}=f / d_B$$
-							- 上述情况是$\Pi_B(R) \subseteq \Pi_A(R)$。综合考虑我们可以得到
+							- 上述情况是$\Pi_B(R) \subseteq \Pi_A(R)$。结合$\Pi_A(R) \subseteq \Pi_B(R)$我们可以得到
 							  $$f_A^{\prime}=f_B^{\prime}=\frac{f}{\max \left(d_A, d_B\right)}$$
 							-
