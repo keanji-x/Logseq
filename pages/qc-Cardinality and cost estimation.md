@@ -133,7 +133,8 @@
 							  $$p(x\in A) = \frac{n-1 \choose d_{A}-1}{n \choose d_A}=\frac{d_A}{n}$$
 					- profile 传递
 						- 上下界不变
-						- 对于f，我们可以得到该filter之后的元素，为 A中元素也在B中的概率 期望
+						- 对于f，我们可以得到公式为
+						  $$f_A' = f_B' = \sum_{i=1}^n\h$$
 							- 每个元素在A的概率为
 							  $$ p(x_i \in A)$$
 							- $$f_A', f_B = \sun$$
