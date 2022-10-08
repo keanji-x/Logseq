@@ -162,32 +162,31 @@
 								- 也可以用类似的估计
 								  $$d_A^\prime = d_B^\prime = d_A*(1-(1-\frac{f_A^\prime}{f_A})^{f_A/ d_A})$$
 							-
-				- Inequality-based correlation
-					- 这里以$\sigma_{A \leq B}(R)$为例，为了简化问题，假设$l_A = l_B, u_A = u_B$（当不满足假设也可以通过计算分布变得满足）
-						- 上下界同样保持不变
-						- 对于f
-							- 这里我们保持假设uniform spread assumption，假设每个值的间隔为
-							  $$\Delta_A = \frac{u_A - l_A}{d_A - 1 }$$
-							  则，对于第i个值可以得到
-							  $$x_i = l_A + (i-1)\Delta_A$$
-							- 则可以得到公式
-							  ![image.png](../assets/image_1665232720859_0.png){:height 556, :width 393}
-								- 我们需要计算每个值满足上述条件的期望，其中概率包括上个部分
-									- 该值在A中的概率$\overline{f_A} = \frac{f_A}{d_A}$
-									- 该值小于B的概率，即[x_i,u_B]这个区间的古典的概率。
-									- 上述公式感觉有点问题，但是结论没有问题
-								-
-						- 对于d
-							- d的推导如图上步
-								- 如果我们能估计出总的domain size，拿问题便成了从对应的domain size中取得$f_A^\prime$ 的元素的distinct value值
-								  $$d_A^\prime = \frac{\mathcal{D}(n*n, f^\prime_A)}{n*n/2}$$
+					- Inequality-based correlation
+						- 这里以$\sigma_{A \leq B}(R)$为例，为了简化问题，假设$l_A = l_B, u_A = u_B$（当不满足假设也可以通过计算分布变得满足）
+							- 上下界同样保持不变
+							- 对于f
+								- 这里我们保持假设uniform spread assumption，假设每个值的间隔为
+								  $$\Delta_A = \frac{u_A - l_A}{d_A - 1 }$$
+								  则，对于第i个值可以得到
+								  $$x_i = l_A + (i-1)\Delta_A$$
+								- 则可以得到公式
+								  ![image.png](../assets/image_1665232720859_0.png){:height 556, :width 393}
+									- 我们需要计算每个值满足上述条件的期望，其中概率包括上个部分
+										- 该值在A中的概率$\overline{f_A} = \frac{f_A}{d_A}$
+										- 该值小于B的概率，即[x_i,u_B]这个区间的古典的概率。
+										- 上述公式感觉有点问题，但是结论没有问题
 									-
-								- 如果无法估计，还可以转换为取n个元素会涉及多少个桶的问题
-								  $$d_A^\prime = d_A*\mathcal{Y}f^{f_A}_{f_A/d_A}(f_A^\prime)$$
-									-
-				- 结合上述推导，我们可以得到总结（上下界的变化比较简单，略去）
-				  ![image.png](../assets/image_1665233523816_0.png)
-				- 还存在一些其它的条件，可以用类似思想推导得到
-					- 这里给出一些帮助
-					  ![image.png](../assets/image_1665234624496_0.png)
+							- 对于d
+								- d的推导如图上步
+									- 如果我们能估计出总的domain size，拿问题便成了从对应的domain size中取得$f_A^\prime$ 的元素的distinct value值
+									  $$d_A^\prime = \frac{\mathcal{D}(n*n, f_A)}{n*n/2}$$
+									- 如果无法估计，还可以转换为取n个元素会涉及多少个桶的问题
+									  $$d_A^\prime = d_A*\mathcal{Y}f^{f_A}_{f_A/d_A}(f_A^\prime)$$
+										-
+					- 结合上述推导，我们可以得到总结（上下界的变化比较简单，略去）
+					  ![image.png](../assets/image_1665233523816_0.png)
+					- 还存在一些其它的条件，可以用类似思想推导得到
+						- 这里给出一些帮助
+						  ![image.png](../assets/image_1665234624496_0.png)
 			-
