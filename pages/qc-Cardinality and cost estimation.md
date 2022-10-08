@@ -162,4 +162,5 @@
 								  $$d_A^\prime = d_B^\prime = d_A*(1-(1-\frac{f_A^\prime}{f_A})^{f_A/ d_A})$$
 							-
 				- Inequality-based correlation
-					- 这里以$\si$
+					- 这里以$\sigma_{A \leq B}(R)$为例
+					-
