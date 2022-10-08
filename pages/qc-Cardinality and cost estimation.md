@@ -152,7 +152,7 @@
 							- 如果上述条件不成立，且A和B是独立且均匀分布，那么我 们可以用 [[qc-Access Path]]内的推导
 								- 对于$n*n$个可能的元素，我们选|R|个元素，其中distinct 的元素个数是
 								  $$\mathcal{D}(n*n, |R|)$$
-								- 由于实际只有n个元素，所以每个元素出现的概率还要除以n
+								- 由于实际只有n个元素满足相等的条件，所以每个元素出现的概率还要除以n
 								  $$d_A^\prime = d_B^\prime = \frac{\mathcal{D}(n*n, f_A)}{n}$$
 							- 用上述方法我们也可以做更精确的估计，如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立
 							  $$d_A^\prime = d_B^\prime = \frac{\mathcal{D}(n*n, f_A)}{max(d_A, d_B)}$$
@@ -182,7 +182,7 @@
 								- 如果我们能估计出总的domain size，拿问题便成了从对应的domain size中取得$f_A^\prime$ 的元素的distinct value值
 								  $$d_A^\prime = \mathcal{D}(n_A, f^\prime_A)$$
 									- 值得注意的是，这时候有效的取值只有n种，即只需要处理对角线种可能
-									- 这里如果是$n_A$ ，应该还有除以${d_A}$?
+									-
 								- 如果无法估计，还可以转换为取n个元素会涉及多少个桶的问题
 								  $$d_A^\prime = d_A*\mathcal{Y}f^{f_A}_{f_A/d_A}(f_A^\prime)$$
 									-
