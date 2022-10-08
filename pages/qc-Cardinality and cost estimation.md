@@ -182,7 +182,9 @@
 							- d的推导如图上步
 								- 如果我们能估计出总的domain size，拿问题便成了从对应的domain size中取得$f_A^\prime$ 的元素的distinct value值
 								  $$d_A^\prime = \mathcal{D}(n_A, f^\prime_A)$$
-									- 值得注意的
+									- 值得注意的是，这时候有效的取值只有n种，即只需要处理对角线种可能
+								- 如果无法估计，还可以转换为取n个元素会涉及多少个桶的问题
+								  $$d_A$$
 				- 结合上述推导，我们可以得到总结（上下界的变化比较简单，略去）
 				  ![image.png](../assets/image_1665233523816_0.png)
 			-
