@@ -87,6 +87,7 @@
 		- 基本operator
 			- filter（针对是同一张表）
 				- exact match ​​​​​​​​​​​​​​​​$\sigma_{A=c}$
+				  collapsed:: true
 					- 属性A
 						- l，u：上界下界 为c
 						- distinct value：我们假设条件总等满足，所以d为1（因为总是返回0的估计没有意义）
@@ -106,6 +107,7 @@
 						- fc和fa相同 
 						  ![image.jpg](../assets/30cd408b-7b39-422c-9946-09a5f307ebd6-1115003.jpg){:height 57, :width 136}
 				- range query $c1 \leq A \leq c2, l_A \leq c1 \leq c2 \leq u_A$
+				  collapsed:: true
 					- 属性A
 						- 对于上下界我们可以直接得到
 						  $$l_A = c1, u_A = c2$$
@@ -177,3 +179,6 @@
 									- 该值小于B的概率，即[x_i,u_B]这个区间的古典的概率。
 									- 上述公式感觉有点问题，但是结论没有问题
 								-
+				- 结合上述推导，我们可以得到总结（上下界的变化比较简单，略去）
+				  ![image.png](../assets/image_1665233523816_0.png)
+			-
