@@ -117,6 +117,7 @@
 						- 对于d的估计使用s(p)
 						  ![image.png](../assets/image_1665058501252_0.png){:height 51, :width 297}
 				- Equality-based correlation $A = B$
+				  collapsed:: true
 					- 基本假设
 						- 对于$[l_A, u_A], [l_B, u_B]$
 							- 如果两个没有交集，则为空
@@ -160,3 +161,5 @@
 								- 也可以用类似的估计
 								  $$d_A^\prime = d_B^\prime = d_A*(1-(1-\frac{f_A^\prime}{f_A})^{f_A/ d_A})$$
 							-
+				- Inequality-based correlation
+					- 这里以$\si$
