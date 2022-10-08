@@ -164,5 +164,6 @@
 				- Inequality-based correlation
 					- 这里以$\sigma_{A \leq B}(R)$为例，为了简化问题，假设$l_A = l_B, u_A = u_B$
 						- 上下界同样保持不变
-						-
-						- 这里我们保持假设uniform spread assumption，假设每个值的间隔为
+						- 对于f
+							- 这里我们保持假设uniform spread assumption，假设每个值的间隔为
+							  $$\Delta_A = \frac{u_A - l_A}{d_A - 1 }$$
