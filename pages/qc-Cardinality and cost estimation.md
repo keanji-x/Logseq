@@ -167,3 +167,6 @@
 						- 对于f
 							- 这里我们保持假设uniform spread assumption，假设每个值的间隔为
 							  $$\Delta_A = \frac{u_A - l_A}{d_A - 1 }$$
+							  则，对于第i个值可以得到
+							  $$x_i = l_A + (i-1)\Delta_A$$
+							- 则可以得到公式
