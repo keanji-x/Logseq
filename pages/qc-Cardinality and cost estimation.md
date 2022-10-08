@@ -119,7 +119,6 @@
 						- 对于d的估计使用s(p)
 						  ![image.png](../assets/image_1665058501252_0.png){:height 51, :width 297}
 				- Equality-based correlation $A = B$
-				  collapsed:: true
 					- 基本假设
 						- 对于$[l_A, u_A], [l_B, u_B]$
 							- 如果两个没有交集，则为空
@@ -185,7 +184,7 @@
 									- 值得注意的是，这时候有效的取值只有n种，即只需要处理对角线种可能
 								- 如果无法估计，还可以转换为取n个元素会涉及多少个桶的问题
 								  $$d_A^\prime = d_A*\mathcal{Y}f^{f_A}_{f_A/d_A}(f_A^\prime)$$
-								-
+									-
 				- 结合上述推导，我们可以得到总结（上下界的变化比较简单，略去）
 				  ![image.png](../assets/image_1665233523816_0.png)
 			-
