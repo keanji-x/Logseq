@@ -147,9 +147,10 @@
 							- 如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立
 							  则
 							  $$d_A^\prime = d_B^\prime = min(d_A, d_B)$$
-							- 如果上述条件不成立，且A和B是独立分布的，那么我 们可以用 [[qc-Access Path]]内的推导
+							- 如果上述条件不成立，且A和B是独立且均匀分布，那么我 们可以用 [[qc-Access Path]]内的推导
 								- 对于$n*n$个可能的元素，我们选|R|个元素，其中distinct 的元素个数是
 								  $$\mathcal{D}(n*n, |R|)$$
 								- 由于实际只有n个元素，所以每个元素出现的概率还要除以n
-								  $$d_A^\prime = d_B^\prime = \frac$$
+								  $$d_A^\prime = d_B^\prime = \frac{\mathcal{D}(n*n, f_A)}{n}$$
+								-
 -

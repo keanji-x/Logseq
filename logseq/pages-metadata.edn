@@ -274,7 +274,7 @@
   :block/updated-at 1665128993505}
  {:block/name "oct 8th, 2022",
   :block/created-at 1665197716679,
-  :block/updated-at 1665197716679}
+  :block/updated-at 1665231086129}
  {:block/name
   "on the correct and complete enumeration of the core search space",
   :block/created-at 1663132980911,
@@ -314,7 +314,7 @@
   :block/updated-at 1663132981247}
  {:block/name "qc-cardinality and cost estimation",
   :block/created-at 1663132978728,
-  :block/updated-at 1665130093481}
+  :block/updated-at 1665231477957}
  {:block/name
   "qc-deriving and dealing with interesting orderings and groupings",
   :block/created-at 1663132979661,
