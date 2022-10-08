@@ -9,6 +9,7 @@
 				- 离散：正整数，**字符串** （只有activate domain）
 				- 连续：**浮点数 **（只有activate domain）
 - 基本操作
+  collapsed:: true
 	- 构建 
 	  ![image.jpg](../assets/f2586aba-a99e-499c-984f-cf0577853e8d-1115003.jpg)
 	- 更新
@@ -19,6 +20,7 @@
 	- 计算
 	   ![image.jpg](../assets/02dd530c-34f0-4a8d-9137-9870534b5780-1115003.jpg)
 - A First Approach
+  collapsed:: true
 	- Abbreviations
 	   ![image.jpg](../assets/6d3608e3-9102-459c-9cb4-751e9a6c1cc7-1115003.jpg)
 	- CPU cost
@@ -55,9 +57,11 @@
 		- profile propagation没有讨论
 - Logical Profile
 	- 完备性
+	  collapsed:: true
 		- **cardinality estimate**
 		- **profile propagation**
 	- 基本概念
+	  collapsed:: true
 		- 下界
 		   ![image.jpg](../assets/c3e9f6f3-8299-4f19-9fc7-8f6ad6a25cc4-1115003.jpg){:height 42, :width 198}
 		- 上界
@@ -67,6 +71,7 @@
 		- distinct value：这里的含义是distinct value的数量
 		   ![image.jpg](../assets/ca240d8c-3c60-4433-9bb0-54c1efda0d0a-1115003.jpg){:height 44, :width 170}
 	- 假设
+	  collapsed:: true
 		- 均匀分布
 			- uniform distribute assumption：每个值出现的频率相同
 			- uniform spread assumption(equal spread assumption)：每个值出现的位置分布是均匀的
@@ -75,6 +80,7 @@
 		   ![image.jpg](../assets/7d051eef-a97b-48bc-a9b2-487f2e76d149-1115003.jpg){:height 49, :width 358}
 	- Propagation
 		- 问题描述
+		  collapsed:: true
 			- 表R 和 attribute
 			   ![image.jpg](../assets/aacfe2a5-3395-4b5a-bede-1517791e6fbe-1115003.jpg){:height 46, :width 138}
 			- 给定每个attribute的logical profile
