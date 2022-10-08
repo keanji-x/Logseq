@@ -152,5 +152,7 @@
 								  $$\mathcal{D}(n*n, |R|)$$
 								- 由于实际只有n个元素，所以每个元素出现的概率还要除以n
 								  $$d_A^\prime = d_B^\prime = \frac{\mathcal{D}(n*n, f_A)}{n}$$
+							- 用上述方法我们也可以做更精确的估计，如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立
+							  $$d_A^\prime = d_B^\prime = \frac{\mathcal{D}(n*n, f_A)}{max(d_A, d_B)}$$
 							-
 -
