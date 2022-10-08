@@ -144,7 +144,7 @@
 							  $$p(x_i \in B | x_i \in A) = p(x_i \in B) = \frac{1}{n}$$
 							  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \frac{f}{d_A} \frac{d_A}{n} \frac{1}{n}=\frac{f}{n}$$
 						- 对于d
-							- 如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立
+							- 如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立，（System R中的估计，误差比较大）
 							  则
 							  $$d_A^\prime = d_B^\prime = min(d_A, d_B)$$
 							- 如果上述条件不成立，且A和B是独立且均匀分布，那么我 们可以用 [[qc-Access Path]]内的推导
@@ -152,5 +152,5 @@
 								  $$\mathcal{D}(n*n, |R|)$$
 								- 由于实际只有n个元素，所以每个元素出现的概率还要除以n
 								  $$d_A^\prime = d_B^\prime = \frac{\mathcal{D}(n*n, f_A)}{n}$$
-								-
+							-
 -
