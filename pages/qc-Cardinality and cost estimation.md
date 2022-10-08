@@ -86,6 +86,7 @@
 			  $$ba’ = [l_a’, u_a’, f_a’, d_a’]$$
 		- 基本operator
 			- filter（针对是同一张表）
+			  collapsed:: true
 				- exact match ​​​​​​​​​​​​​​​​$\sigma_{A=c}$
 				  collapsed:: true
 					- 属性A
@@ -189,4 +190,6 @@
 					- 还存在一些其它的条件，可以用类似思想推导得到
 						- 这里给出一些帮助
 						  ![image.png](../assets/image_1665234624496_0.png)
+			- Join（针对不同表的条件）
+				-
 			-
