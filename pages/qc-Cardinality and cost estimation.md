@@ -164,10 +164,10 @@
 								  $$d_A^\prime = d_B^\prime = d_A*(1-(1-\frac{f_A^\prime}{f_A})^{f_A/ d_A})$$
 							-
 				- Inequality-based correlation
-				  collapsed:: true
 					- 这里以$\sigma_{A \leq B}(R)$为例，为了简化问题，假设$l_A = l_B, u_A = u_B$（当不满足假设也可以通过计算分布变得满足）
 						- 上下界同样保持不变
 						- 对于f
+						  collapsed:: true
 							- 这里我们保持假设uniform spread assumption，假设每个值的间隔为
 							  $$\Delta_A = \frac{u_A - l_A}{d_A - 1 }$$
 							  则，对于第i个值可以得到
@@ -179,6 +179,8 @@
 									- 该值小于B的概率，即[x_i,u_B]这个区间的古典的概率。
 									- 上述公式感觉有点问题，但是结论没有问题
 								-
+						- 对于d
+							-
 				- 结合上述推导，我们可以得到总结（上下界的变化比较简单，略去）
 				  ![image.png](../assets/image_1665233523816_0.png)
 			-
