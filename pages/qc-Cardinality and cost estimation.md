@@ -155,6 +155,6 @@
 							- 用上述方法我们也可以做更精确的估计，如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立
 							  $$d_A^\prime = d_B^\prime = \frac{\mathcal{D}(n*n, f_A)}{max(d_A, d_B)}$$
 							- 当然如果我们无法得到domain size，比如对于一个连续区间，我们需要换一种估计
-								- 即我们将每个value想象为一个bucket，里面的item看为tuple。那么便是从$f_A$
+								- 即我们将每个value想象为一个bucket，里面的item看为tuple。那没问题可以变为：bucket的大小为$\frac{f_A}{d_A}$，总的大小为
 								  $$d_A^\prime = d_B^\prime = d_A*\mathcal{Y}_{f_A}^{f_A/d_A}(f^\prime_A)$$
 -
