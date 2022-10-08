@@ -180,7 +180,9 @@
 								-
 						- 对于d
 							- d的推导如图上步
-								- 如果我们能估计出总的domain size，拿问题便成了从对应的domain size中取得
+								- 如果我们能估计出总的domain size，拿问题便成了从对应的domain size中取得$f_A^\prime$ 的元素的distinct value值
+								  $$d_A^\prime = \mathcal{D}(n_A, f^\prime_A)$$
+									- 值得注意的
 				- 结合上述推导，我们可以得到总结（上下界的变化比较简单，略去）
 				  ![image.png](../assets/image_1665233523816_0.png)
 			-
