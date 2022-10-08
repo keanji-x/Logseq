@@ -162,7 +162,7 @@
 								  $$d_A^\prime = d_B^\prime = d_A*(1-(1-\frac{f_A^\prime}{f_A})^{f_A/ d_A})$$
 							-
 				- Inequality-based correlation
-					- 这里以$\sigma_{A \leq B}(R)$为例，为了简化问题，假设$l_A = l_B, u_A = u_B$
+					- 这里以$\sigma_{A \leq B}(R)$为例，为了简化问题，假设$l_A = l_B, u_A = u_B$（当不满足假设也可以通过）
 						- 上下界同样保持不变
 						- 对于f
 							- 这里我们保持假设uniform spread assumption，假设每个值的间隔为
@@ -170,3 +170,5 @@
 							  则，对于第i个值可以得到
 							  $$x_i = l_A + (i-1)\Delta_A$$
 							- 则可以得到公式
+							  ![image.png](../assets/image_1665232720859_0.png){:height 556, :width 393}
+								-
