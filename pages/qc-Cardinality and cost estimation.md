@@ -218,4 +218,5 @@
 						  ![image.png](../assets/image_1665282106056_0.png)
 						- semi-join 和 regular join对distinct value没有影响，所以我们可以用上述结论
 				- self-join $R \Join_{A=A} R$
-					-
+					- 这时候，所有的tuple都可以找到$f_A/d_A$个相同的partner，所以可得
+					  $$d_A = d_B^\$$
