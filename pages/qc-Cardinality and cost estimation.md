@@ -211,5 +211,7 @@
 						- 对于一个独立于A，B的属性C，我们可以使用桶建模的的方式得到
 						  $$d_C^\prime = d_C*\mathcal{Y}_{f_C/d_C}^{f_A}(f_A^\prime)$$
 						-
-				- regular join
-					- 和semi-join不同的是，此时不需
+				- regular join $\Join_{A = B}$
+					- 和semi-join不同的是，此时不需去重，即返回的是相同元素tuple的笛卡尔积
+					- f
+						- 由于返回的是笛卡尔积，所以返回的
