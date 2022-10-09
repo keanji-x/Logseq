@@ -198,6 +198,6 @@
 					- 这里给出一些帮助
 					  ![image.png](../assets/image_1665234624496_0.png)
 			- Join（针对不同表的条件）
-				- semi-join $$R \leftouterjoin$$
-				-
+				- semi-join $semijoin_{A = B}$
+					-
 			-
