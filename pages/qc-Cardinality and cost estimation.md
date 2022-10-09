@@ -207,4 +207,5 @@
 						- 对于$d_A$中的每个value，它出现的在B的概率为$\frac{d_B}{n}$，则我们可得 
 						  $$d_A^\prime = d_A*p(x_i \in B| x_i \in A) = \frac{d_A*d_B}{n}$$
 						- 对于一个独立于A，B的属性C，我们可以使用桶建模的的方式得到
-						-
+						  $$d_C^\prime = d_C*\mathcal{Y}_{f_C/d_C}^{f_A}(f_A^\prime)$$
+				- regular join
