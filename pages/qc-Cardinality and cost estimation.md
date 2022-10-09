@@ -233,13 +233,17 @@
 				  ![image.png](../assets/image_1665283130831_0.png)
 			- duplicate elimination Project
 				- 这里主要应用 [[qc-Access Path]]中的$\mathcal{D}$-function
-				- f
-					- 对于单个属性$A$我们可以得到
-					  $$f_A^\prime = d_A^\prime = d_A$$
-					- 对于复合属性$\mathcal{A} = \{A_1,...,A_n\}$，$\Pi_\mathcal{A}^D(R)$
-						- 如果知道domain size，那就可以直接根据D function算出：
-						  $$\mathcal{D}(\prod_{i=1}^{n}n_{A_i}, |R|)$$
-							- 总的取值空间是$\prod_{i=1}^{n}n_{A_i}$
-							-
-						- 如果不知道，那就可以用d替换
-						  $$\mathcal{D}(\prod_{i=1}^{n}d_{A_i}, |R|)$$
+				- 均匀分布假设下的估计
+					- f
+					  collapsed:: true
+						- 对于单个属性$A$我们可以得到
+						  $$f_A^\prime = d_A^\prime = d_A$$
+						- 对于复合属性$\mathcal{A} = \{A_1,...,A_n\}$，$\Pi_\mathcal{A}^D(R)$
+							- 如果知道domain size，那就可以直接根据D function算出：
+							  $$\mathcal{D}(\prod_{i=1}^{n}n_{A_i}, |R|)$$
+								- 总的取值空间是$\prod_{i=1}^{n}n_{A_i}$
+								- 需要取|R|个值
+							- 如果不知道，那就可以用d替换
+							  $$\mathcal{D}(\prod_{i=1}^{n}d_{A_i}, |R|)$$
+					- d保持不变
+				-
