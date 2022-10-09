@@ -248,4 +248,5 @@
 							  $$\mathcal{D}(\prod_{i=1}^{n}d_{A_i}, |R|)$$
 					- d保持不变
 				- 如果存在函数依赖，$k \rightarrow \mathcal{A}$，那么k对project不产生任何影响。参见 [[qc-Deriving and Dealing with Interesting Orderings and Groupings]]
-				-
+				- 这里进一步讨论伯努利分布下的实验
+					-
