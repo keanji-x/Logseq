@@ -239,4 +239,7 @@
 					- 对于复合属性$\mathcal{A} = \{A_1,...,A_n\}$，$\Pi_\mathcal{A}^D(R)$
 						- 如果知道domain size，那就可以直接根据D function算出：
 						  $$\mathcal{D}(\prod_{i=1}^{n}n_{A_i}, |R|)$$
-						-
+							- 总的取值空间是$\prod_{i=1}^{n}n_{A_i}$
+							-
+						- 如果不知道，那就可以用d替换
+						  $$\mathcal{D}(\prod_{i=1}^{n}d_{A_i}, |R|)$$
