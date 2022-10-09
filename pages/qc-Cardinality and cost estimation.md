@@ -219,4 +219,6 @@
 						- semi-join 和 regular join对distinct value没有影响，所以我们可以用上述结论
 				- self-join $R \Join_{A=A} R$
 					- 这时候，所有的tuple都可以找到$f_A/d_A$个相同的partner，所以可得
-					  $$d_A = d_B^\$$
+					  $$f_A^\prime  = \frac{f_A*f_A}{d_A}$$
+					- d此时不变
+					- self join也可以推出一个上界
