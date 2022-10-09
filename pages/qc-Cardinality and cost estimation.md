@@ -233,4 +233,6 @@
 				  ![image.png](../assets/image_1665283130831_0.png)
 			- duplicate elimination Project
 				- 这里主要应用 [[qc-Access Path]]中的$\mathcal{D}$-function
-				-
+				- f
+					- 由于去重，我们可以得到
+					  $$f_A^\prime = d_A^\prime = d_A$$
