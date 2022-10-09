@@ -203,6 +203,7 @@
 					- f
 						- 计算公式为：每个$x_i$ 的 在A中出现次数*$p(x_i \in A)p(x_i \in B | x_i \in A)$ 期望
 						  ![image.png](../assets/image_1665281513845_0.png)
+							- 注意当存在$\Pi_A(R)$
 					- d
 						- 对于$d_A$中的每个value，它出现的在B的概率为$\frac{d_B}{n}$，则我们可得 
 						  $$d_A^\prime = d_A*p(x_i \in B| x_i \in A) = \frac{d_A*d_B}{n}$$
