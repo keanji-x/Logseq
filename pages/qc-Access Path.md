@@ -237,7 +237,7 @@ public:: true
 					  ![image.png](../assets/image_1665045398662_0.png){:height 247, :width 266}
 					- 同样可以得到一个近似解 
 					  ![image.png](../assets/image_1665045436590_0.png){:height 49, :width 156}
-				- 当group by的时候，我们可能会关心ck个元素中distinct的数量，它的计算是
+				- 当group by的时候，我们可能会关心从N个元素中放回取k个元素中distinct的数量，公式如下
 				  ![image.png](../assets/image_1665045513251_0.png){:height 85, :width 276}
 					- 从特例来推，当每个bucket只包含一个元素，那么访问bucket的数量即为distinct元素的数量
 						- 概率p为
