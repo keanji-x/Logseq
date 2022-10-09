@@ -234,6 +234,6 @@
 			- duplicate elimination Project
 				- 这里主要应用 [[qc-Access Path]]中的$\mathcal{D}$-function
 				- f
-					- 由于去重，我们可以得到
+					- 对于单个属性$A$我们可以得到
 					  $$f_A^\prime = d_A^\prime = d_A$$
-					-
+					- 对于复合属性$\mathcal{A} = \{A_1,...,\}$
