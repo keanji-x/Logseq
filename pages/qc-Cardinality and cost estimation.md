@@ -200,5 +200,5 @@
 			- Join（针对不同表的条件）
 				- semi-join $semijoin_{A = B}$
 					- 注：semi-join只会返回满足条件的外表tuple，所以在执行的时候会有去重
-					- 计算公式为：对于每个$x_i$ 的 出现次数*$p(x_i \in A)\*p(x_i \in B | x_i \in A)$ 期望，
-			-
+					- 计算公式为：每个$x_i$ 的 在A中出现次数*$p(x_i \in A)p(x_i \in B | x_i \in A)$ 期望，
+						-
