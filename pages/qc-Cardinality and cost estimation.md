@@ -237,4 +237,4 @@
 					- 对于单个属性$A$我们可以得到
 					  $$f_A^\prime = d_A^\prime = d_A$$
 					- 对于复合属性$\mathcal{A} = \{A_1,...,A_n\}$，$\Pi_\mathcal{A}^D(R)$
-						-
+						- 如果知道domain size，
