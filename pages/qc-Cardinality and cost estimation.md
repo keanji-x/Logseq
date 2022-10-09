@@ -125,7 +125,6 @@
 						- 对于d的估计使用s(p)
 						  ![image.png](../assets/image_1665058501252_0.png){:height 51, :width 297}
 				- Equality-based correlation $A = B$
-				  collapsed:: true
 					- 基本假设
 						- 对于$[l_A, u_A], [l_B, u_B]$
 							- 如果两个没有交集，则为空
@@ -142,9 +141,10 @@
 							  $$p(x\in A) = \frac{n-1 \choose d_{A}-1}{n \choose d_A}=\frac{d_A}{n}$$
 					- profile 传递
 						- 上下界不变
-						- 对于f，我们可以通过计算所有元素既在A由在B中的概率期望得到，注意每个元素不一定只出现一次
+						- 对于f，我们可以通过计算所有元素既在A又在B中的概率期望得到，注意每个元素不一定只出现一次
 						  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \overline{f_A} p\left(x_i=A\right) p\left(x_i=B \mid x_i=A\right)$$
 							- $\overline{f_A}$表示每个value对应的tuple数量$\frac{f}{d_A}$
+							-
 							- 所以我们可以计算得到
 							  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \frac{f}{d_A} \frac{d_A}{n} \frac{1}{d_B}=f / d_B$$
 							- 上述情况是$\Pi_B(R) \subseteq \Pi_A(R)$。结合$\Pi_A(R) \subseteq \Pi_B(R)$我们可以得到
