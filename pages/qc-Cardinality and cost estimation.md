@@ -217,4 +217,4 @@
 						- 由于返回的是笛卡尔积，所以当条件满足时，返回的tuple数是 在A出现的次数*在B出现的次数。由此可得公式
 						  ![image.png](../assets/image_1665282106056_0.png)
 						- semi-join 和 regular join对distinct value没有影响，所以我们可以用上述结论
-					-
+				- self-join
