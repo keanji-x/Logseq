@@ -250,10 +250,15 @@
 				- 如果存在函数依赖，$k \rightarrow \mathcal{A}$，那么k对project不产生任何影响。参见 [[qc-Deriving and Dealing with Interesting Orderings and Groupings]]
 				- 这里进一步讨论伯努利分布下的实验
 					- 问题建模
+					  collapsed:: true
 						- 假设关系为R，需要project的属性 $G = \{A_1,...,A_n\}$
 						- 对于每个属性，其distinct value数量是$d_i = |\Pi^D_{A_i}(R)|$
 						- 对于每个属性的每个值，我们可以构建出一个频率向量，$f_i = (f_{i,1} ..., f_{i,d_i})$。建模每个值出现的概率
 							- 比如有三个value：$\{1,2,3\}$。1出现了90次，2出现了9次，3出现了1次
-							- 则其频率向量为$\{}$
+							- 则其频率向量为$\{0.9,0.09.0.01\}$
+					- 上界
+						- 我们首先能给出一个必然成立的上界：
+						  $$D_G \leq min{N, \prod_}$$
+						-
 						-
 						-
