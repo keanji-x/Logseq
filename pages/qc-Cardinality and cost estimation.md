@@ -199,5 +199,6 @@
 					  ![image.png](../assets/image_1665234624496_0.png)
 			- Join（针对不同表的条件）
 				- semi-join $semijoin_{A = B}$
+					- 注：semi-join只会返回满足条件的外表tuple，所以在执行的时候会有去重
 					-
 			-
