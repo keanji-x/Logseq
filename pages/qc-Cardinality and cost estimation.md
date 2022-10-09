@@ -234,6 +234,7 @@
 			- duplicate elimination Project
 				- 这里主要应用 [[qc-Access Path]]中的$\mathcal{D}$-function
 				- 均匀分布假设下的估计
+				  collapsed:: true
 					- f
 					  collapsed:: true
 						- 对于单个属性$A$我们可以得到
@@ -246,4 +247,5 @@
 							- 如果不知道，那就可以用d替换
 							  $$\mathcal{D}(\prod_{i=1}^{n}d_{A_i}, |R|)$$
 					- d保持不变
-				- 如果存在函数依赖，$k \rightarrow \mathcal{A}$。那么k对project不产生任何影响
+				- 如果存在函数依赖，$k \rightarrow \mathcal{A}$，那么k对project不产生任何影响。参见 [[qc-Deriving and Dealing with Interesting Orderings and Groupings]]
+				-
