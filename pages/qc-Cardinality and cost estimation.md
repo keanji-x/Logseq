@@ -296,7 +296,8 @@
 									- $f_G$中的每个元素都对应一个tuple$v \in \Pi_D^{A_1}(R) \times ... \times \Pi_D^{A_n}(R)$的频率
 								- 根据克罗内克积我们可以得到如下假设
 								  ![image.png](../assets/image_1665408624776_0.png)
-									-
+									- 根据上述假设我们就可以得到，我们所要的distinct value估计
+									  $$E[D_G]$$
 									-
 									-
 						-
