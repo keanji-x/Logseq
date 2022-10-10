@@ -298,7 +298,10 @@
 								  ![image.png](../assets/image_1665408624776_0.png)
 									- 根据上述假设我们就可以得到，我们所要的distinct value估计
 									  $$E[D_G] = M-\sum_{i=1}^{M}(1-f_{G,i})^N$$
+										- 某个元素在N个元素中不出现的概率为$(1-)$
 									- 计算的伪代码为
+									  ![image.png](../assets/image_1665408772578_0.png)
+									-
 									-
 									-
 						-
