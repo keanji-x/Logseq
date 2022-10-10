@@ -259,6 +259,6 @@
 						  $$D_G \leq min({N, \prod_{i=1}^nd_i})$$
 						  $$D_G \geq max_{i=1}^n d_i$$
 							- 结果肯定小于所有可能的组合，即所有tuple都不相同
-							- 结果肯定小于最大的那个d，
+							- 结果肯定小于最大的那个d，这代表所有其它attribute都依赖该attribute
 						-
 						-
