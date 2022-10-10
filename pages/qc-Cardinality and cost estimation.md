@@ -264,7 +264,8 @@
 							- 假设只有两个attribute
 								- 下界
 								  ![image.png](../assets/image_1665400974474_0.png)
-									- 在下界$max_{i=1}^nd_i$中，我们可以得到对于每个tuple都有一个
+									- 在下界$max_{i=1}^nd_i$中，我们可以得到对于每个$A_1$的值，都只有一个$A_2$的值和它组合
+										-
 								- 上界
 								  ![image.png](../assets/image_1665400988924_0.png)
 						-
