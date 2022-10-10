@@ -284,7 +284,11 @@
 								-
 							- 根据上述两个属性的推导我们可以得到多个属性的推导
 								- 首先介绍克罗内克积
+								  collapsed:: true
 									- 定义
-									  ![image.png](../assets/image_1665407910843_0.png)
+									  ![image.png](../assets/image_1665407910843_0.png){:height 109, :width 320}
 									- 举例
+									  ![image.png](../assets/image_1665407939012_0.png)
+									-
+								- 我们可以借助克罗内克积我们
 						-
