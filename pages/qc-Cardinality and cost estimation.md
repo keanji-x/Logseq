@@ -262,4 +262,8 @@
 							- 结果肯定小于最大的那个d，这代表所有其它attribute都依赖该attribute
 						- 上述上界过于sound，所以我们给出一个更紧凑的上下界
 							- 下界
+							  ![image.png](../assets/image_1665400974474_0.png)
+								- 在下界$max_{i=1}^nd+$
+							- 上界
+							  ![image.png](../assets/image_1665400988924_0.png)
 						-
