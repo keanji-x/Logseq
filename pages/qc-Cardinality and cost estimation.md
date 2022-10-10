@@ -292,6 +292,6 @@
 								- 我们可以借助克罗内克积来辅助计算
 									- 首先我们可以计算所以frequency vector的积
 									  $$f_G = f_1\otimes ... \otimes f_n$$
-									- $f_G$中的每个元素
+									- $f_G$中的每个元素都对应一个tuple$v \in \prod D^{A_1}(R) \times ... \times D^{A_1}(R)$的频率
 									-
 						-
