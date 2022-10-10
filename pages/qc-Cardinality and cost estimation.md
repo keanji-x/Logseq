@@ -258,10 +258,5 @@
 						- 我们首先能给出一个必然成立的上界：
 						  $$D_G \leq min({N, \prod_{i=1}^nd_i})$$
 						  $$D_G \geq max_{i=1}^n d_i$$
-						- #Therom
-						  id:: 63428fb9-e893-45a4-a5c9-854cccd884e9
-							- dadas [[Example]]
-						- #Example
-							- dasda
 						-
 						-
