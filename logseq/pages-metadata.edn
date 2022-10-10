@@ -259,7 +259,7 @@
   :block/updated-at 1663071616346}
  {:block/name "oct 10th, 2022",
   :block/created-at 1665366066729,
-  :block/updated-at 1665366066729}
+  :block/updated-at 1665400924823}
  {:block/name "oct 1st, 2022",
   :block/created-at 1664628208290,
   :block/updated-at 1664628208290}
@@ -323,7 +323,7 @@
   :block/updated-at 1663132981247}
  {:block/name "qc-cardinality and cost estimation",
   :block/created-at 1663132978728,
-  :block/updated-at 1665371918918}
+  :block/updated-at 1665401502324}
  {:block/name
   "qc-deriving and dealing with interesting orderings and groupings",
   :block/created-at 1663132979661,
