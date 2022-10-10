@@ -262,7 +262,6 @@
 							- 结果肯定小于最大的那个d，这代表所有其它attribute都依赖该attribute
 						- 上述上界过于sound，所以我们给出一个更紧凑的上下界
 							- 假设只有两个attribute
-							  collapsed:: true
 								- 下界
 								  ![image.png](../assets/image_1665400974474_0.png)
 									- 在下界$max_{i=1}^nd_i$中，假设$d_1 > d_2$我们可以得到对于每个$A_1$的值，都只有一个$A_2$的值和它组合
@@ -291,5 +290,5 @@
 									  ![image.png](../assets/image_1665407939012_0.png)
 									-
 								- 我们可以借助克罗内克积来辅助计算
-									-
+									- 首先我们可以计算所以frequency vector的积
 						-
