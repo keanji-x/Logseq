@@ -59,6 +59,7 @@
 		- 不包括projection和semijoin算子
 		- profile propagation没有讨论
 - Logical Profile
+  collapsed:: true
 	- 完备性
 	  collapsed:: true
 		- **cardinality estimate**
@@ -82,6 +83,7 @@
 		- attribute独立
 		   ![image.jpg](../assets/7d051eef-a97b-48bc-a9b2-487f2e76d149-1115003.jpg){:height 49, :width 358}
 	- Propagation
+	  collapsed:: true
 		- 问题描述
 		  collapsed:: true
 			- 表R 和 attribute
@@ -315,8 +317,10 @@
 						-
 			- Division（略过，不想看）
 		- 上述公式的问题
+		  collapsed:: true
 			- Null Value
 				- 当存在Null的时候，我们需要将$d_A$拓展为$d_A^\perp$，即将null作为一个distinct value
 				- 我们可以直接拓展上述的公式
 			- Uniformity is not sufficient：实际分布并不均匀
-			- Set of Attributes：
+			- Set of Attributes：在上述条件中，条件左右两边可能是属性的集合
+- Approximation of a Set of Values
