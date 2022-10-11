@@ -316,6 +316,6 @@
 			- Division（略过，不想看）
 		- 上述公式的问题
 			- Null Value
-				-
+				- 当存在Null的时候，我们需要将$d_A$拓展为$d_A^$
 			- Uniformity is not sufficient
 			- Set of Attributes
