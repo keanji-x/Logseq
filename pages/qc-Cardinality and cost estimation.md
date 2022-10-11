@@ -316,4 +316,6 @@
 			- Division（略过，不想看）
 		- 上述公式的问题
 			- Null Value
-			-
+				-
+			- Uniformity is not sufficient
+			- Set of Attributes
