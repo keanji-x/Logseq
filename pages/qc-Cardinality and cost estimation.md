@@ -316,6 +316,7 @@
 			- Division（略过，不想看）
 		- 上述公式的问题
 			- Null Value
-				- 当存在Null的时候，我们需要将$d_A$拓展为$d_A^\perp$
+				- 当存在Null的时候，我们需要将$d_A$拓展为$d_A^\perp$，即将null作为一个distinct value
+				- 我们可以轻易的
 			- Uniformity is not sufficient
 			- Set of Attributes
