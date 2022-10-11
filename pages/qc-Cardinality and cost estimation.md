@@ -325,4 +325,5 @@
 			- Set of Attributes：在上述条件中，条件左右两边可能是属性的集合
 - Approximation of a Set of Values（略过）、
 - Approximation with Linear Models
-	-
+	- Linear model
+		-
