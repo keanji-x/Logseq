@@ -1,4 +1,4 @@
-- Ch3 Cardinality：如何在不扫描全部数据情况下估计cardinality
+- Ch3 Cardinality
 	- Linear Counting
 		-
-- Ch4 Frequency：如何在不扫描全部数据情况下估计frequency
+- Ch4 Frequency
