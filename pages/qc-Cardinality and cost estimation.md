@@ -94,6 +94,7 @@
 			  $$bc‘ = [l_c‘, u_c‘, f_c‘, d_c‘]$$
 			  $$ba’ = [l_a’, u_a’, f_a’, d_a’]$$
 		- 基本operator
+		  collapsed:: true
 			- filter（针对是同一张表）
 			  collapsed:: true
 				- exact match ​​​​​​​​​​​​​​​​$\sigma_{A=c}$
@@ -312,4 +313,7 @@
 								-
 								-
 						-
-			- Division
+			- Division（略过，不想看）
+		- 上述公式的问题
+			- Null Value
+			-
