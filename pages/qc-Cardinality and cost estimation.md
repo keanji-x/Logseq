@@ -323,4 +323,6 @@
 				- 我们可以直接拓展上述的公式
 			- Uniformity is not sufficient：实际分布并不均匀
 			- Set of Attributes：在上述条件中，条件左右两边可能是属性的集合
-- Approximation of a Set of Values
+- Approximation of a Set of Values（略过）、
+- Approximation with Linear Models
+	-
