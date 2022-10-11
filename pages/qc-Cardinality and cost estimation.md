@@ -1,8 +1,11 @@
 - 代价计算：profile+operator
 - profile
+  collapsed:: true
 	- 分类
+	  collapsed:: true
 		- 物理：page数量
 		- 逻辑：cardinality（一个完整的logical profile是每个属性的子集的size）
+		  collapsed:: true
 			- 属性依赖：如果两个attribute 在各个值上的size相同，就可以说它们是依赖的
 			- 数据类型
 				- 类别：颜色
@@ -232,8 +235,10 @@
 				- 对于Join我们总结
 				  ![image.png](../assets/image_1665283130831_0.png)
 			- duplicate elimination Project
+			  collapsed:: true
 				- 这里主要应用 [[qc-Access Path]]中的$\mathcal{D}$-function
 				- 均匀分布假设下的估计
+				  collapsed:: true
 					- f
 						- 对于单个属性$A$我们可以得到
 						  $$f_A^\prime = d_A^\prime = d_A$$
@@ -247,6 +252,7 @@
 					- d保持不变
 				- 如果存在函数依赖，$k \rightarrow \mathcal{A}$，那么k对project不产生任何影响。参见 [[qc-Deriving and Dealing with Interesting Orderings and Groupings]]
 				- 这里进一步讨论伯努利分布下的实验
+				  collapsed:: true
 					- 问题建模
 					  collapsed:: true
 						- 假设关系为R，需要project的属性 $G = \{A_1,...,A_n\}$
@@ -255,6 +261,7 @@
 							- 比如有三个value：$\{1,2,3\}$。1出现了90次，2出现了9次，3出现了1次
 							- 则其频率向量为$\{0.9,0.09.0.01\}$
 					- 估计元素数量的上下界，此时f和g相同，我们记为$D_G = |\Pi_\mathcal{A}^D(R)|$
+					  collapsed:: true
 						- 我们首先能给出一个必然成立的上界：
 						  $$D_G \leq min({N, \prod_{i=1}^nd_i})$$
 						  $$D_G \geq max_{i=1}^n d_i$$
@@ -265,7 +272,6 @@
 								- 下界
 								  ![image.png](../assets/image_1665400974474_0.png)
 									- 在下界$max_{i=1}^nd_i$中，假设$d_1 > d_2$我们可以得到对于每个$A_1$的值，都只有一个$A_2$的值和它组合
-									  collapsed:: true
 										- 假设有两个$A_2$的值和一个$A_1$的值bind
 										- 那么其distinct的值肯定大于$d_1$，因为这两种组合会被视为两种不同的tuple
 									- 为了下界更紧凑，我们需要算出对于每个$A_1$的值，最少有多少$A_2$的值能和其组合，即为$l_{1,j}$
@@ -281,30 +287,29 @@
 									- 对于$A_1$的每个元素，其最多的组合是$A_2$的全部元素。这样可推出上述的上界$d_1*d_2$
 									- 当然上界不能超过$A_2$每个元素最多的个数，即$f_{1,j}*N$
 								-
-							- 根据上述两个属性的推导我们可以得到多个属性的推导
-							  collapsed:: true
-								- 首先介绍克罗内克积
-								  collapsed:: true
-									- 定义
-									  ![image.png](../assets/image_1665407910843_0.png){:height 109, :width 320}
-									- 举例
-									  ![image.png](../assets/image_1665407939012_0.png)
-									-
-								- 我们可以借助克罗内克积来辅助计算
-									- 首先我们可以计算所以frequency vector的积
-									  $$f_G = f_1\otimes ... \otimes f_n$$
-										- 它的大小是$\prod_{i=1}^n d_i$，我们用**M**标记
-									- $f_G$中的每个元素都对应一个tuple$v \in \Pi_D^{A_1}(R) \times ... \times \Pi_D^{A_n}(R)$的频率
-								- 根据克罗内克积我们可以得到如下假设
-								  ![image.png](../assets/image_1665408624776_0.png)
-									- 根据上述假设我们就可以得到，我们所要的distinct value估计
-									  $$E[D_G] = M-\sum_{i=1}^{M}(1-f_{G,i})^N$$
-										- 第i个tuple在N个元素中不出现的概率为$(1-f_{G,i})^N$
-										- 我们需要计算出期望$\sum(1-((1-f_{G,i})^N))$
-									- 计算的伪代码为
-									  ![image.png](../assets/image_1665408772578_0.png)
-									- 上述我们通过克罗内克积来估计，同样计算克罗内克积也是开销最大的部分，这里一个更简单的操作是使用直方图来直接得到分布，也可以减少误差。其误差为：（这部分待看直方图再细看）
-									  ![image.png](../assets/image_1665408998682_0.png){:height 49, :width 215}
-									-
-									-
+						- 我们可以得到多个属性的推导
+							- 首先介绍克罗内克积
+								- 定义
+								  ![image.png](../assets/image_1665407910843_0.png){:height 109, :width 320}
+								- 举例
+								  ![image.png](../assets/image_1665407939012_0.png)
+								-
+							- 我们可以借助克罗内克积来辅助计算
+								- 首先我们可以计算所以frequency vector的积
+								  $$f_G = f_1\otimes ... \otimes f_n$$
+									- 它的大小是$\prod_{i=1}^n d_i$，我们用**M**标记
+								- $f_G$中的每个元素都对应一个tuple$v \in \Pi_D^{A_1}(R) \times ... \times \Pi_D^{A_n}(R)$的频率
+							- 根据克罗内克积我们可以得到如下假设
+							  ![image.png](../assets/image_1665408624776_0.png)
+								- 根据上述假设我们就可以得到，我们所要的distinct value估计
+								  $$E[D_G] = M-\sum_{i=1}^{M}(1-f_{G,i})^N$$
+									- 第i个tuple在N个元素中不出现的概率为$(1-f_{G,i})^N$
+									- 我们需要计算出期望$\sum(1-((1-f_{G,i})^N))$
+								- 计算的伪代码为
+								  ![image.png](../assets/image_1665408772578_0.png)
+								- 上述我们通过克罗内克积来估计，同样计算克罗内克积也是开销最大的部分，这里一个更简单的操作是使用直方图来直接得到分布，也可以减少误差。其误差为：（这部分待看直方图再细看）
+								  ![image.png](../assets/image_1665408998682_0.png){:height 49, :width 215}
+								-
+								-
 						-
+			- Division
