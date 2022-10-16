@@ -12,7 +12,6 @@
 				- 离散：正整数，**字符串** （只有activate domain）
 				- 连续：**浮点数 **（只有activate domain）
 - 基本操作
-  collapsed:: true
 	- 构建 
 	  ![image.jpg](../assets/f2586aba-a99e-499c-984f-cf0577853e8d-1115003.jpg)
 	- 更新
@@ -59,7 +58,6 @@
 		- 不包括projection和semijoin算子
 		- profile propagation没有讨论
 - Logical Profile
-  collapsed:: true
 	- 完备性
 	  collapsed:: true
 		- **cardinality estimate**
@@ -83,7 +81,6 @@
 		- attribute独立
 		   ![image.jpg](../assets/7d051eef-a97b-48bc-a9b2-487f2e76d149-1115003.jpg){:height 49, :width 358}
 	- Propagation
-	  collapsed:: true
 		- 问题描述
 		  collapsed:: true
 			- 表R 和 attribute
@@ -96,7 +93,6 @@
 			  $$bc‘ = [l_c‘, u_c‘, f_c‘, d_c‘]$$
 			  $$ba’ = [l_a’, u_a’, f_a’, d_a’]$$
 		- 基本operator
-		  collapsed:: true
 			- filter（针对是同一张表）
 			  collapsed:: true
 				- exact match ​​​​​​​​​​​​​​​​$\sigma_{A=c}$
@@ -205,9 +201,7 @@
 					- 这里给出一些帮助
 					  ![image.png](../assets/image_1665234624496_0.png)
 			- Join（针对不同表的条件）
-			  collapsed:: true
 				- semi-join $semijoin_{A = B}$
-				  collapsed:: true
 					- 注：semi-join只会返回满足条件的外表tuple，所以在执行的时候会有去重
 					- f
 						- 计算公式为：每个$x_i$ 的 在A中出现次数*$p(x_i \in A)p(x_i \in B | x_i \in A)$ 期望
@@ -221,7 +215,6 @@
 						  $$d_C^\prime = d_C*\mathcal{Y}_{f_C/d_C}^{f_A}(f_A^\prime)$$
 						-
 				- regular join $\Join_{A = B}$
-				  collapsed:: true
 					- 和semi-join不同的是，此时不需去重，即返回的是相同元素tuple的笛卡尔积
 					- f
 						- 由于返回的是笛卡尔积，所以当条件满足时，返回的tuple数是 在A出现的次数*在B出现的次数。由此可得公式
