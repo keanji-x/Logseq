@@ -13,7 +13,12 @@
 		  $$S_Q = \{p_1, p_2,...,p_n\}$$
 	- 测试指标
 		- Discordance of plan pairs：执行时间和代价的相关性
-			-
+			- Kendall’s Tau rank correlation
 		- Relevance of plan：对于那些更优的计划，给予更大的权重
+			- 权重指数
 		- Pairwise distance：排序错误的影响和执行时间的差距有关，执行时间差距越大，错误的影响越大
+			- 距离指数
+		- 总的公式为
+			- 。。。
+	-
 	-
