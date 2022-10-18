@@ -6,5 +6,7 @@ title:: Plan Space Analysis: An Early Warning System to Detect Plan Regressions 
 	- 传统工作只考虑BPF：即会不会影响最优的计划
 	- 本文考虑了整个搜索空间
 - 标准范式
+	- 标准流程（mtr）
+		-
 	-
 	-
