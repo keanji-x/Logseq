@@ -8,5 +8,6 @@
 - 测试框架：TAQO
 	- 如何衡量cost model的正确且
 		- 对于一个采样空间$Q = \{p_1, ...\}$，我们希望
-		  $$cost_i \lef cost_j \Leftrightarrow$$
+		  $$cost_i \leq cost_j \Leftrightarrow time_i \leq cost_j$$
+		- 当全局空间过大时，我们会均匀采样n个计划
 	-
