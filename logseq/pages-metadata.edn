@@ -314,7 +314,7 @@
   :block/updated-at 1663132981382}
  {:block/name "paper reading",
   :block/created-at 1663135592568,
-  :block/updated-at 1665994584858}
+  :block/updated-at 1666093982657}
  {:block/name "paxos",
   :block/created-at 1663132980948,
   :block/updated-at 1663132980948}
@@ -324,7 +324,7 @@
  {:block/name
   "plan space analysis: an early warning system to detect plan regressions in cost-based optimizers",
   :block/created-at 1666078777409,
-  :block/updated-at 1666091318570}
+  :block/updated-at 1666093817475}
  {:block/name "polardb optimizer",
   :block/created-at 1663132981044,
   :block/updated-at 1663132981044}
@@ -450,6 +450,9 @@
  {:block/name "中级宏观",
   :block/created-at 1663132982270,
   :block/updated-at 1663729700898}
+ {:block/name "优化器测试",
+  :block/created-at 1666093957555,
+  :block/updated-at 1666093957555}
  {:block/name "分布式原理介绍",
   :block/created-at 1663132982230,
   :block/updated-at 1663132982230}
