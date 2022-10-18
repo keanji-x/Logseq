@@ -15,7 +15,11 @@ title:: Plan Space Analysis: An Early Warning System to Detect Plan Regressions 
 			- 一些修改隐藏的改动没有被体现出来
 		- 大量的计划导致需要很多人工干预（mtr测试经常爆出几百个测试错误需要修改）
 - 新的测试框架
-	- 准则
+	- 通过计划时间和执行时间的相关性判断一个优化器是否更好
+	- 如何均匀采样计划
+		- 手动调整配置
+	- 如何计算参数
 		-
+	-
 	-
 	-
