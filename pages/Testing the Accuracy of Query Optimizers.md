@@ -23,5 +23,9 @@
 			- 。。。
 		- Normalization Across Systems
 			- 对于不同的系统可能会生成不同数量的计划，所以只选择k个
-			-
-	-
+			- 使用标准算法去除离群点
+		-
+	- 实现架构
+		- 架构图 
+		  ![image.png](../assets/image_1666082175727_0.png)
+		-
