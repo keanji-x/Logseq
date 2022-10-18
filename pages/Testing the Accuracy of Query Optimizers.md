@@ -14,6 +14,6 @@
 	- 测试指标
 		- Discordance of plan pairs：执行时间和代价的相关性
 			- Spearman’s Rank Coefficient \ Kendall’s Tau
-		- Relevance of plan：
+		- Relevance of plan：对于那些
 		- Pairwise distance：
 	-
