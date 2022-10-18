@@ -8,6 +8,11 @@ title:: Plan Space Analysis: An Early Warning System to Detect Plan Regressions 
 - 标准范式
 	- 标准流程（mtr）
 		- 定义测试的query 集合，并保存它们的优化计划
-		- 当修改优化器时，
+		- 当修改优化器时，查看计划是否改变
+			- 如果改变，需要开发者进行讨论是否需要修改测试文件
+	- 问题
+		- 只是定义计划级别的测试，约束比较小（）
+			- 一些修改隐藏的改动没有被体现出来
+		- 大量
 	-
 	-
