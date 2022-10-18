@@ -6,8 +6,7 @@
 - [[优化器测试]]
 	- [[Testing the Accuracy of Query Optimizers]]
 	- [[Plan Space Analysis: An Early Warning System to Detect Plan Regressions in Cost-based Optimizers]]
-	- [[Counting, Enumerating, and Sampling of Execution Plans
-	  in a Cost-Based Query Optimizer ]]
+	- [[Counting,Enumerating, and Sampling of Execution Plans in a Cost-Based Query Optimizer]]
 	-
 -
 -
