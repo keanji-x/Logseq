@@ -176,6 +176,10 @@
  {:block/name "contents",
   :block/created-at 1663071616346,
   :block/updated-at 1663245982277}
+ {:block/name
+  "counting,enumerating, and sampling of execution plans in a cost-based query optimizer",
+  :block/created-at 1666096224942,
+  :block/updated-at 1666096224942}
  {:block/name "csapp",
   :block/created-at 1663136047832,
   :block/updated-at 1663136047832}
@@ -314,7 +318,7 @@
   :block/updated-at 1663132981382}
  {:block/name "paper reading",
   :block/created-at 1663135592568,
-  :block/updated-at 1666093982657}
+  :block/updated-at 1666096224942}
  {:block/name "paxos",
   :block/created-at 1663132980948,
   :block/updated-at 1663132980948}
