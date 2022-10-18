@@ -12,7 +12,8 @@
 		- 当全局空间过大时，我们会均匀采样n个计划
 		  $$S_Q = \{p_1, p_2,...,p_n\}$$
 	- 测试指标
+		- 测试函数
 		- Discordance of plan pairs：执行时间和代价的相关性
 		- Relevance of plan：对于那些更优的计划，给予更大的权重
-		- Pairwise distance：排序错误的影响和执行时间的差距有关，执行
+		- Pairwise distance：排序错误的影响和执行时间的差距有关，执行时间差距越大，错误的影响越大
 	-
