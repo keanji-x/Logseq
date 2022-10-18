@@ -19,6 +19,9 @@ title:: Plan Space Analysis: An Early Warning System to Detect Plan Regressions 
 	- 如何均匀采样计划
 		- 手动调整配置
 	- 如何计算参数
+		- xxx
+	- 实现中的问题
+		- 坏计划可能执行时间很长，需要删除
 		-
 	-
 	-
