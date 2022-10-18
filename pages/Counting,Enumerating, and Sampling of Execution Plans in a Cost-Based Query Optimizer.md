@@ -4,4 +4,6 @@
 	- Ranking
 		- ranking：将一个计划映射到一个整数
 		- unranking：从整数构建一个计划
-	- Memo 中已经包含所有的
+	- Memo 中已经包含所有的logical plan
+		- 如果我们保存所有的physical plan，就可以得到了完整的搜索空间（也许可以基于概率，或者基于cost分布保存）
+		- 我们可以建立一个映射来
