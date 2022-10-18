@@ -28,4 +28,4 @@
 	- 实现架构
 		- 架构图 
 		  ![image.png](../assets/image_1666082175727_0.png){:height 319, :width 471}
-			- Configuration Generator：
+			- Configuration Generator：生成一些switch开关的
