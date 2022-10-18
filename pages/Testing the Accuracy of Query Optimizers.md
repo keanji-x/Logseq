@@ -30,5 +30,6 @@
 		  ![image.png](../assets/image_1666082175727_0.png){:height 319, :width 471}
 			- Configuration Generator
 				- 设置不同的switch \ hint
-				- 枚举出所有不同配置
+				- 枚举出所有可能的配置
 			- Plan Deduplicator
+				-
