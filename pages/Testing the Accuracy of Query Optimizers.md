@@ -2,5 +2,7 @@
 	- cost 和 执行时间是否正比
 	- cost 很难调优，和系统的硬件有很大搞关系
 - key idea
-	- 使用hint 和
+	- 使用hint or switch 来控制不同的plan生成
+		- 生成的模型需要
+	- 比较这些不同的plan的执行时间和代价模型
 - 算法
