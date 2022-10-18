@@ -3,5 +3,7 @@
 - [[Columbia Optimizer]]
 - [[MPP]]
 - [[Executing Nested Queries ]]
-- [[Testing the Accuracy of Query Optimizers]]
-- [[Plan Space Analysis: An Early Warning System to Detect Plan Regressions in Cost-based Optimizers]]
+- [[优化器测试]]
+	- [[Testing the Accuracy of Query Optimizers]]
+	- [[Plan Space Analysis: An Early Warning System to Detect Plan Regressions in Cost-based Optimizers]]
+	-
