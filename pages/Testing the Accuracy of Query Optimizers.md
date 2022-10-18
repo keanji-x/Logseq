@@ -12,5 +12,6 @@
 		- 当全局空间过大时，我们会均匀采样n个计划
 		  $$S_Q = \{p_1, p_2,...,p_n\}$$
 	- 测试指标
-		- Discordance of plan pairs：
+		- Discordance of plan pairs：执行时间和代价的关系
+			- Spearman’s Rank Coefficient：
 	-
