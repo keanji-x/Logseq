@@ -28,4 +28,7 @@
 	- 实现架构
 		- 架构图 
 		  ![image.png](../assets/image_1666082175727_0.png){:height 319, :width 471}
-			- Configuration Generator：生成一些switch开关的
+			- Configuration Generator
+				- 设置不同的switch \ hint
+				- 枚举出所有不同配置
+			- Plan Deduplicator
