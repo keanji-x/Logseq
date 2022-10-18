@@ -14,5 +14,5 @@
 	- 测试指标
 		- Discordance of plan pairs：执行时间和代价的相关性
 		- Relevance of plan：对于那些更优的计划，给予更大的权重
-		- Pairwise distance：
+		- Pairwise distance：排序错误的影响和执行时间的差距有关，执行
 	-
