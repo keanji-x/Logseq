@@ -22,5 +22,5 @@
 		- 衡量公式
 			- 。。。
 		- Normalization Across Systems
-			- 对于不同的系统产能是的
+			- 对于不同的系统可能会生成不同的系统
 	-
