@@ -21,5 +21,5 @@
 				- 距离指数
 		- 衡量公式
 			- 。。。
-		- Normalization
+		- Normalization Across Systems
 	-
