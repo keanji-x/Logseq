@@ -14,6 +14,8 @@ title:: Plan Space Analysis: An Early Warning System to Detect Plan Regressions 
 		- 只是定义计划级别的测试，约束比较小（哪怕有很多计划）
 			- 一些修改隐藏的改动没有被体现出来
 		- 大量的计划导致需要很多人工干预（mtr测试经常爆出几百个测试错误需要修改）
--
+- 新的测试框架
+	- 准则
+		-
 	-
 	-
