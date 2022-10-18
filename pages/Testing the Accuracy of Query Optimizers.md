@@ -13,6 +13,6 @@
 		  $$S_Q = \{p_1, p_2,...,p_n\}$$
 	- 测试指标
 		- Discordance of plan pairs：执行时间和代价的相关性
-			- Spearman’s Rank Coefficient 、
-		-
+			- Spearman’s Rank Coefficient \ Kendall’s Tau
+		- Relevance of plan：
 	-
