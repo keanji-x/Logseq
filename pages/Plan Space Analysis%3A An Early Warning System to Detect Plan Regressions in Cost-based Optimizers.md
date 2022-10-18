@@ -22,7 +22,8 @@ title:: Plan Space Analysis: An Early Warning System to Detect Plan Regressions 
 		- xxx
 	- 实现中的问题
 		- 坏计划可能执行时间很长，需要删除
-		-
+		- 计划需要执行多次避免系统波动的影响
+		- 去除重复的plan
 	-
 	-
 	-
