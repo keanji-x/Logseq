@@ -324,7 +324,7 @@
  {:block/name
   "plan space analysis: an early warning system to detect plan regressions in cost-based optimizers",
   :block/created-at 1666078777409,
-  :block/updated-at 1666089122301}
+  :block/updated-at 1666090161504}
  {:block/name "polardb optimizer",
   :block/created-at 1663132981044,
   :block/updated-at 1663132981044}
