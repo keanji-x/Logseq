@@ -7,5 +7,6 @@
 	- 比较这些不同的plan的执行时间和代价模型
 - 测试框架：TAQO
 	- 如何衡量cost model的正确且
-		- 对于一个采样空间$Q = \{p_1, ...\}$，
+		- 对于一个采样空间$Q = \{p_1, ...\}$，我们希望
+		  $$cost_i \lef cost_j \Leftrightarrow$$
 	-
