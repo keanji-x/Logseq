@@ -15,4 +15,5 @@
 		- Discordance of plan pairs：执行时间和代价的相关性
 			- Spearman’s Rank Coefficient \ Kendall’s Tau
 		- Relevance of plan：
+		- Pairwise distance：
 	-
