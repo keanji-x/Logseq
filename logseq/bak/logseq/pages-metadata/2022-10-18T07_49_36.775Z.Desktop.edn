@@ -267,11 +267,8 @@
   :block/created-at 1665924674567,
   :block/updated-at 1665924674567}
  {:block/name "oct 17th, 2022",
-  :block/created-at 1666078777411,
-  :block/updated-at 1666078777411}
- {:block/name "oct 18th, 2022",
-  :block/created-at 1666078777277,
-  :block/updated-at 1666078777277}
+  :block/created-at 1665994481149,
+  :block/updated-at 1665994535554}
  {:block/name "oct 1st, 2022",
   :block/created-at 1664628208290,
   :block/updated-at 1664628208290}
@@ -312,6 +309,9 @@
  {:block/name "p1",
   :block/created-at 1663132981382,
   :block/updated-at 1663132981382}
+ {:block/name "paper re",
+  :block/created-at 1665994562386,
+  :block/updated-at 1665994562386}
  {:block/name "paper reading",
   :block/created-at 1663135592568,
   :block/updated-at 1665994584858}
@@ -323,8 +323,8 @@
   :block/updated-at 1663135231712}
  {:block/name
   "plan space analysis: an early warning system to detect plan regressions in cost-based optimizers",
-  :block/created-at 1666078777409,
-  :block/updated-at 1666078777409}
+  :block/created-at 1665994519430,
+  :block/updated-at 1665994519430}
  {:block/name "polardb optimizer",
   :block/created-at 1663132981044,
   :block/updated-at 1663132981044}
@@ -424,8 +424,8 @@
   :block/created-at 1663132981591,
   :block/updated-at 1663132981591}
  {:block/name "testing the accuracy of query optimizers",
-  :block/created-at 1666078777409,
-  :block/updated-at 1666079293253}
+  :block/created-at 1665994535553,
+  :block/updated-at 1665994535553}
  {:block/name "therom",
   :block/created-at 1665366932774,
   :block/updated-at 1665366932774}

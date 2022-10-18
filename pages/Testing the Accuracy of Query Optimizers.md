@@ -3,7 +3,8 @@
 	- cost 很难调优，和系统的硬件有很大搞关系
 - key idea
 	- 使用hint or switch 来控制不同的plan生成
-		- 生成的模型需要尽可能的在枚举空间中均匀分布
+		- 生成的模型需要尽可能的在枚举空间中均匀分布，结合Plan Space Analysis
 	- 比较这些不同的plan的执行时间和代价模型
 - 测试框架：TAQO
+	-
 	-
