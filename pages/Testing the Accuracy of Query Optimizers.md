@@ -34,4 +34,5 @@
 			- Plan Deduplicator
 				- 解析执行的计划
 				- 删去重复的计划
-			- Execution Tracker.
+			- Execution Tracker
+			- Ranker
