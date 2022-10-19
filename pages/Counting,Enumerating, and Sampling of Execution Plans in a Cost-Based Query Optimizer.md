@@ -29,5 +29,6 @@
 					- 使得根据sub_rank算出来的rank为r_l
 				- 计算孩子group对应的plan
 - Application
-	-
+	- Verifying Query Processors
+	- Cost Distributions
 	-
