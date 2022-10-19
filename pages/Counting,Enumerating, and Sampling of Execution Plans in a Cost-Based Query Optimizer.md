@@ -11,6 +11,7 @@
 	- Counting：计算所有的空间
 		- 对于一个group，其所有可能的组合为其子所有expr的计划数之和
 		- 对于一个expr，其所有可能的组合为其所有child group计划数之乘
-	- Ranking
+	- UnRanking
+		- 假设总的计划数为$N(v)$
 		-
 		-
