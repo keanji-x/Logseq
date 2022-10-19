@@ -3,8 +3,7 @@
 		- `analyzeAndGenerateQueryPlan`
 			- `planner.plan(Stmt)`
 				- preprocess
-					-
-						- EliminateLogicalSelectHint：处理set var的hint
+					- EliminateLogicalSelectHint：处理set var的hint
 				- Casscades Init
 					- 初始化context，将plan 拷贝进memo
 				- analyze
