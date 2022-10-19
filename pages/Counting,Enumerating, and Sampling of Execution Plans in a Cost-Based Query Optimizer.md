@@ -30,5 +30,6 @@
 				- 计算孩子group对应的plan
 - Application
 	- Verifying Query Processors
+		- 根据上述算法，我们可以使用一个query，执行不同的plan来
 	- Cost Distributions
 	-
