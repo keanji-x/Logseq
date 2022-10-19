@@ -10,5 +10,5 @@
 - 算法
 	- counting：计算所有的空间
 		- 对于一个group，其所有可能的组合为其子所有expr的计划数之和
-		  $$b_v(i) = \sum_j N(w_)$$
+		  $$b_v(i) = \sum_j N(w)$$
 		-
