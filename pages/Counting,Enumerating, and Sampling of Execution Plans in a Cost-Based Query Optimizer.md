@@ -18,7 +18,7 @@
 		- Unranking
 			- 对于一个编号r，计算流程如下
 				- 从根节点开始，遍历每一个expr，计算local rank
-				  $$r -= Count(expr)$$
+				  $$r_l = r -\sum_{i} Count(expr_i)$$
 				- 对选定的expr的孩子，我们计算孩子的rank为
 			-
 		-
