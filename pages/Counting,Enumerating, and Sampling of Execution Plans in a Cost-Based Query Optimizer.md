@@ -33,5 +33,8 @@
 		- 根据上述算法，我们可以使用一个query，执行不同的plan来提高测试率
 		- SQLServer的语法
 		   ![image.png](../assets/image_1666150404314_0.png){:height 222, :width 370}
+		- 优点
+			- 简单，只需要几条语句
+			- 结果方便验证，因为都一样
 	- Cost Distributions
 	-
