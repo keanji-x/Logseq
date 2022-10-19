@@ -179,7 +179,7 @@
  {:block/name
   "counting,enumerating, and sampling of execution plans in a cost-based query optimizer",
   :block/created-at 1666096224942,
-  :block/updated-at 1666147199156}
+  :block/updated-at 1666148323710}
  {:block/name "csapp",
   :block/created-at 1663136047832,
   :block/updated-at 1663136047832}
