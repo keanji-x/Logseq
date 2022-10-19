@@ -18,11 +18,12 @@
 			- 将计划按照顺序编号$0...N(v)$
 		- Unranking
 			- 对于一个编号r，计算流程如下
-				- 从根节点开始，遍历每一个 v，计算local rank
+				- 从根group开始，遍历每一个 v，计算local rank
 				  $$r_l = r -\sum_{i} N(v_i)$$
 				- 对选定的expr的k个孩子，我们计算第i个孩子的rank为$s_v(i)$
 				  ![image.png](../assets/image_1666148816473_0.png){:height 204, :width 431}
 					- 本质上是一个编码，每个rank的权重是其孩子group数量
-					- 使得根据
-					-
+					- 使得根据sub_rank算出来的rank为r_l
+				- 计算孩子group对应的plan
+			-
 		-
