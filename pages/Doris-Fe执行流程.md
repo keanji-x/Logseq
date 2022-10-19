@@ -3,7 +3,7 @@
 		- `analyzeAndGenerateQueryPlan`
 			- `planner.plan(Stmt)`
 				- preprocess
-					- 使用各种visitor预处理语句
+					-
 						- EliminateLogicalSelectHint：处理set var的hint
 				- Casscades Init
 					- 初始化context，将plan 拷贝进memo
@@ -18,7 +18,10 @@
 				- derivestats
 					- 推导基本的统计信息
 				- optimize
-					-
+					- 执行基于代价的搜索
 				- chooseBestPlan
+					- 选择最佳计划
 				- postProcess
+					- RuntimeFilterGenerator
+					- Validator
 -
