@@ -30,6 +30,8 @@
 				- 计算孩子group对应的plan
 - Application
 	- Verifying Query Processors
-		- 根据上述算法，我们可以使用一个query，执行不同的plan来
+		- 根据上述算法，我们可以使用一个query，执行不同的plan来提高测试率
+		- SQLServer的语法
+		   ![image.png](../assets/image_1666150404314_0.png){:height 222, :width 370}
 	- Cost Distributions
 	-
