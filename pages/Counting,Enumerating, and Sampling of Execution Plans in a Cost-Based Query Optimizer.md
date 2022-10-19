@@ -1,6 +1,8 @@
 - 问题
+  collapsed:: true
 	- 测试优化器的核心是在计划空间中均匀采样
 - 核心
+  collapsed:: true
 	- Ranking
 		- ranking：将一个计划映射到一个整数
 		- unranking：从整数构建一个计划
@@ -8,6 +10,7 @@
 		- 如果我们保存所有的physical plan，就可以得到了完整的搜索空间（也许可以基于概率，或者基于cost分布保存）
 		- 我们可以建立一个映射来映射计划
 - 算法
+  collapsed:: true
 	- Counting：计算所有的空间
 		- 对于一个expr，以其为根节点的所有可能的组合为其所有child group计划数之乘，记为$N$
 		- 对于一个group，其所有可能的组合为其所有expr的计划数之和，记为$B$
@@ -25,5 +28,5 @@
 					- 本质上是一个编码，每个rank的权重是其孩子group数量
 					- 使得根据sub_rank算出来的rank为r_l
 				- 计算孩子group对应的plan
-		-
-		-
+-
+	-
