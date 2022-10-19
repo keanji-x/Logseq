@@ -3,7 +3,8 @@
 		- `analyzeAndGenerateQueryPlan`
 			- `planner.plan(Stmt)`
 				- preprocess
-					-
+					- 使用各种visitor预处理语句
+						- EliminateLogicalSelectHint
 				- analyze
 				- rewrite
 				- derivestats
