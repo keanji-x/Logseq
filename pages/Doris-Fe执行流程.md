@@ -8,10 +8,17 @@
 				- Casscades Init
 					- 初始化context，将plan 拷贝进memo
 				- analyze
-					-
+					- AnalyzeRulesJob
+					- AnalyzeSubqueryRulesJob
+					- TypeCoercionJob
+					- FinalizeAnalyzeJob
+					- CheckAnalysisJob
 				- rewrite
+					- 执行一些rewrite的rule
 				- derivestats
+					- 推导基本的统计信息
 				- optimize
+					-
 				- chooseBestPlan
 				- postProcess
 -
