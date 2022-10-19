@@ -18,9 +18,8 @@
 			- 将计划按照顺序编号$0...N(v)$
 		- Unranking
 			- 对于一个编号r，计算流程如下
-				- 从根节点开始，遍历每一个expr，计算local rank
-				  $$r_l = r -\sum_{i} Count(expr_i)$$
+				- 从根节点开始，遍历每一个 v，计算local rank
+				  $$r_l = r -\sum_{i} N(v_i)$$
 				- 对选定的expr的k个孩子，我们计算第i个孩子的rank为$r_i$
-				  使得$Cnt(g_{k-1})(Cnt(g_k)*r_k + Cnt(g_)$
 			-
 		-
