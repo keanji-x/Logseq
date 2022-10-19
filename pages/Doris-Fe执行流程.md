@@ -4,8 +4,9 @@
 			- `planner.plan(Stmt)`
 				- preprocess
 					- 使用各种visitor预处理语句
-						- EliminateLogicalSelectHint
+						- EliminateLogicalSelectHint：处理set var的hint
 				- analyze
+					-
 				- rewrite
 				- derivestats
 				- optimize
