@@ -29,6 +29,7 @@
 					- 使得根据sub_rank算出来的rank为r_l
 				- 计算孩子group对应的plan
 - Application
+  collapsed:: true
 	- Verifying Query Processors
 		- 根据上述算法，我们可以使用一个query，执行不同的plan来提高测试率
 		- SQLServer的语法
