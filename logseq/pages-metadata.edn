@@ -310,6 +310,9 @@
  {:block/name "optimizer",
   :block/created-at 1663132981155,
   :block/updated-at 1663132981155}
+ {:block/name "optmark: a toolkit for benchmarking query optimizers",
+  :block/created-at 1666155020827,
+  :block/updated-at 1666155020827}
  {:block/name "ostep",
   :block/created-at 1663119184740,
   :block/updated-at 1663119184740}
@@ -321,7 +324,7 @@
   :block/updated-at 1663132981382}
  {:block/name "paper reading",
   :block/created-at 1663135592568,
-  :block/updated-at 1666096224942}
+  :block/updated-at 1666155020827}
  {:block/name "paxos",
   :block/created-at 1663132980948,
   :block/updated-at 1663132980948}
