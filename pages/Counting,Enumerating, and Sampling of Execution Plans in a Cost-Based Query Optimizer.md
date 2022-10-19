@@ -9,8 +9,8 @@
 		- 我们可以建立一个映射来映射计划
 - 算法
 	- Counting：计算所有的空间
-		- 对于一个group，其所有可能的组合为其子所有expr的计划数之和
-		- 对于一个expr，其所有可能的组合为其所有child group计划数之乘
+		- 对于一个group，其所有可能的组合为其子所有expr的计划数之和，记为$C_g$
+		- 对于一个expr，其所有可能的组合为其所有child group计划数之乘，即为$C_e
 	- Ranking
 		- 假设总的计划数为$N(v)$
 		- Ranking
@@ -20,6 +20,6 @@
 				- 从根节点开始，遍历每一个expr，计算local rank
 				  $$r_l = r -\sum_{i} Count(expr_i)$$
 				- 对选定的expr的k个孩子，我们计算第i个孩子的rank为$r_i$
-				  使得$Cnt(g_k)*r_k + Cnt(g_{})$
+				  使得$Cnt(g_{k-1})(Cnt(g_k)*r_k + Cnt(g_)$
 			-
 		-
