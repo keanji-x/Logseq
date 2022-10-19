@@ -36,5 +36,5 @@
 		- 优点
 			- 简单，只需要几条语句
 			- 结果方便验证，因为都一样
-	- Cost Distributions
+	- Cost Distributions：待研究
 	-
