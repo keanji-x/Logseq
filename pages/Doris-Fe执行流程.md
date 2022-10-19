@@ -5,6 +5,8 @@
 				- preprocess
 					- 使用各种visitor预处理语句
 						- EliminateLogicalSelectHint：处理set var的hint
+				- Casscades Init
+					- 初始化context，将plan 拷贝进memo
 				- analyze
 					-
 				- rewrite
