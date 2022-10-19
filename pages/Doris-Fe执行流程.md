@@ -1,4 +1,6 @@
 - SelectStmt的一生
 	- `StmtExecutor::execute`
-		-
+		- `analyzeAndGenerateQueryPlan`
+			- `planner.plan(Stmt)`
+				-
 -
