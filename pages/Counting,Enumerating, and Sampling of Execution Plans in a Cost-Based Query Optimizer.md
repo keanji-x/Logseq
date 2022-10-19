@@ -25,5 +25,5 @@
 					- 本质上是一个编码，每个rank的权重是其孩子group数量
 					- 使得根据sub_rank算出来的rank为r_l
 				- 计算孩子group对应的plan
-			-
+		-
 		-
