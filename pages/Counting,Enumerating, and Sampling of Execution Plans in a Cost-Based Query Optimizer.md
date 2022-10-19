@@ -21,7 +21,8 @@
 				- 从根节点开始，遍历每一个 v，计算local rank
 				  $$r_l = r -\sum_{i} N(v_i)$$
 				- 对选定的expr的k个孩子，我们计算第i个孩子的rank为$s_v(i)$
-				  ![image.png](../assets/image_1666148816473_0.png)
-					-
+				  ![image.png](../assets/image_1666148816473_0.png){:height 204, :width 431}
+					- 本质上是一个编码，每个rank的权重是其孩子group数量
+					- 使得根据
 					-
 		-
