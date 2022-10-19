@@ -2,5 +2,12 @@
 	- `StmtExecutor::execute`
 		- `analyzeAndGenerateQueryPlan`
 			- `planner.plan(Stmt)`
-				-
+				- preprocess
+					-
+				- analyze
+				- rewrite
+				- derivestats
+				- optimize
+				- chooseBestPlan
+				- postProcess
 -
