@@ -2,15 +2,15 @@
 	- `StmtExecutor::execute`
 		- `analyzeAndGenerateQueryPlan`
 			- `planner.plan(Stmt)`
-				- preprocess
+				- preprocess（visitor模式）
 					- EliminateLogicalSelectHint：处理set var的hint
 				- Casscades Init
 					- 初始化context，将plan 拷贝进memo
 				- analyze
-					- AnalyzeRulesJob
-						- BindRelation（visitor模式）
+					- AnalyzeRulesJob（根据rule来自底向上execute task）
+						- BindRelation
 							- 从catalog那里根据表的名字解析table的具体信息
-						- BindSlotReference（execute task）
+						- BindSlotReference
 							- 构建Slot，将输入绑定到下面operator的输出
 						- BindFunction
 						- ResolveHaving
