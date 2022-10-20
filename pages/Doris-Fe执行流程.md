@@ -7,7 +7,7 @@
 				- Casscades Init
 					- 初始化context，将plan 拷贝进memo
 				- analyze
-					- AnalyzeRulesJob（使用visitor 改写每个operator状态）
+					- AnalyzeRulesJob
 						- BindRelation
 							- 从catalog那里根据表的名字解析table的具体信息
 						- BindSlotReference
