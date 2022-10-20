@@ -6,7 +6,7 @@
 					- EliminateLogicalSelectHint：处理set var的hint
 				- Casscades Init
 					- 初始化context，将plan 拷贝进memo
-				- analyze
+				- analyze（结合一些rule 来进行一些改写）
 					- AnalyzeRulesJob（根据rule来自底向上execute task）
 						- BindRelation
 							- 从catalog那里根据表的名字解析table的具体信息
