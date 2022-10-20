@@ -11,7 +11,8 @@
 						- BindRelation
 						- BindSlotReference
 						- BindFunction
-						-
+						- ResolveHaving
+						- ProjectToGlobalAggregate
 					- AnalyzeSubqueryRulesJob
 					- TypeCoercionJob
 					- FinalizeAnalyzeJob
