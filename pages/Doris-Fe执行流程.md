@@ -11,7 +11,7 @@
 						- BindRelation
 							- 将所有的UnboundRelation（根节点？）的表，根据表名+数据库名从catalog中开表（初始化表的基本信息）
 						- BindSlotReference
-							- 构建Slot，将输入绑定到下面operator的输出
+							- 对于所有的有输入的operator（除根节点）
 						- BindFunction
 						- ResolveHaving
 						- ProjectToGlobalAggregate
