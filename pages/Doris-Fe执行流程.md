@@ -11,7 +11,7 @@
 						- BindRelation
 							- 从catalog那里根据表的名字解析table的具体信息
 						- BindSlotReference
-							-
+							- 构建Slot，将输入绑定到下面operator的输出
 						- BindFunction
 						- ResolveHaving
 						- ProjectToGlobalAggregate
