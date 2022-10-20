@@ -8,9 +8,9 @@
 					- 初始化context，将plan 拷贝进memo
 				- analyze
 					- AnalyzeRulesJob
-						- BindRelation
+						- BindRelation（visitor模式）
 							- 从catalog那里根据表的名字解析table的具体信息
-						- BindSlotReference
+						- BindSlotReference（execute task）
 							- 构建Slot，将输入绑定到下面operator的输出
 						- BindFunction
 						- ResolveHaving
