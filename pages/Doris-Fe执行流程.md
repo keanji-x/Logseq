@@ -8,6 +8,10 @@
 					- 初始化context，将plan 拷贝进memo
 				- analyze
 					- AnalyzeRulesJob
+						- BindRelation
+						- BindSlotReference
+						- BindFunction
+						-
 					- AnalyzeSubqueryRulesJob
 					- TypeCoercionJob
 					- FinalizeAnalyzeJob
