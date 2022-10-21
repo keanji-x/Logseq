@@ -17,10 +17,11 @@
 						- BindFunction
 							- 绑定一些内置函数，比如对时间的加减函数
 						- ResolveHaving
-							-
+							- 处理having，待看
 						- ProjectToGlobalAggregate
 							- 处理空group by的agg
 					- AnalyzeSubqueryRulesJob
+						-
 					- TypeCoercionJob
 					- FinalizeAnalyzeJob
 					- CheckAnalysisJob
