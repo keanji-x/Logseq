@@ -42,14 +42,14 @@
 					- 表达式改写
 					- Reorder
 					- 列裁剪
-					- 谓词 limit 下推
-					- limit下推
+					- 下推 谓词 limit
 					- 删除无用 limit 谓词
 					- Rollup相关
 				- derivestats
 					- 推导基本的统计信息
 				- optimize
 					- 执行基于代价的搜索
+						-
 				- chooseBestPlan
 					- 选择最佳计划
 				- postProcess
