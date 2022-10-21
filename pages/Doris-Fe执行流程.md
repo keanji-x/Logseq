@@ -22,7 +22,7 @@
 							- 处理空group by的agg
 					- AnalyzeSubqueryRulesJob
 						- 处理filter 中的子查询，e.g., a in expressions
-						-
+						- 将上述条件改写
 					- TypeCoercionJob
 					- FinalizeAnalyzeJob
 					- CheckAnalysisJob
