@@ -30,7 +30,8 @@
 							  |      |
 							  child plan      subquery
 					- TypeCoercionJob
-						-
+						- 做表达式类型的一些改写
+							-
 					- FinalizeAnalyzeJob
 					- CheckAnalysisJob
 				- rewrite
