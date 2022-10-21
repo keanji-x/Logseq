@@ -24,7 +24,9 @@
 						- 处理filter 中的子查询，e.g., a in expressions
 						- 将上述条件改写，即使得条件不包括subquery
 						- 将subquery改写为apply放在filter的children上
-							- Apply 
+							- Logical Filter
+							      |
+							  Apply 
 							  |      |
 							        subquery
 					- TypeCoercionJob
