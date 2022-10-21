@@ -47,12 +47,11 @@
 					- Rollup相关
 				- derivestats
 					- 推导基本的统计信息
-				- optimize
-					- 执行基于代价的搜索
-						- join order
-						- project 和 谓词的下推
-				- chooseBestPlan
-					- 选择最佳计划
+				- optimize：执行基于代价的搜索
+					- join order
+					- project 和 谓词的下推
+				- chooseBestPlan：选择最佳计划
+					- 从根group开始，自顶向下构建对于property set 的
 				- postProcess
 					- RuntimeFilterGenerator
 					- Validator
