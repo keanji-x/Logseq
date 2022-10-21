@@ -30,6 +30,7 @@
 							  |      |
 							  child plan      subquery
 					- TypeCoercionJob
+						-
 					- FinalizeAnalyzeJob
 					- CheckAnalysisJob
 				- rewrite
