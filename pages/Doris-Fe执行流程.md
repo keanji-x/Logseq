@@ -21,10 +21,12 @@
 						- ProjectToGlobalAggregate
 							- 处理空group by的agg
 					- AnalyzeSubqueryRulesJob
+					  collapsed:: true
 						- 处理filter 中的子查询，e.g., a in expressions
 						- 将上述条件改写，使得包含再expression中的子查询变为单独一个apply
-							- 对于
+							- 即Filter<sub_expr>(child) Filter(Apply(child, sub_expr))
 					- TypeCoercionJob
+					  collapsed:: true
 						- 做表达式类型的一些改写
 							- 将表达式的类型cast到同一个类型
 							- 处理字符串常量和以及常量折叠
