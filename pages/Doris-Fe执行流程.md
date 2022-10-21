@@ -40,6 +40,9 @@
 				- rewrite：执行一些rewrite的plan
 					- 子查询改写
 					- 表达式改写
+					- Reorder
+					- 列裁剪
+					- 谓词下推
 					-
 				- derivestats
 					- 推导基本的统计信息
