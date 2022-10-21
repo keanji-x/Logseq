@@ -23,12 +23,7 @@
 					- AnalyzeSubqueryRulesJob
 						- 处理filter 中的子查询，e.g., a in expressions
 						- 将上述条件改写，使得包含再expression中的子查询变为单独一个apply
-						- 将subquery改写为apply放在filter的children上
-							- Logical Filter
-							      |
-							  Apply 
-							  |      |
-							  child plan      subquery
+							- 对于
 					- TypeCoercionJob
 						- 做表达式类型的一些改写
 							- 将表达式的类型cast到同一个类型
