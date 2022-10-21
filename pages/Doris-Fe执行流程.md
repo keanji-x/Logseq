@@ -31,7 +31,7 @@
 							- 将表达式的类型cast到同一个类型
 							- 处理字符串常量和以及常量折叠
 					- FinalizeAnalyzeJob
-						- 将alias node删除
+						- 去除一些alias node
 					- CheckAnalysisJob
 						- 检查expression input type的正确性
 				- rewrite
