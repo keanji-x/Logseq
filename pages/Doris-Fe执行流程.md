@@ -13,7 +13,7 @@
 						- BindSlotReference
 							- 对于所有的有输入的operator（具有predicates的节点）
 							- 遍历所有的predicates，将其所有的引用（输入）绑定到其孩子对应的expression
-						- BindFunction
+						- BindFunction（为什么function 和 expression要分开来处理）
 							-
 						- ResolveHaving
 						- ProjectToGlobalAggregate
