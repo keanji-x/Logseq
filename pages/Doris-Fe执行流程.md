@@ -19,6 +19,7 @@
 						- ResolveHaving
 							-
 						- ProjectToGlobalAggregate
+							- 处理空group by的agg
 					- AnalyzeSubqueryRulesJob
 					- TypeCoercionJob
 					- FinalizeAnalyzeJob
