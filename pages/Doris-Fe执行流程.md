@@ -36,7 +36,7 @@
 					- FinalizeAnalyzeJob
 						- 将alias node删除
 					- CheckAnalysisJob
-						-
+						- 检查expression input type的正确性
 				- rewrite
 					- 执行一些rewrite的rule
 				- derivestats
