@@ -14,9 +14,10 @@
 							- 对于所有的有输入的operator（具有predicates的节点）
 							- 遍历所有的predicates，将其所有的引用（输入）绑定到其孩子对应的expression
 							- 具体实现方式为，写一个规则处理所有的operator，再用visitor处理expression绑定到input的slot上
-						- BindFunction（为什么function 和 expression要分开来处理）
-							-
+						- BindFunction
+							- 绑定一些内置函数，比如对时间的加减函数
 						- ResolveHaving
+							-
 						- ProjectToGlobalAggregate
 					- AnalyzeSubqueryRulesJob
 					- TypeCoercionJob
