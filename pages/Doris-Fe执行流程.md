@@ -21,7 +21,8 @@
 						- ProjectToGlobalAggregate
 							- 处理空group by的agg
 					- AnalyzeSubqueryRulesJob
-						- 处理filter 中的子查询，e,g,.
+						- 处理filter 中的子查询，e.g., a in expressions
+						-
 					- TypeCoercionJob
 					- FinalizeAnalyzeJob
 					- CheckAnalysisJob
