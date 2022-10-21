@@ -51,7 +51,7 @@
 					- join order
 					- project 和 谓词的下推
 				- chooseBestPlan：选择最佳计划
-					- 从根group开始，自顶向下构建对于property set 的
+					- 从根group开始，自顶向下构建对于property set 的最佳计划
 				- postProcess
 					- RuntimeFilterGenerator
 					- Validator
