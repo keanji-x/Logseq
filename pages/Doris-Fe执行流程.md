@@ -28,7 +28,7 @@
 							      |
 							  Apply 
 							  |      |
-							        subquery
+							  child plan      subquery
 					- TypeCoercionJob
 					- FinalizeAnalyzeJob
 					- CheckAnalysisJob
