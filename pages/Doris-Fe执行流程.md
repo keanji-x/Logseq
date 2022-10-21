@@ -34,7 +34,9 @@
 							- 将表达式的类型cast到同一个类型
 							- 处理字符串常量和以及常量折叠
 					- FinalizeAnalyzeJob
+						- 将alias node删除
 					- CheckAnalysisJob
+						-
 				- rewrite
 					- 执行一些rewrite的rule
 				- derivestats
