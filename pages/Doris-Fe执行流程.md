@@ -37,8 +37,10 @@
 						- 去除一些alias node
 					- CheckAnalysisJob
 						- 检查expression input type的正确性
-				- rewrite
-					- 执行一些rewrite的rule
+				- rewrite：执行一些rewrite的plan
+					- 子查询改写
+					- 表达式改写
+					-
 				- derivestats
 					- 推导基本的统计信息
 				- optimize
