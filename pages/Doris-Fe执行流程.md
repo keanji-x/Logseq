@@ -3,10 +3,13 @@
 		- `analyzeAndGenerateQueryPlan`
 			- `planner.plan(Stmt)`
 				- preprocess（visitor模式）
+				  collapsed:: true
 					- EliminateLogicalSelectHint：处理set var的hint
 				- Casscades Init
+				  collapsed:: true
 					- 初始化context，将plan 拷贝进memo
 				- analyze（结合一些rule 来进行一些改写）
+				  collapsed:: true
 					- AnalyzeRulesJob（根据rule来自底向上execute task）
 						- BindRelation
 							- 将所有的UnboundRelation（未绑定的根节点）的表，根据表名+数据库名从catalog中开表（初始化表的基本信息）
