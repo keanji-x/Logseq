@@ -42,8 +42,10 @@
 					- 表达式改写
 					- Reorder
 					- 列裁剪
-					- 谓词下推
-					-
+					- 谓词 limit 下推
+					- limit下推
+					- 删除无用 limit 谓词
+					- Rollup相关
 				- derivestats
 					- 推导基本的统计信息
 				- optimize
