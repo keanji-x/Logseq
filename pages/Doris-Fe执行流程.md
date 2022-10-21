@@ -32,6 +32,8 @@
 					- TypeCoercionJob
 						- 做表达式类型的一些改写
 							- 将表达式的类型cast到同一个类型
+							- 常量折叠
+							-
 					- FinalizeAnalyzeJob
 					- CheckAnalysisJob
 				- rewrite
