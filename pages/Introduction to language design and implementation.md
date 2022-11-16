@@ -1,7 +1,9 @@
 - 从设计一个语言开始，表达式evaluation 语言
 	- Tiny Language 0：我们使用Add来构建抽象语法树，避免具体的语义
 	  ![image.png](../assets/image_1668603424226_0.png){:height 147, :width 499}
-	- 如果
+	- 如果我们想要解释它的话，可以使用模式匹配来递归执行
+	  ![image.png](../assets/image_1668603512443_0.png){:height 135, :width 383}
+	- 上述的执行
 	-
 	-
 	-
