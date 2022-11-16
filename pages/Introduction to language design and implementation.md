@@ -12,7 +12,12 @@
 			- 上述的执行过程依赖于一个语言栈，即我们需要保存临时变量
 		- Lowering to a stack machine and interpret：引入一个存储栈去执行
 			- 定义基本操作
-				-
+				- 指令
+				  ![image.png](../assets/image_1668603924453_0.png)
+				- 程序
+				- ![image.png](../assets/image_1668603932922_0.png)
+				- 操作数
+				- 数据栈
 			-
 	-
 		-
