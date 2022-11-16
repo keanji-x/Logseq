@@ -3,7 +3,10 @@
 	  ![image.png](../assets/image_1668603424226_0.png){:height 147, :width 499}
 	- 如果我们想要解释它的话，可以使用模式匹配来递归执行
 	  ![image.png](../assets/image_1668603512443_0.png){:height 135, :width 383}
-	- 上述的执行
+	- 上述的执行语义可以转为数学符号描述
+		- 定义基本的term：符号，和值范围values
+		  ![image.png](../assets/image_1668603567971_0.png){:height 68, :width 523}
+		- 对于上述的三条执行规则，我们可以用数学语言
 	-
 	-
 	-
