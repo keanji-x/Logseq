@@ -31,6 +31,10 @@
 				  ![image.png](../assets/image_1668604138573_0.png)
 				- formalization
 					- 这里我们使用方括号表示编译，则我们得到对语言的编译规则为
+					  ![image.png](../assets/image_1668604312038_0.png){:height 152, :width 492}
+					- 编译对应的语义为
+					  ![image.png](../assets/image_1668604358664_0.png){:height 76, :width 426}
+					-
 			-
 			-
 			-
