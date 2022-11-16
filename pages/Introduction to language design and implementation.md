@@ -51,7 +51,9 @@
 			   ![image.png](../assets/image_1668604633013_0.png){:height 69, :width 714}
 			- 一些标记，取值和赋值
 			  ![image.png](../assets/image_1668604663879_0.png)
-			-
+			- 执行规则
+			  ![image.png](../assets/image_1668604684075_0.png)
+		- 上述执行过程的问题是，我们需要通过变量名寻址，变量名寻址
 		-
 		-
 		-
