@@ -29,7 +29,8 @@
 				  ![image.png](../assets/image_1668604078599_0.png){:height 107, :width 500}
 				- 基本的操作指令和数学符号的映射
 				  ![image.png](../assets/image_1668604138573_0.png)
-				- Proof Tree
+				- formalization
+					- 这里我们使用方括号表示编译，则我们得到对语言的编译规则为
 			-
 			-
 			-
