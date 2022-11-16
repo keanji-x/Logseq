@@ -32,6 +32,8 @@
 				- formalization
 					- 这里我们使用方括号表示编译，则我们得到对语言的编译规则为
 					  ![image.png](../assets/image_1668604312038_0.png){:height 152, :width 492}
+					- 对于一系列指令，我们编译到最后，使得栈上只有一个值，这个值就是执行结果
+						- 栈平衡：执行结果
 					- 编译对应的语义为
 					  ![image.png](../assets/image_1668604358664_0.png){:height 76, :width 426}
 					-
