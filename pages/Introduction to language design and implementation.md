@@ -43,8 +43,9 @@
 			-
 	- Tiny Language 1：引入一个有名变量
 	  ![image.png](../assets/image_1668604479634_0.png){:height 131, :width 485}
-		-
-		-
+		- 这里语言的执行过程和Tiny Language 1类似，不过我们引入了一个环境保存变量
+		  ![image.png](../assets/image_1668604519543_0.png){:height 225, :width 627}
+			- 这里引入一个
 		-
 		-
 		-
