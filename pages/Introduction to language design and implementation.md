@@ -8,6 +8,7 @@
 		  ![image.png](../assets/image_1668603567971_0.png){:height 68, :width 523}
 		- 对于上述的三条执行规则，我们可以用数学语言描述
 		  ![image.png](../assets/image_1668603598358_0.png)
+	- 上述的执行过程依赖于一个语言
 		-
 	-
 	-
