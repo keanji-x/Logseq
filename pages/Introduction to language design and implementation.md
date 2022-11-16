@@ -15,9 +15,14 @@
 				- 指令
 				  ![image.png](../assets/image_1668603924453_0.png)
 				- 程序
-				- ![image.png](../assets/image_1668603932922_0.png)
+				- ![image.png](../assets/image_1668603932922_0.png){:height 53, :width 486}
 				- 操作数
+				  ![image.png](../assets/image_1668603950876_0.png){:height 40, :width 352}
 				- 数据栈
+				  ![image.png](../assets/image_1668603960302_0.png){:height 43, :width 474}
+			- 基于栈的数据操作：每次操作将数据压入栈顶
+			  ![image.png](../assets/image_1668603999064_0.png){:height 215, :width 522}
+			-
 			-
 	-
 		-
