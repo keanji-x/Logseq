@@ -29,7 +29,7 @@
 				  ![image.png](../assets/image_1668604078599_0.png){:height 107, :width 500}
 				- 基本的操作指令和数学符号的映射
 				  ![image.png](../assets/image_1668604138573_0.png)
-				-
+				- Proof Tree
 			-
 			-
 			-
