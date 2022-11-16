@@ -56,3 +56,7 @@
 			  ![image.png](../assets/image_1668604684075_0.png)
 		- 上述执行过程的问题是，我们需要通过变量名寻址，变量名寻址比较低效可以直接转为一个栈，利用索引寻址
 	- Tiny  Language 2：将有名变量转为无名变量
+	  ![image.png](../assets/image_1668604799970_0.png){:height 180, :width 341}
+		- 构造一个使用语言栈的evaluation过程
+		  ![image.png](../assets/image_1668604832943_0.png){:height 222, :width 580}
+			- 该构造过程
