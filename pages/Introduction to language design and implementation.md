@@ -46,7 +46,12 @@
 		- 这里语言的执行过程和Tiny Language 1类似，不过我们引入了一个环境保存变量
 		  ![image.png](../assets/image_1668604519543_0.png){:height 225, :width 627}
 			- 这里引入一个三元表达式，语义为 let (x, e1, e2): e2 是包含x的表达式，其中x = e1
-		-
+		- formalization
+			- 符号定义
+			   ![image.png](../assets/image_1668604633013_0.png){:height 69, :width 714}
+			- 一些标记，取值和赋值
+			  ![image.png](../assets/image_1668604663879_0.png)
+			-
 		-
 		-
 		-
