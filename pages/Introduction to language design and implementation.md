@@ -24,7 +24,11 @@
 			  ![image.png](../assets/image_1668603999064_0.png){:height 215, :width 522}
 				- Cst：将数据压入栈顶
 				- Add|Mul：取出栈顶的两个元素来操作
-			- 压栈出栈的数学符号
+			- formalization
+				- 压栈出栈的数学符号
+				  ![image.png](../assets/image_1668604078599_0.png){:height 107, :width 500}
+				- 基本的操作指令和
+			-
 			-
 			-
 	-
