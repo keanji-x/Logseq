@@ -20,8 +20,11 @@
 				  ![image.png](../assets/image_1668603950876_0.png){:height 40, :width 352}
 				- 数据栈
 				  ![image.png](../assets/image_1668603960302_0.png){:height 43, :width 474}
-			- 基于栈的数据操作：每次操作将数据压入栈顶
+			- 基于栈的数据操作
 			  ![image.png](../assets/image_1668603999064_0.png){:height 215, :width 522}
+				- Cst：将数据压入栈顶
+				- Add|Mul：取出栈顶的两个元素来操作
+			- 压栈出栈的数学符号
 			-
 			-
 	-
