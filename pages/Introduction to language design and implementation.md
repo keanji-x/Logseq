@@ -72,4 +72,6 @@
 				- 例子
 					- 例1
 					  ![image.png](../assets/image_1668688023805_0.png)
-					-
+					- 例2
+					  ![image.png](../assets/image_1668688043517_0.png)
+						- Add(Csrt(1), let(x, Cst(2), Add(Cst(x), Cst())))
