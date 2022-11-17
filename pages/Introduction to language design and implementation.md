@@ -1,6 +1,5 @@
 - 从设计一个语言开始，表达式evaluation 语言
 	- Tiny Language 0：我们使用Add来构建抽象语法树，避免具体的语义
-	  collapsed:: true
 	  ![image.png](../assets/image_1668603424226_0.png){:height 147, :width 499}
 		- 如果我们想要解释它的话，可以使用模式匹配来递归执行
 		  collapsed:: true
@@ -31,7 +30,7 @@
 				- 基本的操作指令和数学符号的映射
 				  ![image.png](../assets/image_1668604138573_0.png)
 				- formalization
-					- 这里我们使用方括号表示编译，则我们得到对语言的编译规则为
+					- 这里我们使用方括号表示编译，则我们得到对语言的编译规则为，
 					  ![image.png](../assets/image_1668604312038_0.png){:height 152, :width 492}
 					- 对于一系列指令，我们编译到最后，使得栈上只有一个值，这个值就是执行结果
 						- 栈平衡：在执行后，栈只会包含一个值
@@ -67,4 +66,5 @@
 		  ![image.png](../assets/image_1668686833431_0.png)
 			- 这里将加一个cenv，即编译时的环境，用来存储变量名
 			- 这里我们通过index(cenv, x)找到对应变量的索引
-		-
+		- 同样我们期望将其编译为一系列的指令
+			-
