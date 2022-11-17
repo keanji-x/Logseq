@@ -66,4 +66,5 @@
 		- 同我们可以将一个有名的expr翻译为Nameless的expr
 		  ![image.png](../assets/image_1668686833431_0.png)
 			- 这里将加一个cenv，即编译时的环境，用来存储变量名
-			- 这里Let(x, e1, e2) 的语义
+			- 这里我们通过index(cenv, x)找到对应变量的索引
+		-
