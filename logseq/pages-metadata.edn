@@ -242,7 +242,7 @@
   :block/updated-at 1663071616346}
  {:block/name "introduction to language design and implementation",
   :block/created-at 1668515640972,
-  :block/updated-at 1668688168787}
+  :block/updated-at 1668688302850}
  {:block/name "java",
   :block/created-at 1663136307990,
   :block/updated-at 1663136307990}
@@ -487,6 +487,9 @@
  {:block/name "welcome",
   :block/created-at 1663120262265,
   :block/updated-at 1663120262265}
+ {:block/name "λ calculus",
+  :block/created-at 1668688358346,
+  :block/updated-at 1668688358346}
  {:block/name "中级宏观",
   :block/created-at 1663132982270,
   :block/updated-at 1663729700898}
@@ -549,7 +552,7 @@
   :block/updated-at 1663119184734}
  {:block/name "程序语言设计与实现",
   :block/created-at 1668515573681,
-  :block/updated-at 1668517854318}
+  :block/updated-at 1668688358346}
  {:block/name "算法导论",
   :block/created-at 1663136569313,
   :block/updated-at 1663136569313}
