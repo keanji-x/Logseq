@@ -1,5 +1,6 @@
 - 从设计一个语言开始，表达式evaluation 语言
 	- Tiny Language 0：我们使用Add来构建抽象语法树，避免具体的语义
+	  collapsed:: true
 	  ![image.png](../assets/image_1668603424226_0.png){:height 147, :width 499}
 		- 如果我们想要解释它的话，可以使用模式匹配来递归执行
 		  collapsed:: true
@@ -38,6 +39,7 @@
 					  ![image.png](../assets/image_1668604358664_0.png){:height 76, :width 426}
 			-
 	- Tiny Language 1：引入一个有名变量
+	  collapsed:: true
 	  ![image.png](../assets/image_1668604479634_0.png){:height 131, :width 485}
 		- 这里语言的执行过程和Tiny Language 1类似，不过我们引入了一个环境保存变量
 		  ![image.png](../assets/image_1668604519543_0.png){:height 225, :width 627}
@@ -51,6 +53,7 @@
 			  ![image.png](../assets/image_1668604684075_0.png)
 		- 上述执行过程的问题是，我们需要通过变量名寻址，变量名寻址比较低效可以直接转为一个栈，利用索引寻址
 	- Tiny  Language 2：将有名变量转为无名变量
+	  collapsed:: true
 	  ![image.png](../assets/image_1668604799970_0.png){:height 180, :width 341}
 		- 构造一个使用语言栈的evaluation过程
 		  ![image.png](../assets/image_1668604832943_0.png){:height 222, :width 580}
@@ -70,9 +73,11 @@
 			  $$[\![Let(e1, e2)]\!] = [\![e1]\!];[\![e2]\!];Swap;Pop$$
 				- 这里会造成一次变量的冗余压栈，所以最后需要swap和pop保证栈平衡
 				- 例子
+				  collapsed:: true
 					- 例1
 					  ![image.png](../assets/image_1668688023805_0.png)
-						- 注：上述Var(1) 是将
+						- 注：上述Var(1) 是因为上述索引开始永远是栈顶，即栈顶是0
 					- 例2
 					  ![image.png](../assets/image_1668688043517_0.png)
 						- Add(Cst(1), let(x, Cst(2), Add(Var(x), Cst(7)))) =>
+-
