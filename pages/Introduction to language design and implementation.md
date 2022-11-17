@@ -60,4 +60,6 @@
 		- 构造一个使用语言栈的evaluation过程
 		  ![image.png](../assets/image_1668604832943_0.png){:height 222, :width 580}
 			- 该构造过程引入了一个二元函数，let(e1, e2): e1 作为e2 的变量
+			- 上述语义同样也可以使用数学公式表达
+			  ![image.png](../assets/image_1668686694067_0.png)
 			-
