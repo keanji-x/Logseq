@@ -66,5 +66,5 @@
 			- 为了编译Nameless expr，我们还需引入一些指令
 			   ![image.png](../assets/image_1668687327419_0.png)
 			- 我们可以得到
-			  $$Var[] $$
+			  $$ \![\] $$
 			-
