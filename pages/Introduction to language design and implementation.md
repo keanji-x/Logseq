@@ -36,12 +36,8 @@
 						- 栈平衡：在执行后，栈只会包含一个值
 					- 编译对应的语义为
 					  ![image.png](../assets/image_1668604358664_0.png){:height 76, :width 426}
-					-
-			-
-			-
 			-
 	- Tiny Language 1：引入一个有名变量
-	  collapsed:: true
 	  ![image.png](../assets/image_1668604479634_0.png){:height 131, :width 485}
 		- 这里语言的执行过程和Tiny Language 1类似，不过我们引入了一个环境保存变量
 		  ![image.png](../assets/image_1668604519543_0.png){:height 225, :width 627}
@@ -67,5 +63,6 @@
 			- 这里将加一个cenv，即编译时的环境，用来存储变量名
 			- 这里我们通过index(cenv, x)找到对应变量的索引
 		- 同样我们期望将其编译为一系列的指令
-			- 为了编译无名
+			- 为了编译Nameless expr，我们还需引入一些指令
+			   ![image.png](../assets/image_1668687327419_0.png)
 			-
