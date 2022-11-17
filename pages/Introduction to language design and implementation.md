@@ -81,6 +81,6 @@
 					  ![image.png](../assets/image_1668688043517_0.png)
 						- Add(Cst(1), let(x, Cst(2), Add(Var(x), Cst(7)))) =>
 - 总结：我们做了三次语言的翻译，从expr =》 无名expr =》使用宿主栈的expr
-  ![image.png](../assets/image_1668688262034_0.png)
--
+  ![image.png](../assets/image_1668688262034_0.png){:height 190, :width 423}
+	- 这里面从栈指令层面翻译name 到 nameless，这里略
 -
