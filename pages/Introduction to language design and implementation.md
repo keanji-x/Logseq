@@ -72,6 +72,7 @@
 				- 例子
 					- 例1
 					  ![image.png](../assets/image_1668688023805_0.png)
+						- 注：上述Var(1) 是将
 					- 例2
 					  ![image.png](../assets/image_1668688043517_0.png)
-						- Add(Csrt(1), let(x, Cst(2), Add(Cst(x), Cst())))
+						- Add(Cst(1), let(x, Cst(2), Add(Var(x), Cst(7)))) =>
