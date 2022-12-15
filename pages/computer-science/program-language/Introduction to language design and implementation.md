@@ -80,11 +80,26 @@
 			- 如何编译Var 指令
 				- 尽管在语言中Var(i) 表示第i个局部变量，但是i并不一定代表栈道地址，如上述例1，所以我们需要将bind index 转变为stack index
 				- 这一步是通过引入另一个IR，index.expr 来实现的
+				  collapsed:: true
 				   ![image.png](../assets/image_1671109599108_0.png)
 					- 将nameless.expr => indexd.expr 的核心便是stack_index的计算，编译过程如下
 					  ![image.png](../assets/image_1671109664397_0.png)
 						- 以上编译过程称为 abstract interpretation，即我们不关心具体的值，只关心变量的性质：是局部变量还是临时变量
+						- 我们会模拟整个执行流程，在遇到Var(s) 时，我们将bind index 转为 stack index
+							- 即考虑临时变量后的实际物理地址
+							- 比如 注意右下角的Var0 -> Var1的过程
+							  ![image.png](../../../assets/image_1671112863843_0.png)
+						- 在得到stack index后，我们便可以自然的将其转变为machine language
+						  ![image.png](../../../assets/image_1671112974922_0.png)
 				-
-- 总结：我们做了三次语言的翻译，从expr =》 无名expr =》使用宿主栈的expr
+				- 上述的编译过程包括 named.expr => nameless.expr => indexd.expr => machine language，四个语言。当然也可以将它们合并为一个pass
+					- 现代编译器更倾向于多个pass，因为每个pass都可以优化，且方便debug，在内存足够的情况下
+- 总结，这一节我们学到了
   ![image.png](../assets/image_1668688262034_0.png){:height 190, :width 423}
+	- 即三种eval，两种 translate
+	    expr => eval
+	       |
+	  namelss => eval
+	       |
+	     instr => eval
 	- 这里面从栈指令层面翻译name 到 nameless，这里略
