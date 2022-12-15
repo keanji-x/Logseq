@@ -53,7 +53,6 @@
 			  ![image.png](../assets/image_1668604684075_0.png)
 		- 上述执行过程的问题是，我们需要通过变量名寻址，变量名寻址比较低效可以直接转为一个栈，利用索引寻址
 	- Tiny  Language 2：将有名变量转为无名变量
-	  collapsed:: true
 	  ![image.png](../assets/image_1668604799970_0.png){:height 180, :width 341}
 		- 构造一个使用语言栈的evaluation过程
 		  ![image.png](../assets/image_1668604832943_0.png){:height 222, :width 580}
@@ -68,19 +67,24 @@
 		- 同样我们期望将其编译为一系列的指令
 			- 为了编译Nameless expr，我们还需引入一些指令
 			   ![image.png](../assets/image_1668687327419_0.png)
-			- 我们可以得到
-			  $$ [\![Var(i)]\!]  = Var(i)$$
+			- 1如何编译Let 指令
 			  $$[\![Let(e1, e2)]\!] = [\![e1]\!];[\![e2]\!];Swap;Pop$$
-				- 这里会造成一次变量的冗余压栈，所以最后需要swap和pop保证栈平衡
+				- 为了保持栈平衡，我们需要删除$[\![e1]\!]$，所以需要swap 和 pop
 				- 例子
-				  collapsed:: true
-					- 例1
+					- 例1，注意转为nameless expr的时候，下述x是不需要的
 					  ![image.png](../assets/image_1668688023805_0.png)
 						- 注：上述Var(1) 是因为上述索引开始永远是栈顶，即栈顶是0
 					- 例2
 					  ![image.png](../assets/image_1668688043517_0.png)
 						- Add(Cst(1), let(x, Cst(2), Add(Var(x), Cst(7)))) =>
+			- 如何编译Var 指令
+				- 尽管在语言中Var(i) 表示第i个局部变量，但是i并不一定代表栈道地址，如上述例1，所以我们需要将bind index 转变为stack index
+				- 这一步是通过引入另一个IR，index.expr 来实现的
+				   ![image.png](../assets/image_1671109599108_0.png)
+					- 将nameless.expr => indexd.expr 的核心便是stack_index的计算，编译过程如下
+					  ![image.png](../assets/image_1671109664397_0.png)
+						- 以上编译过程称为 abstract interpretation，即我们不关心具体的值，只关心变量的性质：是局部变量还是临时变量
+				-
 - 总结：我们做了三次语言的翻译，从expr =》 无名expr =》使用宿主栈的expr
   ![image.png](../assets/image_1668688262034_0.png){:height 190, :width 423}
 	- 这里面从栈指令层面翻译name 到 nameless，这里略
--
