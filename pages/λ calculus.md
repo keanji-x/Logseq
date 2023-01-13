@@ -26,6 +26,7 @@
 	-
 - lambda calculus
 	- Simplify tiny language 3 to lambda calculus
+	  collapsed:: true
 		- 对于let iterm，我们可以将其转为函数调用
 		  $$let(x, e1, e2) = App(Fn(x, e2), e1)$$
 		- 将所有的常量数转为函数（Church numeral）
@@ -38,6 +39,7 @@
 			- 一元函数定义
 			- 一元函数调用
 	- Formally Definition
+	  collapsed:: true
 		- Lambda terms: $M,N ::= x|(MN)|(\lambda x.M)$
 			- 其中小写字母x，作为变量名
 			- MN: 是函数调用，即将N作为M的参数
@@ -52,5 +54,35 @@
 			- lambda 计算的结果和计算的顺序无关，也就是说我们可以随便选择一个 $\beta - redex$进行归约
 			- 形式化的描述
 			  ![image.png](../assets/image_1673319704511_0.png)
-			-
+	- Execution
+	  collapsed:: true
+		- 形式化执行
+			- 如何执行函数Call by Value
+			  $$\frac{}{(\lambda x.a)v \rightarrow a[v/x]} $$
+			- 执行顺序，从左到右
+			  $$\frac{a\rightarrow a'}{ab\rightarrow a'b}, \frac{b\rightarrow b'}{vb\rightarrow vb'}$$
+		- 具体的解释执行可分为两种：Substitution 和 Environment
+			- 在执行的时候，替换对应变量，正如上述定义
+			  ![image.png](../assets/image_1673359740048_0.png){:height 344, :width 392}
+				- 实际不容易实现，因为生成代码很麻烦
+				- 在编译时可以做一些IR的生成，类似于常量折叠，partial evaluation？
+			- 在执行的时候，将所有的外部变量，都保存在环境中，最后统一解释执行替换
+			  ![image.png](../assets/image_1673359862981_0.png){:height 255, :width 345}
+	- 用函数表示数
+		- bool
+			- 数据定义：$T = \lambda xy.x , F = \lambda xy.y$，即它接收两个参数，即if else里的两个参数
+			- 基本操作if-then-else $\lambda x.x$
+				- 当我们带入T，即$\lambda x.x T MN= \lambda xy.x MN = M$。可见正好选择了第一个参数，和true语意相通
+				- 同理，当我们带入F的时候，会选择N
+		- Pair
+			- 数据定义：$P = \lambda xyz.zxy$，它接受三个参数，pair 对xy和访问方法p
+			- First：F=$\lambda p.p \lambda xy.x$
+				- 规约过程
+				  id:: 63bd7690-255f-4331-9138-7c191cfc0a19
+				  $$
+				  F P M N \rightarrow F \space \lambda z.zMN  \rightarrow \lambda z.zMN \space \lambda xy.x \rightarrow \lambda xy.x MN  \rightarrow M
+				  $$
+			- Second: $F = \lambda p.p \lambda xy.y$
+		- Numerals
+		-
 -
