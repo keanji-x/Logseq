@@ -84,5 +84,24 @@
 				  $$
 			- Second: $F = \lambda p.p \lambda xy.y$
 		- Numerals
-		-
+			- 数据定义
+			  $$
+			  n = \lambda fx.f^n(x) \\0 = \lambda fx.x $$
+			- 数据操作
+				- 加法推导
+					- 后继函数: succ
+					  $$succ = \lambda nfx.f(nfx)$$
+						- 举例
+						  $$
+						  \begin{align}
+						  succ(n)  &\\
+						  &= \lambda nfx.f(nfx) \lambda fx.f^n(x)  \\  
+						  &= \lambda fx.f(\lambda fx.f^n(x)fx) \\
+						  &= \lambda fx.f(f^n(x)) = \lambda fx.f^{n+1}(x)
+						  \end{align}
+						   $$
+					- 加函数：add
+					  $$\lambdanm.$$
+-
+-
 -
