@@ -69,12 +69,15 @@
 			- 在执行的时候，将所有的外部变量，都保存在环境中，最后统一解释执行替换
 			  ![image.png](../assets/image_1673359862981_0.png){:height 255, :width 345}
 	- 用函数表示数
+	  collapsed:: true
 		- bool
+		  collapsed:: true
 			- 数据定义：$T = \lambda xy.x , F = \lambda xy.y$，即它接收两个参数，即if else里的两个参数
 			- 基本操作if-then-else $\lambda x.x$
 				- 当我们带入T，即$\lambda x.x T MN= \lambda xy.x MN = M$。可见正好选择了第一个参数，和true语意相通
 				- 同理，当我们带入F的时候，会选择N
 		- Pair
+		  collapsed:: true
 			- 数据定义：$P = \lambda xyz.zxy$，它接受三个参数，pair 对xy和访问方法p
 			- First：F=$\lambda p.p \lambda xy.x$
 				- 规约过程
@@ -88,6 +91,7 @@
 			  $$
 			  n = \lambda fx.f^n(x) \\0 = \lambda fx.x $$
 			- 数据操作
+			  collapsed:: true
 				- 加法推导
 					- 后继函数: succ
 					  $$succ = \lambda nfx.f(nfx)$$
@@ -101,7 +105,93 @@
 						  \end{align}
 						   $$
 					- 加函数：add
-					  $$\lambdanm.$$
--
--
--
+					  collapsed:: true
+					  $$\lambda nmfx.nf(mfx)$$
+						- 推导
+						  $$
+						  \begin{align}
+						  \lambda nmfx.nf(mfx) \space nm \\
+						  &= \lambda fx.(\lambda fx.f^n(x)) f (\lambda fx.f^m(x)fx) \\
+						  &= \lambda fx.(\lambda fx.f^n(x)) f^{m+1}(x)) \text{每次带入两个f} \\
+						  &= \lambda fx.( f^{m+n}(x)) 
+						  \end{align}
+						  $$
+					- is zero
+					  collapsed:: true
+					  $$iszero = \lambda n.n(\lambda z.\overline F)\overline T$$
+						- 推导
+							- 当是0的时候
+							  $$\lambda n.n(\lambda z.\overline F)\overline T 0 = \lambda fx.x(\lambda z.\overline F)\overline T = \overline T$$
+							- 当不是0
+							  $$\lambda n.n(\lambda z.\overline F)\overline T 0 = \lambda fx.f^nx(\lambda z.\overline F)\overline T = \overline F$$
+					- Predecessor
+					  collapsed:: true
+					  $$\lambda n. fst (n \space(\lambda p. pair(snd\space p)(succ (snd\space p)))(pair 0, 0)$$
+						- 推导
+							- 0
+							  $$
+							  \begin{align}
+							  & \lambda n. fst (n \space(\lambda p. pair(snd\space p)(succ (snd\space p)))(pair 0, 0) 0 \\
+							  &= fst (0 \space(\lambda p. pair(snd\space p)(succ (snd\space p))(pair 0, 0)  \\
+							  &= fst(pair 0, 0)  = 0
+							  \end{align}
+							  $$
+							- 非0
+							  $$
+							  \begin{align}
+							  & \lambda n. fst (n \space(\lambda p. pair(snd\space p)(succ (snd\space p)))(pair 0, 0) n \\
+							  &= fst (n \space(\lambda p. pair(snd\space p)(succ (snd\space p))(pair 0, 0)  \\
+							  &= fst (\space(\lambda p. pair(snd\space p)(succ (snd\space p))^n(pair 0, 0) \\
+							  &= fst (\space(\lambda p. pair(snd\space p)(succ (snd\space p))^{n-1}(pair 0, 1) \\
+							  &= fst(n-1, n) = n-1 
+							  \end{align}
+							  $$
+						-
+					- multiplication
+					  collapsed:: true
+						- 递归定义
+						  $$\times = \lambda nm. ifZero \space n \space 0 (\space m+(n-1)\times m)$$
+						- 上述公式可以将其化简，提取乘号
+						  $$\times = \lambda nm. ifZero \space n \space 0 \space (\lambda f. (m+f(n-1, m)\times))$$
+						- 将右边的公式用F表示即得到
+						  $$\times = F \times$$
+						- 接下来的核心便是对F的推导，这部分的核心是lambda对于递归的定义，感觉和乘法无关。参照下一节
+						-
+		- 递归：如何将递归引入lambda 演算
+		  collapsed:: true
+			- 这里以一个经典斐波拉契数列为例
+				- 斐波拉契函数
+				  $$Fib = \lambda n. if (n = 1) \text{ 1 } (n * f(n-1))$$
+				- 上述函数有一个问题，就是f是递归定义的，而lambda 语义中没有递归定义。我们可以抽象为
+				  $$Fib = \lambda fn.if(n=1)1(nf(n-1))Fib$$
+				- 我们将左半边抽象为F得到
+				  $$Fib = \lambda fn.FFib$$
+				- 由于n是未bound的，所以我们得到
+				  $$f = Ff\\F= \lambda fn.if(n=1)1(nf(n-1))$$
+				- 这里我们希望求解f，而f的本质上的语义是递归的调用F（推导略）
+					- 不动点理论当存在一个形式$YF = F(YF)$，我们把Y称为不动点组合子
+					- 经典Y组合子(Y combinator)
+					  $$\lambda f. (\lambda x.f(xx))(\lambda x.f(xx))$$
+				- 所以我们可以解得$Fib= YF$，即
+				  $$Fib = Y\lambda fn.if(n=1)1(nf(n-1))$$
+					- 推到$Fib(2)$
+					  $$\begin{align}
+					  Fib2 &= YF2\\
+					  &= \lambda x.F(xx) \lambda x.F(xx) 2 \\
+					  &= F(YF)2 \\
+					  &=(\lambda f.2f(1) )(YF) \\
+					  &=2*F((YF))1 \\
+					  &=2*1 \\
+					  &=2\end{align}$$
+				- 程序语言来实现
+					- 假设存在一个递归函数fix
+					- 我们可以定义一个通用的调用改递归函数的模版:
+					  ```
+					  combinator (fix, ...) ->  fix (combinator, ...)
+					  ```
+					- 这里还是以递归函数为例
+					  ```
+					  fib(n) = n == 1? 1 : fib(n-1)
+					  combinator(fix, n) ->  fix(combinator, n)  
+					  ```
+					- 该定义的好处，我们可以在combinator函数中做一些通用的优化，比如cache缓存结果等
