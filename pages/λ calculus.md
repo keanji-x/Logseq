@@ -1,5 +1,4 @@
 - 从引入函数开始（tiny language 3）
-  collapsed:: true
 	- 我们继[tiny language](((639b2805-145f-444e-805a-b0fe66998f11)))需要引入新的expr定义
 	  collapsed:: true
 	   ![image.png](../assets/image_1673316918464_0.png){:height 113, :width 375}
@@ -25,6 +24,7 @@
 		- 如何计算对应的索引，homework
 	-
 - lambda calculus
+  collapsed:: true
 	- Simplify tiny language 3 to lambda calculus
 	  collapsed:: true
 		- 对于let iterm，我们可以将其转为函数调用
