@@ -12,6 +12,7 @@
 				- 离散：正整数，**字符串** （只有activate domain）
 				- 连续：**浮点数 **（只有activate domain）
 - 基本操作
+  collapsed:: true
 	- 构建 
 	  ![image.jpg](../assets/f2586aba-a99e-499c-984f-cf0577853e8d-1115003.jpg)
 	- 更新
@@ -22,7 +23,6 @@
 	- 计算
 	   ![image.jpg](../assets/02dd530c-34f0-4a8d-9137-9870534b5780-1115003.jpg)
 - A First Approach
-  collapsed:: true
 	- Abbreviations
 	   ![image.jpg](../assets/6d3608e3-9102-459c-9cb4-751e9a6c1cc7-1115003.jpg)
 	- CPU cost
@@ -59,11 +59,9 @@
 		- profile propagation没有讨论
 - Logical Profile
 	- 完备性
-	  collapsed:: true
 		- **cardinality estimate**
 		- **profile propagation**
 	- 基本概念
-	  collapsed:: true
 		- 下界
 		   ![image.jpg](../assets/c3e9f6f3-8299-4f19-9fc7-8f6ad6a25cc4-1115003.jpg){:height 42, :width 198}
 		- 上界
@@ -73,7 +71,6 @@
 		- distinct value：这里的含义是distinct value的数量
 		   ![image.jpg](../assets/ca240d8c-3c60-4433-9bb0-54c1efda0d0a-1115003.jpg){:height 44, :width 170}
 	- 假设
-	  collapsed:: true
 		- 均匀分布
 			- uniform distribute assumption：每个值出现的频率相同
 			- uniform spread assumption(equal spread assumption)：每个值出现的位置分布是均匀的
@@ -82,7 +79,6 @@
 		   ![image.jpg](../assets/7d051eef-a97b-48bc-a9b2-487f2e76d149-1115003.jpg){:height 49, :width 358}
 	- Propagation
 		- 问题描述
-		  collapsed:: true
 			- 表R 和 attribute
 			   ![image.jpg](../assets/aacfe2a5-3395-4b5a-bede-1517791e6fbe-1115003.jpg){:height 46, :width 138}
 			- 给定每个attribute的logical profile
@@ -94,13 +90,11 @@
 			  $$ba’ = [l_a’, u_a’, f_a’, d_a’]$$
 		- 基本operator
 			- filter（针对是同一张表）
-			  collapsed:: true
 				- exact match ​​​​​​​​​​​​​​​​$\sigma_{A=c}$
-				  collapsed:: true
 					- 属性A
 						- l，u：上界下界 为c
 						- distinct value：我们假设条件总等满足，所以d为1（因为总是返回0的估计没有意义）
-						   ![image.jpg](../assets/686254fb-927d-44fc-937c-ea919f0c69db-1115003.jpg){:height 94, :width 376}
+						   ![image.jpg](../assets/686254fb-927d-44fc-937c-ea919f0c69db-1115003.jpg){:height 98, :width 376}
 						- 累计次数满足均匀分布且CSA（对于是key的attribute，为1）
 						   ![image.jpg](../assets/2521c54a-b07b-4e35-ba3f-511caa8f50a7-1115003.jpg){:height 58, :width 132}
 					- 属性C
@@ -116,7 +110,6 @@
 						- fc和fa相同 
 						  ![image.jpg](../assets/30cd408b-7b39-422c-9946-09a5f307ebd6-1115003.jpg){:height 57, :width 136}
 				- range query $c1 \leq A \leq c2, l_A \leq c1 \leq c2 \leq u_A$
-				  collapsed:: true
 					- 属性A
 						- 对于上下界我们可以直接得到
 						  $$l_A = c1, u_A = c2$$
@@ -144,15 +137,15 @@
 							  $$p(x\in A) = \frac{n-1 \choose d_{A}-1}{n \choose d_A}=\frac{d_A}{n}$$
 					- profile 传递
 						- 上下界不变
-						- 对于f，我们可以通过计算所有元素既在A又在B中的概率期望得到，注意每个元素不一定只出现一次
-						  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \overline{f_A} p\left(x_i=A\right) p\left(x_i=B \mid x_i=A\right)$$
+						- 对于f，我们计算每一行出现的概率大期望，每一行出现的概率是一个值$x_i$在A中，且对于A中等于$x_i$的行，B也等于$x_i$。
+						  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \overline{f_A} p\left(x_i \in A\right) p\left(x_i=B \mid x_i=A\right)$$
 							- $\overline{f_A}$表示每个value对应的tuple数量$\frac{f}{d_A}$
-							- 所以我们可以计算得到（当独立时$p(x_i = B | x_i = A) = p(x_i = B)$）
+							- 当$\Pi_B(R) \subseteq \Pi_A(R)$所以我们可以计算得到（当独立时$p(x_i = B | x_i = A) = 1/d_B)$）
 							  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \frac{f}{d_A} \frac{d_A}{n} \frac{1}{d_B}=f / d_B$$
 							- 上述情况是$\Pi_B(R) \subseteq \Pi_A(R)$。结合$\Pi_A(R) \subseteq \Pi_B(R)$我们可以得到
 							  $$f_A^{\prime}=f_B^{\prime}=\frac{f}{\max \left(d_A, d_B\right)}$$
 							- 如果上述条件都不成立，但是A和B是独立的。那么我们可以推得
-							  $$p(x_i \in B | x_i \in A) = p(x_i \in B) = \frac{1}{n}$$
+							  $$p(x_i = B | x_i = A) = p(x_i = B) = \frac{1}{n}$$
 							  $$f_A^{\prime}=f_B^{\prime}=\sum_{i=1}^n \frac{f}{d_A} \frac{d_A}{n} \frac{1}{n}=\frac{f}{n}$$
 						- 对于d
 							- 如果$\Pi_B(R) \subseteq \Pi_A(R)$或$\Pi_A(R) \subseteq \Pi_B(R)$成立，（System R中的估计，误差比较大）
@@ -172,7 +165,6 @@
 								  $$d_A^\prime = d_B^\prime = d_A*(1-(1-\frac{f_A^\prime}{f_A})^{f_A/ d_A})$$
 							-
 				- Inequality-based correlation
-				  collapsed:: true
 					- 这里以$\sigma_{A \leq B}(R)$为例，为了简化问题，假设$l_A = l_B, u_A = u_B$（当不满足假设也可以通过计算分布变得满足）
 						- 上下界同样保持不变
 						- 对于f
