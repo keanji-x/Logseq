@@ -1,6 +1,5 @@
 - 代价计算：profile+operator
 - profile
-  collapsed:: true
 	- 分类
 	  collapsed:: true
 		- 物理：page数量
@@ -12,7 +11,6 @@
 				- 离散：正整数，**字符串** （只有activate domain）
 				- 连续：**浮点数 **（只有activate domain）
 - 基本操作
-  collapsed:: true
 	- 构建 
 	  ![image.jpg](../assets/f2586aba-a99e-499c-984f-cf0577853e8d-1115003.jpg)
 	- 更新
