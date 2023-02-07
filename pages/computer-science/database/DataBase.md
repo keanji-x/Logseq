@@ -22,3 +22,5 @@
 	- [[Query Compiler]]
 	- [[Paper Reading]]
 	- [[Code Reading]]
+	- [[Cost Model And Cardinality Estimation]]
+	-

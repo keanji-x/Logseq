@@ -1,0 +1,21 @@
+- 基本设置
+	- 代价类型
+		- seq_page_cost: Cost of a sequential page fetch
+		- random_page_cost Cost of a non-sequential page fetch
+		- cpu_tuple_cost: Cost of typical CPU time to process a tuple
+		- cpu_index_tuple_cost: Cost of typical CPU time to process an index tuple
+		- cpu_operator_cost: Cost of CPU time to execute an operator or function
+		- parallel_tuple_cost: Cost of CPU time to pass a tuple from worker to leader backend
+		- parallel_setup_cost: Cost of setting up shared memory for parallelism
+	- 这里我们为每个operator 计算两种cost
+		- startup_cost：从启动到拿到第一个tuple的代价，这是由于对于exsit 算子或者limit算子而已，不需要所有的代价
+		- total_cost：从计算到拿到全部tuple的代价
+		- 这样我们可以得到一个基本的计算
+			- total_cost = startup_cost + rows * cost_per_tuple
+			- start_upcost 根据不同的算子等于孩子的startup_cost 或total cost
+- 计算
+	- scan
+	- filter
+	- join
+	- agg
+	-

@@ -1,0 +1,39 @@
+- 基本定义
+	- 代价包含<CPU cost, memory cost, networkCost>
+	- size代表数据的大小，计算方式为row_cnt*avg_size
+- OLAP_SCAN：size, 0, 0
+- Project：size, 0, 0
+- TopN??
+	- one phase：无
+	- two phase：input_size, size,  size
+- HashAgg
+	- 1 phase
+	- 2 phase：input size，size，0
+- Distribute
+	- Any：output_size（output col size per tuple * rows）
+	- broadcast：size*alive be
+	- shuffle：output_size
+- HashJoin
+	- PropbeCost
+		- (1, log(map_size/BOTTOM_NUMBER))，和hash表的size成log
+		- 当存在并行hash，(Math.log(mapSize / BOTTOM_NUMBER) - Math.log(parallelFactor) / Math.log(2)))
+	- broadcast
+		- build_cost = rightOutSize
+		- probe_cost = leftOut*ProbeCost
+	- shuffle
+		- buidl_cost = right_output/parallel_factor
+		- probe_cost =leftOut*ProbeCost
+	- default
+		- build_cost = rightOutput
+		- probe_cost = leftOutput
+- NestLoopJoin
+	- cpu: left_size\*right_size\*PENALTY
+- CTE
+	- CTE Produce
+		- zero
+	- CTE Anchor
+		- cpu cost: produce_size \* consume_num\*0.5
+	- CTE Consume
+		- zero
+	- NonOp
+		- zero
