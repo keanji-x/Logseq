@@ -14,7 +14,10 @@
 			- total_cost = startup_cost + rows * cost_per_tuple
 			- start_upcost 根据不同的算子等于孩子的startup_cost 或total cost
 - 计算
-	- scan
+	- seq_scan
+		- I/O cost = cost_per_page\*page_num
+		- CPU cost = cost_per_tuple \* row_count
+		-
 	- filter
 	- join
 	- agg
