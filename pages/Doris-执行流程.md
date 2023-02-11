@@ -1,0 +1,3 @@
+- Fragment 间执行
+- Fragment 内执行
+- 算子执行
