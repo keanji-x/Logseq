@@ -1,3 +1,28 @@
-- Fragment 间执行
-- Fragment 内执行
+- Fragment 执行
+	- Fragment 划分（PhysicalTranslator）
+		- 当遇到exchange Node便可以划分为两个node。Fragment 之前不一定是完全阻塞的。但是不同的fragment 可以被调度在不同的机器上
+		- Join为例
+		  collapsed:: true
+			- colocate join
+				- 将left fragment 和 right fragment 合并为一个。也就是构建新的hash node，它的左孩子是leftFrag的root，右孩子是rightFrag的root
+			- bucket-shuffle join/ broadcast join
+				- rightFragment -> leftFragment
+			- shuffle join
+				- rightFragment -> leftFragment -> 当前join作为一个新的fragment
+	- Fragment 的执行
+		- 一条fragment 会被拆成一条或多条pipeline。pipeline的生命周期由fragmentContext管理
+			- **pipeline拆分的粒度？**
+			- 最细的一个节点一个pipeline，最粗的是以整个pipeline
+		- **多个fragment的pipeline如何共同管理？**什么东西共享，什么东西独占
+		- pipeline的调度
+			- pipeline 执行一段时间会用用户态的操作yield
+			- 外部存在一个task scheduler 调度不同的pipeline
+		- pipeline的执行
+			- pipeline单进单出
+			- 即当是ready状态被调度执行时，
+			- 首先会拿到chunk（）
+			- 然后执行
+			- 然后就生成的chunk压入对应的数据池中
+			-
+			-
 - 算子执行
