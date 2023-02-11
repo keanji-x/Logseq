@@ -18,9 +18,9 @@
 			- pipeline 执行一段时间会用用户态的操作yield
 			- 外部存在一个task scheduler 调度不同的pipeline
 		- pipeline的执行
-			- pipeline单进单出
+			- pipeline的算子单进单出，一个pipeline可能会由多个线程执行（pipedriver？）
 			- 即当是ready状态被调度执行时，
-			- 首先会拿到chunk（）
+			- 首先会拿到chunk（由调度器管理？）
 			- 然后执行
 			- 然后就生成的chunk压入对应的数据池中
 			-
