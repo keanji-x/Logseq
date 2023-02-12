@@ -25,4 +25,7 @@
 			- 然后就生成的chunk压入对应的数据池中
 - 算子执行
 	- RepeatNode：将算子按照group set 进行拓展
-	-
+	- Union
+	- Intersect
+	- AssertNumRows
+		- 读取所有数据并比较行数
