@@ -29,4 +29,5 @@
 	- Intersect
 	- AssertNumRows
 		- 读取所有数据并比较行数
-	- SetOperation
+	- SetOperation（Union）
+	-
