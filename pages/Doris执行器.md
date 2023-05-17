@@ -9,7 +9,7 @@
 - fragment分配be节点
 - pipeline 划分
 	- PipelineContext.Prepare
-		-
+	- _build_pipelines
 	- context->set_merge_controller_handler
 	- PipelineConetx.Submit
 	-
