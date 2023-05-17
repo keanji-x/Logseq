@@ -1,4 +1,10 @@
 - 问题
 	- Fe 如何确定fragment 发送的be节点
 	- Fe 如何发送fragment，调用什么rpc，执行顺序是什么样的
+	- fragment如何执行
+		- 如何切分成pipeline
+		- pipeline如何执行
+-
+- fragment划分：根据exchange Node划分
+- fragment分配be节点
 	-
