@@ -7,4 +7,7 @@
 -
 - fragment划分：根据exchange Node划分
 - fragment分配be节点
+- pipeline 划分
+	- PipelineContext.Prepare
+	- PipelineConetx.
 	-
