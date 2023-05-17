@@ -1,2 +1,4 @@
 - 问题
-	- Fe
+	- Fe 如何确定fragment 发送的be节点
+	- Fe 如何发送fragment，调用什么rpc，执行顺序是什么样的
+	-
