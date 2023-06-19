@@ -6,10 +6,28 @@
 		- pipeline如何执行
 -
 - fragment划分：根据exchange Node划分
-- fragment分配be节点
+- fragment分配be节点策略
 - pipeline 划分
 	- PipelineContext.Prepare
+	  collapsed:: true
+		- 初始化运行的状态
+		- 为当前pipeline创建 执行节点 execNode，即将所有ThriftNode转为vectorNode
+		- 为exchange node构建 sender（外部变量）
 	- _build_pipelines
+		- 将各个节点转为各个OperatorBuilder，并根据pipeline breaker 划分pipeline，为每个pipeline构建sink 和 source，并将划分出的pipeline加到依赖的pipeline中去
+			- 典型的Pipeline Breaker
+			  collapsed:: true
+				- sort
+				- join
+				- agg
+				- set operation
+			- 构建sink 和 source
+				- 构建sink，设置为孩子pipeline的输出
+				- 构建soruce，设置为cur pipe（sort -pipeline）的输入
+			- 注：fragment 的划分和 pipeline的划分是不同的，尽管它们有很多相似的地方
+			  collapsed:: true
+				- fragment的划分只根据是否会被分配到不同的节点上去
+				- pipeline breaker的划分根据是否会造成pipeline 阻塞，即pipeline breaker
 	- context->set_merge_controller_handler
 	- PipelineConetx.Submit
 	-
