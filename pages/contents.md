@@ -1,5 +1,8 @@
-- [[computer-science]]
-- [[encnomic]]
+- Computer Science
+	- [[DataBase]]
+	- algorithm
+- Economic
+- Math
 - [[DataBase]]
 - [[Query Compiler]]
 - [[Paper Reading]]
