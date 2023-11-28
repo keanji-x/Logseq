@@ -1,3 +1,5 @@
+- [[computer-science]]
+- [[encnomic]]
 - [[DataBase]]
 - [[Query Compiler]]
 - [[Paper Reading]]
