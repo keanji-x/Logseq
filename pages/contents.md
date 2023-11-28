@@ -18,24 +18,29 @@
 		- [[Ch4处理器体系结构]]
 		- [[Ch5 优化程序性能]]
 	- Language
+	  collapsed:: true
 		- CPP
+		  collapsed:: true
 			- [[Ch2,3 基本变量]]
 			- [[Ch4,5 表达式]]
 			- [[Ch6 函数]]
 			- [[Ch7 对象]]
+			- [[Ch8 IO标准库]]
+			- [[Ch9顺序容器]]
+			- [[Ch10 泛型算法]]
+			- [[Ch11 关联容器]]
+			- [[Ch12 动态内存]]
+			- [[Ch13 拷贝控制]]
 		- Java
+		  collapsed:: true
 			- [[Ch6 访问权限控制]]
 			- [[Ch7 复用类]]
-		- [[Ch8 IO标准库]]
-		- [[Ch9顺序容器]]
-		- [[Ch10 泛型算法]]
-		- [[Ch11 关联容器]]
-		- [[Ch12 动态内存]]
-		- [[Ch13 拷贝控制]]
 		-
 	- Machine Learning
+	  collapsed:: true
 		- [[统计学习方法]]
 	- operator system
+		- Three easy peace
 		- [[tep-Concurrency]]
 		- [[tep-Persistence]]
 		- [[tep-Virtualization]]
