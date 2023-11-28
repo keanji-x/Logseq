@@ -1,4 +1,5 @@
 - [[DataBase]]
+  collapsed:: true
 	- [[CMU 15445]]
 	  collapsed:: true
 		- [[445-关系代数]]
