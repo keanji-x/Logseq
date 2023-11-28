@@ -2,7 +2,11 @@
 	- [[DataBase]]
 	- algorithm
 		- [[AVL 树]]
-		-
+		- [[Ch1计算机系统漫游]]
+		- [[Ch2 算法基础]]
+		- [[Ch2,3 基本变量]]
+		- [[Ch4 分治策略]]
+		- [[Ch5 优化程序性能]]
 	- Machine Learning
 		- [[统计学习方法]]
 	- operator system
