@@ -1,6 +1,11 @@
 - Computer Science
 	- [[DataBase]]
-	- Dirtribute System
+	- Distribute System
+		- Paper Reading
+			- [[GFS，a distribute file system]]
+			- [[分布式原理介绍]]
+			- [[逻辑时钟与last write win]]
+			-
 	- algorithm
 	  collapsed:: true
 		- [[AVL 树]]
