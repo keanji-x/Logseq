@@ -1,6 +1,8 @@
 - Computer Science
 	- [[DataBase]]
+	- Dirtribute System
 	- algorithm
+	  collapsed:: true
 		- [[AVL 树]]
 		- [[Ch2 算法基础]]
 		- [[Ch4 分治策略]]
@@ -13,6 +15,7 @@
 		- [[Ch16 贪心算法]]
 		- [[Ch22 基本的图算法]]
 	- CSAPP
+	  collapsed:: true
 		- [[Ch1计算机系统漫游]]
 		- [[Ch2信息的表示和处理]]
 		- [[Ch4处理器体系结构]]
@@ -40,21 +43,25 @@
 	  collapsed:: true
 		- [[统计学习方法]]
 	- operator system
+	  collapsed:: true
 		- Three easy peace
-		- [[tep-Concurrency]]
-		- [[tep-Persistence]]
-		- [[tep-Virtualization]]
+			- [[tep-Concurrency]]
+			- [[tep-Persistence]]
+			- [[tep-Virtualization]]
 		- [[文件IO]]
 		- [[文件和目录]]
 	- Program Language
+	  collapsed:: true
 		- [[Introduction to language design and implementation]]
 		- [[程序语言设计与实现]]
 	- Stream Processing
+	  collapsed:: true
 		- [[architecture of AF]]
 		- [[Fundamentals]]
 		- [[SS with Stateful]]
 		- [[w3-Streaming database]]
 	- Clound
+	  collapsed:: true
 		- [[k8s in action]]
 - Economic
 - Math
