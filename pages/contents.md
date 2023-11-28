@@ -92,10 +92,11 @@
 		- [[中级宏观]] 曼昆中级宏观教材
 	- 微观经济学
 	- 交易系统
-		- 初级思考[[交易系统]]
+		- 初级思考[[交易系统的思考]]
 	- 量化策略
 		- [[Asset Management：A Systematic Approach to Factor Investing]]
 - Math
+  collapsed:: true
 	- [[大学概率论]]
 	- [[大学微积分]]
 	- [[概率论1-----概率]]
