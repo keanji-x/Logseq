@@ -1,12 +1,16 @@
 - Computer Science
+  collapsed:: true
 	- [[DataBase]]
 		- [[CMU 15445]]
 		- [[Code reading]]
 		- [[Paper Reading]]
 		- [[Query Compiler]]
 		- complete book
+		  collapsed:: true
 			- [[cb-目录]]
-			-
+			- [[cb-execution]]
+			- [[cb-关系]]
+			- [[cb-transaction]]
 	- Distribute System
 	  collapsed:: true
 		- Paper Reading
@@ -84,6 +88,8 @@
 	  collapsed:: true
 		- [[k8s in action]]
 - Economic
+	- 宏观经济学
+	-
 - Math
 - [[DataBase]]
 - [[Query Compiler]]
