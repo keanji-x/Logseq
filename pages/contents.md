@@ -89,7 +89,12 @@
 		- [[k8s in action]]
 - Economic
 	- 宏观经济学
-	-
+		- [[中级宏观]] 曼昆中级宏观教材
+	- 微观经济学
+	- 交易系统
+		-
+	- 量化策略
+		- [[Asset Management：A Systematic Approach to Factor Investing]]
 - Math
 - [[DataBase]]
 - [[Query Compiler]]
