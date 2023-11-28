@@ -2,7 +2,21 @@
 	- [[DataBase]]
 	- algorithm
 		- [[AVL 树]]
-	-
+	- Machine Learning
+		- [[统计学习方法]]
+	- operator system
+		- [[tep-Concurrency]]
+		- [[tep-Persistence]]
+		- [[tep-Virtualization]]
+		- [[文件IO]]
+		- [[文件和目录]]
+	- Program Language
+		- [[Introduction to language design and implementation]]
+		- [[程序语言设计与实现]]
+	- Stream Processing
+		- [[architecture of AF]]
+		- [[Fundamentals]]
+		-
 - Economic
 - Math
 - [[DataBase]]
