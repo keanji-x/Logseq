@@ -1,11 +1,19 @@
 - Computer Science
 	- [[DataBase]]
 	- Distribute System
+	  collapsed:: true
 		- Paper Reading
 			- [[GFS，a distribute file system]]
 			- [[分布式原理介绍]]
 			- [[逻辑时钟与last write win]]
-			-
+		- [[dsaai-Interprocess communication]]
+		- [[dsaai-Introduction]]
+		- [[FLP]]
+		- [[MapReduce]]
+		- [[Paxos]]
+		- [[RAFT]]
+		- [[RPC & threads]]
+		- [[schema 异步变化]]
 	- algorithm
 	  collapsed:: true
 		- [[AVL 树]]
