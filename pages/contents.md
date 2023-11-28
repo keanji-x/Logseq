@@ -1,6 +1,8 @@
 - Computer Science
 	- [[DataBase]]
 	- algorithm
+		- [[AVL 树]]
+	-
 - Economic
 - Math
 - [[DataBase]]
