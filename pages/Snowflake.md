@@ -1,0 +1,6 @@
+- Building An Elastic Query Engine on Disaggregated Storage
+- 目标
+	- 存储 和 计算 的弹性
+	- 多租户
+	- 高性能
+- a
