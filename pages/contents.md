@@ -1,10 +1,12 @@
 - Computer Science
+  collapsed:: true
 	- [[DataBase]]
 		- [[CMU 15445]]
 		- [[Code reading]]
 		- [[Paper Reading]]
 		- [[Query Compiler]]
 		- complete book
+		  collapsed:: true
 			- [[cb-目录]]
 			- [[cb-execution]]
 			- [[cb-关系]]
@@ -62,6 +64,7 @@
 			- [[Ch7 复用类]]
 		-
 	- Machine Learning
+	  collapsed:: true
 		- [[统计学习方法]]
 	- operator system
 	  collapsed:: true
@@ -76,6 +79,7 @@
 		- [[Introduction to language design and implementation]]
 		- [[程序语言设计与实现]]
 	- Stream Processing
+	  collapsed:: true
 		- [[architecture of AF]]
 		- [[Fundamentals]]
 		- [[SS with Stateful]]
@@ -86,12 +90,15 @@
 - Economic
 	- 宏观经济学
 		- [[中级宏观]] 曼昆中级宏观教材
+		- [[布兰查德宏观经济学]]
+		-
 	- 微观经济学
 	- 交易系统
 		- 初级思考[[交易系统的思考]]
 	- 量化策略
 		- [[Asset Management：A Systematic Approach to Factor Investing]]
 - Math
+  collapsed:: true
 	- [[大学概率论]]
 	- [[大学微积分]]
 	- [[概率论1-----概率]]
