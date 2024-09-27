@@ -1,0 +1,6 @@
+- 在`generate_proposal`方法中
+	- 会根据当前round获取hqc
+	- 根据hqc来拿到当前 certified_block的block id
+		- certified block是怎么管理的
+-
+-
