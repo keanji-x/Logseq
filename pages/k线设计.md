@@ -1,0 +1,18 @@
+- Market Calendar
+	- 标识每一天状态
+	- 即每段开盘收盘时间, session
+	- 每段session的状态
+- 数据的key设计
+	- 由128位int 表示
+	- 前32位, 表示TimeUnit
+	- 中间32位, 表示TimeUnitValue
+	- 后64位, 表示TimeStamp
+		- ms_ts: 即unixTimeStamp
+		- s: 即ms_ts/1000
+		- min: 即s_ts/ 60
+		- h: 即min_ts / 60
+		- day: 即h_ts / 24
+		- week_ts: 即day / 7
+		- mouth_ts: year * 12 + month
+		- year: year
+-
